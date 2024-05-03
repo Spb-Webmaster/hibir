@@ -1,0 +1,31 @@
+@import "@fontsource-variable/inter";
+@import '@fontsource/source-sans-pro/200-italic.css';
+@import '@fontsource/source-sans-pro/300-italic.css';
+@import '@fontsource/source-sans-pro/400-italic.css';
+@import '@fontsource/source-sans-pro/600-italic.css';
+@import '@fontsource/source-sans-pro/700-italic.css';
+@import '@fontsource/source-sans-pro/900-italic.css';
+
+@import '@fontsource-variable/roboto-flex';
+
+@import "slick-carousel/slick/slick.scss";
+@import "slick-carousel/slick/slick-theme.scss";
+
+@import "./click.scss";
+@import "./general-style/paddind.scss";
+@import "./general-style/width.scss";
+@import "./fancybox.scss";
+@import "./forms/file.scss";
+@import "./forms/button.scss";
+@import "./forms/input.scss";
+@import "./forms/select.css";
+@import "./forms/form_modal/form_modal.scss";
+@import "./forms/form_modal/qr_modal.scss";
+@import "./forms/order_mini.scss";
+@import "./forms/loader.css";
+@import "./menu/menu.scss";
+@import "./menu/left_menu.scss";
+@import "./auth/flash.scss";
+@import "./pagination.scss";
+@import "./content/teaser_img.scss";
+@import "./style.scss";
