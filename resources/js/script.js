@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
         variableWidth:true,
         infinite: false,
 
-
     });
 
 
