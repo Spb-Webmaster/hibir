@@ -13,6 +13,8 @@ class Religion extends Model
     protected $fillable = [
         'title',
         'slug',
+        'img',
+        'text',
         'sorting',
     ];
 

@@ -5,7 +5,7 @@
 @section('content')
     <section class="good_summer"></section>
     <main>
-        @include('include.blocks.sections.sections_index')
+        @include('include.blocks.religions.religions_index')
         @include('include.blocks.slider.top_slider')
         @include('include.blocks.slider.news_slider')
         @include('include.blocks.slider.video_slider')

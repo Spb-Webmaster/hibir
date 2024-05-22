@@ -10,14 +10,18 @@
 * */
 import './bootstrap';
 import jQuery from 'jquery';
-window.$ = jQuery;
+//window.$ = jQuery;
+window.$ = window.jQuery = jQuery;
+
 
 
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import 'slick-carousel/slick/slick';
+import './chosen/chosen.jquery';
+/*import '@selectize/selectize/dist/js/selectize.min';*/
+
+import './select';
 import './script';
-
-
 import './fancybox';
 

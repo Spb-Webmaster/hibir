@@ -4,6 +4,8 @@ $colorRed: #EF533F;
 $colorCCC: #CCCCCC;
 $colorGrey: #667085;
 $colorBlue: #00AFEF;
+$colorGreen: #0f6567;
+
 
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {
@@ -112,6 +114,15 @@ a:hover {
 .flex {
     display: flex;
 }
+
+.z-index_100 { z-index: 100}
+.z-index_90 { z-index: 90}
+.z-index_80 { z-index: 80}
+.z-index_70 { z-index: 70}
+.z-index_60 { z-index: 60}
+.z-index_50 { z-index: 50}
+.z-index_40 { z-index: 40}
+.z-index_30 { z-index: 30}
 
 /**
 header
@@ -347,21 +358,51 @@ sections
     height: 65px;
     margin: 24px 0 0 0;
 
-    .sect_1 {
+    .sect {
+        text-decoration: none;
+
+        &:hover {
+            .h1 span {
+                border-bottom: 4px solid $colorRed;
+            }
+        }
+    }
+
+    .sect_hristianstvo {
         min-width: 30%;
+
+        .sect__background-image {
+            width: 35px;
+            height: 51px;
+        }
     }
 
-    .sect_2 {
-
+    .sect_islam {
         min-width: 21%;
+
+        .sect__background-image {
+            width: 47px;
+            height: 51px;
+        }
     }
 
-    .sect_3 {
+    .sect_buddizm {
         min-width: 22%;
+
+        .sect__background-image {
+            width: 51px;
+            height: 51px;
+        }
+
     }
 
-    .sect_4 {
+    .sect_iudaizm {
         min-width: 22%;
+
+        .sect__background-image {
+            width: 45px;
+            height: 50px;
+        }
     }
 
     .sect {
@@ -383,7 +424,13 @@ sections
 
         .sect__img {
             padding: 0 32px 0 0;
+            position: relative;
         }
+
+        .sect__background-image {
+            background-repeat: no-repeat;
+        }
+
 
         .sect__title {
 
@@ -581,6 +628,23 @@ end responce -------------------------------------------------------------------
 /**
   * editor
   * */
+
+.ellipsis_500 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 500px;
+    width: 100%;
+}
+.ellipsis_600 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 600px;
+    width: 100%;
+}
+
+
 .desc {
     p {
         line-height: 1.3em;
@@ -729,3 +793,95 @@ end responce -------------------------------------------------------------------
 /**
   * end footer ------------------------------------------------------------------
   * */
+
+
+/**
+  * filter
+  * */
+.r_filter {
+    position: relative;
+
+    .r_filter__b {
+        display: block;
+        position: absolute;
+        width: 50%;
+        top: 25px;
+        right: 0;
+        content: '';
+        // background: #f0f1f3;
+        // height: 73px;
+
+
+        box-sizing: content-box;
+        height: 0;
+        // width: 100px;
+        border-bottom: 73px solid #f0f1f3;
+        border-left: 22px solid transparent;
+
+    }
+}
+
+.r_filter__flex {
+    display: flex;
+    padding: 40px 0;
+
+    .r_filter__left {
+        width: 50%;
+    }
+
+    .r_filter__right {
+        width: 50%;
+    }
+    &.r_filter__flex_nopadding {
+        padding: 2px 0;
+    }
+}
+
+.font_30 {
+    font-weight: 600;
+    font-size: 30px;
+    color: #000;
+    transition: 0.2s;
+
+    span {
+        border-bottom: 3px solid #999;
+        padding-bottom: 2px;
+    }
+}
+
+.f_region {
+    position: relative;
+    cursor: pointer;
+
+   &.active, &:hover {
+        .font_30 {
+        font-weight: 600;
+        font-size: 30px;
+        color: #9b9b9b;
+
+        span {
+            border-bottom: 3px solid #9b9b9b;
+            padding-bottom: 2px;
+        }
+    }
+    }
+}
+
+.f_region__flex {
+    display: flex;
+    padding: 0 0 0 30px;
+}
+
+.f_icon__region {
+    width: 30px;
+    min-height: 30px;
+    background: red;
+    position: relative;
+}
+
+/**
+  * end filter ------------------------------------------------------------------
+  * */
+
+
+

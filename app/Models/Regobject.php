@@ -14,6 +14,7 @@ class Regobject extends Model
         'title',
         'subtitle',
         'slug',
+        'img',
         'shortdesc',
         'a_desc',
         'a_img',

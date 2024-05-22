@@ -4,14 +4,18 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
+use App\MoonShine\Pages\CategoryTreePage;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Area;
 
+use Leeto\MoonShineTree\Resources\TreeResource;
 use MoonShine\Enums\ClickAction;
 use MoonShine\Fields\Slug;
 use MoonShine\Fields\Text;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
+use MoonShine\Pages\Crud\DetailPage;
+use MoonShine\Pages\Crud\FormPage;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
@@ -19,7 +23,7 @@ use MoonShine\Fields\ID;
 /**
  * @extends ModelResource<Area>
  */
-class AreaResource extends ModelResource
+class AreaResource extends TreeResource
 {
     protected string $model = Area::class;
 
@@ -50,11 +54,23 @@ class AreaResource extends ModelResource
         return [];
     }
 
-    public function getActiveActions(): array
+    protected function pages(): array
     {
-        return ['create', /*'view',*/ 'update', 'delete', 'massDelete'];
+        return [
+            CategoryTreePage::make($this->title()),
+            FormPage::make(
+                $this->getItemID()
+                    ? __('moonshine::ui.edit')
+                    : __('moonshine::ui.add')
+            ),
+            DetailPage::make(__('moonshine::ui.show')),
+        ];
     }
 
+    public function getActiveActions(): array
+    {
+        return [/*'create', 'view', 'update', 'delete', 'massDelete'*/];
+    }
 
     public function import(): ?ImportHandler
     {
@@ -64,5 +80,15 @@ class AreaResource extends ModelResource
     public function export(): ?ExportHandler
     {
         return null;
+    }
+
+    public function treeKey(): ?string
+    {
+        return null;
+    }
+
+    public function sortKey(): string
+    {
+        return 'sorting';
     }
 }

@@ -4,18 +4,22 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
+use App\Models\CatRegobject;
 use App\MoonShine\Pages\CategoryTreePage;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Religion;
 
 use Leeto\MoonShineTree\Resources\TreeResource;
 use MoonShine\Enums\ClickAction;
+use MoonShine\Fields\Image;
 use MoonShine\Fields\Slug;
 use MoonShine\Fields\Text;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
 use MoonShine\Pages\Crud\DetailPage;
 use MoonShine\Pages\Crud\FormPage;
+use MoonShine\QueryTags\QueryTag;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
@@ -43,10 +47,11 @@ class ReligionResource extends TreeResource
             ID::make()
                 ->sortable(),
 
-            Text::make(__('Заголовок'), 'title')
-
+            Text::make(__('Заголовок'), 'title'),
+           Image::make(__('Изображение'), 'img'),
         ];
     }
+
     public function formFields(): array
     {
         return [
@@ -58,6 +63,12 @@ class ReligionResource extends TreeResource
                     ->from('title')
                     ->unique(),
             ]),
+            Image::make(__('Изображение'), 'img')
+                ->showOnExport()
+                ->disk(config('moonshine.disk', 'moonshine'))
+                ->dir('religion')
+                ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                ->removable(),
         ];
     }
 
@@ -80,6 +91,10 @@ class ReligionResource extends TreeResource
         ];
     }
 
+    public function getActiveActions(): array
+    {
+        return [/*'create', 'view', 'update', 'delete', 'massDelete'*/];
+    }
 
 
     public function import(): ?ImportHandler
@@ -87,10 +102,6 @@ class ReligionResource extends TreeResource
         return null;
     }
 
-    public function getActiveActions(): array
-    {
-        return [/*'create', 'view', 'update', 'delete', 'massDelete'*/];
-    }
 
 
     public function export(): ?ExportHandler

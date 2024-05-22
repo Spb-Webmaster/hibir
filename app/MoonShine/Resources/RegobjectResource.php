@@ -50,7 +50,7 @@ class RegobjectResource extends ModelResource
         return [
             ID::make()
                 ->sortable(),
-
+            Image::make(__('Изображение'), 'img'),
             Text::make(__('Заголовок'), 'title')
 
         ];
@@ -71,7 +71,15 @@ class RegobjectResource extends ModelResource
                                 Collapse::make('Заголовок/Алиас', [
                                     Text::make('Заголовок', 'title')->required(),
                                     Slug::make('Алиас', 'slug')
-                                        ->from('title')->unique()
+                                        ->from('title')->unique(),
+                                    Image::make(__('Изображение'), 'img')
+                                        ->disk(config('moonshine.disk', 'moonshine'))
+                                        ->dir('objects')
+                                        ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                        ->removable()
+                                        ->required()
+                                        ->hint('Основное изображение. Обязательное поле.'),
+
                                 ])->show(),
 
 

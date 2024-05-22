@@ -37,6 +37,8 @@ if (!function_exists('cache_clear ')) {
     {
         Cache::forget('top_menu');
         Cache::forget('slider_infos');
+        Cache::forget('religion_list');
+        Cache::forget('area_list');
 
     }
 }
