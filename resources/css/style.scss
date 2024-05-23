@@ -884,4 +884,41 @@ end responce -------------------------------------------------------------------
   * */
 
 
+/* Menu
+----------------------------------*/
+.ui-menu {
+    list-style:none;
+    padding: 0;
+    margin: 0;
+    display:block;
+ li {
+     height: 40px !important;
+     position: relative;
+     box-sizing: border-box;
+     div {
+
+
+     }
+ }
+}
+.ui-menu .ui-menu-item-wrapper {
+    border:1px solid #fff !important;
+    color: $color !important;
+    padding:  3px 1em 3px  44px !important;
+    height: 40px !important;
+    line-height: 36px;
+    font-size: 18px !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+}
+
+.ui-menu .ui-menu-item-wrapper.ui-state-active {
+ background: #abdfdf !important;
+ border:1px solid #abdfdf !important;
+    height: 40px !important;
+    line-height: 36px;
+margin: 0 !important;
+    color: $color !important;
+}
+
 

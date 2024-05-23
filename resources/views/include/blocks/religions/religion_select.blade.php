@@ -5,7 +5,7 @@
         <input type="hidden" name="religion" class="f_religion__js" value="{{ $religion->id }}">
 
     </x-forms.formsubmit>
-    <div class="axeld_select__js religion_select__flex">
+    <div class="axeld_select__js religion_select__flex _rel__js">
         <div class="_h1 color_green"><span>{{__('Направление:')}}</span></div>
         <div class="religion_select__axeld">
             <div class="font_30 s_active s__js" data-religion="{{ $religion->id }}"><span>{{ $religion->title }}</span></div>

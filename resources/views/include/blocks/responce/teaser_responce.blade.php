@@ -13,7 +13,7 @@
         <div class="_responce_right">
             <div class="_responce_title">
                 <div class="box_title_block pad_t10_important pad_b10_important">
-                    <div class="_h2" title="{{__('Юля Хуева')}}"><span>{{__('Юля Хуева')}}</span></div>
+                    <div class="_h2" title="{{__('Юля Мукаева')}}"><span>{{__('Юля Мукаева')}}</span></div>
                 </div>
                 <div class="s_date"><span>7 марта 2023</span></div>
 

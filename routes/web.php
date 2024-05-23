@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\Catalog\CatalogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
@@ -37,8 +38,22 @@ Route::controller(CatalogController::class)->group(function () {
     Route::get('/r-{slug}/area-{id}', 'religionAreaListObjects')
         ->name('religion.area.list');
 
-    Route::get('/r-{religion_slug}/area-{area_id}/r-{religion_gategory_slug}', 'religionAreaListCategoryObjects')
+    Route::get('/r-{religion_slug}/area-{area_id}/{religion_gategory_slug}', 'religionAreaListCategoryObjects')
         ->name('religion.area.category.list');
+    /** search */
+    Route::post('/search.big-search', 'bigSearch')
+        ->name('form.search.big_search');
+
+    /** //search */
 
 });
+
+
+
+Route::controller(AjaxController::class)->group(function () {
+    /* подставка в input в поиске */
+    Route::post('/serch/autocomplete', 'autocomplete');
+
+});
+
 

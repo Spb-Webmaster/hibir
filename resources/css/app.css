@@ -15,6 +15,7 @@
 @import "chosen-js/chosen.css";
 @import "./chosen/chosen.css";
 /*@import "@selectize/selectize/dist/css/selectize.css";*/
+@import "./ui/jquery-ui.min.css";
 @import "./general-style/paddind.scss";
 @import "./general-style/width.scss";
 @import "./fancybox.scss";
@@ -31,5 +32,6 @@
 @import "./menu/left_menu.scss";
 @import "./auth/flash.scss";
 @import "./pagination.scss";
+@import "./content/teaser_4.scss";
 @import "./content/teaser_img.scss";
 @import "./style.scss";

@@ -24,7 +24,11 @@
             <div class="block block_1147">
                 <div class="r_filter__flex r_filter__flex_nopadding">
                     <div class="r_filter__left">
-                        @include('include.blocks.religions.religioncategory_select')
+                        <div class="axeld_select__js religion_select__flex ">
+                            <div class="_h1 color_green"><span>{{__('Вид объекта:')}}</span></div>
+                            <div class="font_30 s_active pad_l10">{{ $selected_religion_category->title }}</div>
+
+                        </div>
                     </div>
                     <div class="r_filter__right">
                     </div>
@@ -32,8 +36,9 @@
             </div>
         </div>
 
+   @include('include.blocks.search.big_search')
 
-        @dump($items->all())
+   @include('include.blocks.content.teaser.teaser_4')
 
 
 

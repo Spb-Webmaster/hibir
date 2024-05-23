@@ -32,8 +32,11 @@
             </div>
         </div>
 
+        @include('include.blocks.search.big_search')
 
-        @dump($items->all())
+        @include('include.blocks.content.teaser.teaser_4')
+
+
 
 
 

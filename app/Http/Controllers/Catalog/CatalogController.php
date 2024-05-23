@@ -82,6 +82,9 @@ class CatalogController extends Controller
     }
 
 
+    public function bigSearch(Request $request) {
+        dd($request->all());
+    }
 
     /** -   --------------------------------------------------   -  **/
 
@@ -98,7 +101,7 @@ class CatalogController extends Controller
         $religions =  CatalogViewModel::make()->religionList();  /** все религии **/
         $areas = AreaViewModel::make()->areaList(); /** Все субъекты РФ **/
         $selected_area = AreaViewModel::make()->areaId($id); /** Один субъект РФ **/
-        $religion_categories = CatalogViewModel::make()->catRegobject($religion->id); /** спискоk категорий определенной религии **/
+        $religion_categories = CatalogViewModel::make()->catRegobjects($religion->id); /** спискоk категорий определенной религии **/
         $items = ObjectsViewModel::make()->objects($religion, $selected_area);
 
         return view('pages.catalog.list_objects.religion_area_list_objects',
@@ -142,6 +145,7 @@ class CatalogController extends Controller
                 'selected_religion_category' => $selected_religion_category,
             ]);
     }
+
 
 
 
