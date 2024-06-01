@@ -15,10 +15,10 @@
                         <x-forms.text-input-bigsearch
                             id="big_search"
                             class="autocomplete-ajax"
-                            name="big_search"
+                            name="top_search"
                             placeholder="Поиск по организациям. Введите название."
                             type="text"
-                            :isError="$errors->has('big_search')"
+                            :isError="$errors->has('top_search')"
                         />
                         <x-forms.error class="error_big_search"/>
                     </div>

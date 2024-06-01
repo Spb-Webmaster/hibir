@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\Catalog\CatalogController;
+use App\Http\Controllers\Catalog\ObjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
 use Illuminate\Support\Facades\Route;
@@ -40,19 +41,32 @@ Route::controller(CatalogController::class)->group(function () {
 
     Route::get('/r-{religion_slug}/area-{area_id}/{religion_gategory_slug}', 'religionAreaListCategoryObjects')
         ->name('religion.area.category.list');
+
+
+
     /** search */
+
     Route::post('/search.big-search', 'bigSearch')
         ->name('form.search.big_search');
+
+    Route::post('/search.top-search', 'topSearch')
+        ->name('form.search.top_search');
 
     /** //search */
 
 });
 
-
+Route::controller(ObjectController::class)->group(function () {
+    Route::get('/r-{religion_slug}/{object_slug}', 'pageObjectHome')
+        ->name('page.object');
+    Route::get('/r-{religion_slug}/{object_slug}/contacts', 'pageObjectContact')
+        ->name('page.object.contact');
+});
 
 Route::controller(AjaxController::class)->group(function () {
     /* подставка в input в поиске */
-    Route::post('/serch/autocomplete', 'autocomplete');
+    Route::post('/search/big_autocomplete', 'bigAutocomplete');
+    Route::post('/search/top_autocomplete', 'topAutocomplete');
 
 });
 

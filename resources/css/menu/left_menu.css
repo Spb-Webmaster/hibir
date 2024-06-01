@@ -9,26 +9,53 @@ nav#slide-menu {
   display: block;
   float: left;
   width: 100%;
-  max-width: 284px;
+  max-width: 300px;
   height: 100%;
   -moz-transition: all 500ms;
   -webkit-transition: all 500ms;
   transition: all 500ms;
   z-index: 100;
-  background: #fff; }
+  background: #fff;
+  background-position: 0 0;
+  background-repeat: repeat-y;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARIAAAAaCAYAAAB7E9P6AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABCElEQVR4nO3cQQ6CMBAF0AHX3v+26kpjsEUK0sTpewnBADFx0Z8pHTtFxDWADKaVa6Xz8nhenyv3S8clIm7zL38F8BdKgXOIIIEc1qqR0wkSyOH+42dbvk+QQGK1MNhSqTRVM4IEcmgZ+N+qjaZqJEKQQBbNg3+nYmAJEhjPlurFOxIYUK9Vm2LACBLIoTTAa1XFt2rjvUFtE0ECHCZIYDw6W4Fd7pXPtWe9bAU+nNouL0ggh27/qykRJJBDr4a0IkECLFn+BV72TnfWqhst8jCYvdOdtQDS2QqcQ5BAXnZIAw7rtpIjSIAlGxvBoHptI2DVBhJr2T7xyMZGVm1gMLXw2DJ1aapmHnS7HVfuO5SWAAAAAElFTkSuQmCC");
+  background-size: 100%; }
   nav#slide-menu > ul {
     display: block;
-    margin: 40px;
+    margin: 20px 40px 40px 40px;
     padding: 0;
     -moz-transition: all 500ms;
     -webkit-transition: all 500ms;
     transition: all 500ms;
     z-index: 100;
-    position: relative; }
+    position: relative;
+    height: auto; }
     nav#slide-menu > ul li {
       color: #000;
-      padding: 6px 0;
       cursor: pointer; }
+      nav#slide-menu > ul li a {
+        padding: 7px 0; }
+        nav#slide-menu > ul li a span {
+          border-bottom: 1px dotted #000; }
+      nav#slide-menu > ul li:hover a span {
+        border-bottom: none; }
+  nav#slide-menu .nav_close_wrap {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding: 26px 15px 0 0; }
+    nav#slide-menu .nav_close_wrap .nav_close__ {
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMTkgNUw0Ljk5OTk4IDE5TTUuMDAwMDEgNUwxOSAxOSIgc3Ryb2tlPSIjYTVhNWE1IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+DQo8L3N2Zz4=");
+      background-size: 100%;
+      width: 36px;
+      height: 36px;
+      position: relative;
+      cursor: pointer;
+      transition: 0.3s; }
+    nav#slide-menu .nav_close_wrap .nav_close__:hover {
+      opacity: 0.4; }
 
 body.menu-active nav#slide-menu {
   left: 0; }

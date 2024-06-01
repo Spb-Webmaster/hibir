@@ -12,10 +12,20 @@ class Regobject extends Model
     protected $table = 'regobjects';
     protected $fillable = [
         'title',
-        'subtitle',
         'slug',
         'img',
+        'subtitle',
         'shortdesc',
+        'main_title',
+        'main_desc',
+        'main_right_img',
+        'main_right_img_text',
+        'contact_title',
+        'contact_address',
+        'contact_phone1',
+        'contact_phone2',
+        'contact_email',
+        'contact_desc',
         'a_desc',
         'a_img',
         'a_desc2',
@@ -30,6 +40,7 @@ class Regobject extends Model
         'description',
         'keywords',
         'sorting',
+
 
     ];
 

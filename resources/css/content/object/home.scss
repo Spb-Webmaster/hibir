@@ -1,0 +1,55 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+$colorGreen: #0f6567;
+
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
+}
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
+.page_l {
+    display: flex;
+    .page_l__left {
+        width: 75%;
+        padding: 24px 4% 0 0;
+    }
+    .page_l__right {
+        width: 25%;
+        .desc_main__imgR {
+            text-align: center;
+            img {
+                border-radius: 4px;
+            }
+        }
+        .desc_main__signature_img {
+            padding: 16px 10px;
+        }
+    }
+}
+
+
+

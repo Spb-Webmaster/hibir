@@ -11,7 +11,7 @@ class AutoCompleteViewModel
 {
     use Makeable;
 
-    public function search($request)
+    public function bigSearch($request)
     {
         $search = trim($request->term);
         $religion = $request->religion;
@@ -25,6 +25,19 @@ class AutoCompleteViewModel
             $query->where('area_id', $area);
         }
 
+        $query->where('published', 1);
+        $query->where("title", "like", "%" . $search . "%");
+        $result = $query->limit(15)->get()->toArray();
+
+        return $result;
+
+
+    }
+
+    public function topSearch($request)
+    {
+        $search = trim($request->term);
+        $query = Regobject::query();
         $query->where('published', 1);
         $query->where("title", "like", "%" . $search . "%");
         $result = $query->limit(15)->get()->toArray();

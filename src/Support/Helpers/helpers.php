@@ -36,6 +36,7 @@ if (!function_exists('cache_clear ')) {
     function cache_clear($model = null)
     {
         Cache::forget('top_menu');
+        Cache::forget('bottom_menu');
         Cache::forget('slider_infos');
         Cache::forget('religion_list');
         Cache::forget('area_list');
@@ -152,6 +153,23 @@ if (!function_exists('active_linkMenu')) {
 
 
         return ($url == url()->current() ) ? $class : null;
+    }
+}
+
+
+if (!function_exists('active_linkParse')) {
+    function active_linkParse($url, string $find = null, string $class = 'active'): string|null
+    {
+        if($find) {
+            if(str_starts_with(parse_url(url()->current(), PHP_URL_PATH), trim($url))) {
+                return $class;
+            }
+            return  null;
+
+        }
+           $parse_url =  parse_url(url()->current(), PHP_URL_PATH)?? '/' ;
+
+        return ($url == $parse_url) ? $class : null;
     }
 }
 

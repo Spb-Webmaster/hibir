@@ -1,3 +1,4 @@
+@charset "UTF-8";
 nav {
   padding: 3px 0;
   box-sizing: border-box; }
@@ -54,6 +55,9 @@ ul.top_menu li:first-child a {
   .top_menu li.active > a span {
     /*        background-color: #dcedfd;
             border-radius: 20px;*/ }
+.top_menu li > a.active {
+  border-radius: 20px;
+  border: 1px solid #929292; }
 .top_menu .submenu {
   position: absolute;
   z-index: 30;
@@ -196,5 +200,53 @@ a.lodge {
     position: relative;
     display: block;
     z-index: 9; }
+
+.bottom__menu {
+  overflow: hidden; }
+  .bottom__menu li.active a {
+    color: #acacac;
+    transition: 0.2s; }
+    .bottom__menu li.active a span {
+      transition: 0.2s;
+      border-bottom: 1px solid #acacac; }
+  .bottom__menu li a:hover {
+    color: #acacac; }
+    .bottom__menu li a:hover span {
+      border-bottom: 1px solid #acacac; }
+
+/* memu объектов  */
+.ob_menu_hor {
+  position: relative;
+  z-index: 35;
+  top: -16px; }
+
+.ob_menu_hor__ul {
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: table; }
+  .ob_menu_hor__ul .top_menu {
+    padding-left: 25px;
+    padding-right: 25px;
+    min-height: 48px;
+    width: 100%;
+    background: #f0f1f3;
+    border-radius: 25px; }
+    .ob_menu_hor__ul .top_menu li {
+      z-index: 35; }
+    .ob_menu_hor__ul .top_menu a {
+      color: #282828;
+      text-decoration: none;
+      height: 48px; }
+    .ob_menu_hor__ul .top_menu a:hover {
+      color: #EF533F; }
+    .ob_menu_hor__ul .top_menu li.active a {
+      border: none;
+      text-decoration: underline; }
+    .ob_menu_hor__ul .top_menu .submenu {
+      margin-top: 0;
+      top: 46px; }
+
+/* ////memu объектов  */
 
 /*# sourceMappingURL=menu.css.map */

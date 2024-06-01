@@ -19,16 +19,19 @@
     <meta name="keywords" content="@yield('keywords',  config('seo.seo.keywords'))"/>
 </head>
 <body>
+
 <nav id="slide-menu">
+    <div class="nav_close_wrap"><div id="nav_close__" class="nav_close__"></div></div>
+
     <ul>
-        <li class=""><a href="">Координационные советы</a></li>
-        <li class=""><a href="">Межрелигиозная деятельность</a></li>
-        <li class=""><a href="">Межрелигиозный совет России</a></li>
-        <li class=""><a href="">Электронная библиoтека</a></li>
-        <li class=""><a href="">Видеоконференции</a></li>
-        <li class=""><a href="">Благотворительность</a></li>
-        <li class=""><a href="">Волонтерская деятельность</a></li>
-        <li class=""><a href="">Медиатека</a></li>
+        <li class=""><a href=""><span>Координационные советы</span></a></li>
+        <li class=""><a href=""><span>Межрелигиозная деятельность</span></a></li>
+        <li class=""><a href=""><span>Межрелигиозный совет России</span></a></li>
+        <li class=""><a href=""><span>Электронная библиoтека</span></a></li>
+        <li class=""><a href=""><span>Видеоконференции</span></a></li>
+        <li class=""><a href=""><span>Благотворительность</span></a></li>
+        <li class=""><a href=""><span>Волонтерская деятельность</span></a></li>
+        <li class=""><a href=""><span>Медиатека</span></a></li>
 
     </ul>
 </nav>

@@ -53,6 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }).call(this);
 
+    $('body').on('click', '#nav_close__', function (event) {
+
+        if($(this).parents('body').hasClass('menu-active')) {
+            $(this).parents('body').removeClass('menu-active');
+        }
+    });
+
+
     /*
       Slidemenu левое меню canvas
     */
@@ -64,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $('body').on('click', '.s__js', function (event) {
 
         $(this).parents('.axeld_select__js').find('.s_box').toggleClass('active');
+        $(this).toggleClass('reverse');
     });
 
     /** select религий  */
@@ -150,11 +159,47 @@ document.addEventListener('DOMContentLoaded', function () {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: '/serch/autocomplete',
+                url: '/search/big_autocomplete',
                 data: {
                     "_token": $('meta[name="csrf-token"]').attr('content'),
                     "area": area,
                     "religion": religion,
+                    term: request.term,
+                },
+                success: function (data) {
+
+                  //  console.log(data)
+
+                    response($.map(data, function (item) {
+                        return {
+                            id: item.id,
+                            label: item.title,
+                        }
+                    }));
+                }
+            });
+        },
+        select: function (event, ui) {
+            $('.ui_object').val(ui.item.id);
+
+
+        },
+        minLength: 2,
+    });
+
+
+
+    $('._search .autocomplete-ajax').autocomplete({
+        source: function (request, response) {
+
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: '/search/top_autocomplete',
+                data: {
+                    "_token": $('meta[name="csrf-token"]').attr('content'),
+
                     term: request.term,
                 },
                 success: function (data) {

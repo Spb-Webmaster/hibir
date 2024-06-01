@@ -24,9 +24,26 @@ class ObjectsViewModel
            $query->where('cat_regobject_id', $religion_category->id);
        }
        $query->where('published', 1);
+       $query->orderBy('created_at', 'desc');
        $result = $query->paginate(20);
-
         return $result;
+
+    }
+
+    public function objectSlug($slug)
+    {
+        return Regobject::query()
+            ->where('published', 1)
+            ->where('slug', $slug)
+            ->first();
+
+    }
+    public function objectId($id)
+    {
+        return Regobject::query()
+            ->where('published', 1)
+            ->where('id', $id)
+            ->first();
 
     }
 

@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Models\MenuTopItem;
 use App\MoonShine\Resources\AreaResource;
 use App\MoonShine\Resources\CatRegobjectResource;
 use App\MoonShine\Resources\InfoResource;
 use App\MoonShine\Resources\ItemRegobjectResource;
+use App\MoonShine\Resources\MenuBottomResource;
+use App\MoonShine\Resources\MenuTopResource;
 use App\MoonShine\Resources\RegobjectResource;
 use App\MoonShine\Resources\ReligionResource;
+use App\MoonShine\Resources\SeoResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -86,7 +90,6 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuGroup::make(static fn() => __('Служебная информация'), [
 
 
-
                 MenuItem::make(
                     static fn() => __('Субъекты РФ'),
                     new AreaResource()
@@ -95,6 +98,30 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     static fn() => __('Религии'),
                     new ReligionResource()
                 )->icon('heroicons.outline.rectangle-group'),
+
+            ]),
+
+            MenuGroup::make(static fn() => __('Настройки'), [
+
+
+                MenuItem::make(
+                    static fn() => __('SEO'),
+                    new SeoResource()
+                )->icon('heroicons.outline.bug-ant'),
+
+            ]),
+            MenuGroup::make(static fn() => __('Меню'), [
+
+
+                MenuItem::make(
+                    static fn() => __('Верхнее меню'),
+                    new MenuTopResource()
+                )->icon('heroicons.bars-3'),
+
+                MenuItem::make(
+                    static fn() => __('Нижнее меню'),
+                    new MenuBottomResource()
+                )->icon('heroicons.bars-3'),
 
             ]),
         ];

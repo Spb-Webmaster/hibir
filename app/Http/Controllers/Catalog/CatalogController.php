@@ -22,6 +22,10 @@ class CatalogController extends Controller
     {
 
         $religion =  CatalogViewModel::make()->religionSlug($slug); // активная религия
+        if(!$religion) {
+            abort(404);
+        }
+
         $religions =  CatalogViewModel::make()->religionList(); // все религии
 
        return view('pages.catalog.religion.religion',
@@ -40,6 +44,9 @@ class CatalogController extends Controller
     {
 
         $religion =  CatalogViewModel::make()->religionId($request->religion); // активная религия
+        if(!$religion) {
+            abort(404);
+        }
         return redirect(route('religion', ['slug' => $religion->slug]));
 
     }
@@ -53,7 +60,9 @@ class CatalogController extends Controller
     public function areaSubmit(Request $request)
     {
         $religion =  CatalogViewModel::make()->religionId($request->religion); //  религия
-
+        if(!$religion) {
+            abort(404);
+        }
         return redirect(route('religion.area.list', ['slug' => $religion->slug, 'id' => $request->area]));
 
 
@@ -71,6 +80,9 @@ class CatalogController extends Controller
          * получаем религию, регион, и категорию религии
          */
         $religion_category =  CatalogViewModel::make()->categoryId($request->religion_category); /** активная категория религии **/
+        if(!$religion_category) {
+            abort(404);
+        }
         if($religion_category->religion) {
             $religion_slug = $religion_category->religion->slug;
             $religion_category_slug  =  $religion_category->slug;
@@ -83,6 +95,13 @@ class CatalogController extends Controller
 
 
     public function bigSearch(Request $request) {
+
+        dd($request->all());
+
+
+    }
+
+    public function topSearch(Request $request) {
         dd($request->all());
     }
 
@@ -98,9 +117,15 @@ class CatalogController extends Controller
     {
 
         $religion =  CatalogViewModel::make()->religionSlug($slug); /** активная религия **/
+        if(!$religion) {
+            abort(404);
+        }
         $religions =  CatalogViewModel::make()->religionList();  /** все религии **/
         $areas = AreaViewModel::make()->areaList(); /** Все субъекты РФ **/
         $selected_area = AreaViewModel::make()->areaId($id); /** Один субъект РФ **/
+        if(!$selected_area) {
+            abort(404);
+        }
         $religion_categories = CatalogViewModel::make()->catRegobjects($religion->id); /** спискоk категорий определенной религии **/
         $items = ObjectsViewModel::make()->objects($religion, $selected_area);
 
@@ -123,15 +148,22 @@ class CatalogController extends Controller
     public function religionAreaListCategoryObjects($religion_slug, $area_id, $religion_gategory_slug)
     {
 
-        $slug =  $religion_slug;
-        $id = $area_id;
 
-        $religion =  CatalogViewModel::make()->religionSlug($slug); /** активная религия **/
+        $religion =  CatalogViewModel::make()->religionSlug($religion_slug); /** активная религия **/
+        if(!$religion) {
+            abort(404);
+        }
         $religions =  CatalogViewModel::make()->religionList();  /** все религии **/
         $areas = AreaViewModel::make()->areaList(); /** Все субъекты РФ **/
-        $selected_area = AreaViewModel::make()->areaId($id); /** Один субъект РФ **/
+        $selected_area = AreaViewModel::make()->areaId($area_id); /** Один субъект РФ **/
+        if(!$selected_area) {
+            abort(404);
+        }
         $religion_categories = CatalogViewModel::make()->catRegobjects($religion->id); /** спискоk категорий определенной религии **/
         $selected_religion_category = CatalogViewModel::make()->categorySlug($religion_gategory_slug); /**  категорий определенной религии **/
+        if(!$selected_religion_category) {
+            abort(404);
+        }
         $items = ObjectsViewModel::make()->objects($religion, $selected_area, $selected_religion_category);
 
         return view('pages.catalog.list_objects.religion_area_category_list_objects',
@@ -145,9 +177,6 @@ class CatalogController extends Controller
                 'selected_religion_category' => $selected_religion_category,
             ]);
     }
-
-
-
 
 
 

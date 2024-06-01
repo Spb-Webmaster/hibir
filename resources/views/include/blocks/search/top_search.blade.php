@@ -1,8 +1,8 @@
-<div class="t_search">
+<div class="t_search _search">
     <x-forms.form
         title=""
         subtitle=""
-        action="{{ route('home') }}"
+        action="{{ route('form.search.top_search') }}"
         method="POST"
     >
         <div class="slotButtons slotButtons__right">
@@ -15,19 +15,17 @@
             <x-forms.text-input
                 type="text"
                 id="searchSearch"
-                name="search"
+                name="top_search"
                 placeholder="Поиск по организациям"
                 value=""
                 class="input search"
+             {{-- // можно добавить - будет посветка autocomplete-ajax--}}
                 required="true"
-                :isError="$errors->has('search')"
+                :isError="$errors->has('top_search')"
             />
-            <x-forms.error class="error_search"/>
+            <x-forms.error class="error_top_search"/>
 
         </div>
-
-
-
 
     </x-forms.form>
 

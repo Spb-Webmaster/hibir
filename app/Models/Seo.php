@@ -27,6 +27,7 @@ class Seo extends Model
 
     protected static function boot()
     {
+
         parent::boot();
 
         static::created(function (Seo $model) {

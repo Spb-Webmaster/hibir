@@ -1,7 +1,9 @@
 @extends('layouts.layout')
-@section('title', ($seo_title)??null)
-@section('description', ($seo_description)??null)
-@section('keywords', ($seo_keywords)??null)
+<x-seo.meta
+    title="{{$religion->title . ' | ' .$selected_area->title . ' | ' . env('APP_NAME')}}"
+    description=""
+    keywords=""
+/>
 @section('content')
     <section class="good_summer"></section>
     <main>

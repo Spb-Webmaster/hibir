@@ -22,6 +22,7 @@ use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
+use MoonShine\Fields\Textarea;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
@@ -77,19 +78,16 @@ class RegobjectResource extends ModelResource
                                         ->dir('objects')
                                         ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                         ->removable()
-                                        ->required()
-                                        ->hint('Основное изображение. Обязательное поле.'),
-
-                                ])->show(),
-
-
-                                Text::make(__('Подзаголовок'), 'subtitle'),
-
-                                TinyMce::make('Краткое описание', 'shortdesc')
+                                        ->hint('Основное изображение. Обязательное поле.'), Image::make(__('Логотип'), 'logo')
+                                        ->disk(config('moonshine.disk', 'moonshine'))
+                                        ->dir('objects')
+                                        ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                        ->removable()
+                                        ->hint('Подбирайте размер изображения правильно. Стороны у логотипа должны быть равными. В противном случае лишнее будет обрезано.
+'),])->show(),
 
 
-                            ])
-                                ->columnSpan(6),
+                            ])->columnSpan(6),
                             Column::make([
 
                                 Collapse::make('Метотеги', [
@@ -109,6 +107,35 @@ class RegobjectResource extends ModelResource
                                 ->columnSpan(6)
 
                         ]),
+
+                    ]),
+
+
+                    Tab::make(__('Главная'), [
+
+                        Grid::make([
+
+                            Column::make([
+
+                                Text::make(__('Заголовок главной страницы'), 'main_title'),
+                                TinyMce::make('Описание на главной', 'main_desc'),
+
+                            ])->columnSpan(6),
+
+                            Column::make([
+
+                                Image::make(__('Изображение'), 'main_right_img')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('objects')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Встраивается справа'),
+                                Textarea::make('Описание под изображением', 'main_right_img_text'),
+
+                            ])->columnSpan(6),
+                        ]),
+
                         Divider::make(),
                         Grid::make([
                             Column::make([
@@ -125,14 +152,11 @@ class RegobjectResource extends ModelResource
                                 TinyMce::make('Текст', 'a_desc')
                                     ->hint('Встраивается справа, не оптекает'),
                             ])
-                                ->columnSpan(6),
+                                ->columnSpan(6)
                         ]),
-
-
                         Divider::make(),
-
-                            TinyMce::make('Описание', 'a_desc2')
-                                ->hint('На всю ширину макета'),
+                        TinyMce::make('Описание', 'a_desc2')
+                            ->hint('На всю ширину макета'),
 
                         Image::make(__('Изображение'), 'a_img2')
                             ->showOnExport()
@@ -159,35 +183,42 @@ class RegobjectResource extends ModelResource
                                     ->removable()
                                     ->hint('Встраивается справа'),
 
-
-
                             ])
                                 ->columnSpan(6),
                         ]),
 
 
-
                         Divider::make(),
+                        Grid::make([
 
-                        TinyMce::make('Описание', 'a_desc4')
-                            ->hint('На всю ширину макета'),
+                            Column::make([
+                                TinyMce::make('Описание', 'a_desc4')
+                                    ->hint('На всю ширину макета'),
 
-                        Image::make(__('Изображение'), 'a_img4')
-                            ->showOnExport()
-                            ->disk(config('moonshine.disk', 'moonshine'))
-                            ->dir('objects')
-                            ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
-                            ->removable()
-                            ->hint('Растягивается на 100% ширины'),
-
+                                Image::make(__('Изображение'), 'a_img4')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('objects')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Растягивается на 100% ширины'),
+                            ])->columnSpan(12)
+                        ]),
                     ]),
+                    Tab::make(__('Контакты'), [
 
+                        Grid::make([
 
-                    Tab::make(__('Дизайн'), [
+                            Column::make([
+                                Text::make(__('Заголовок контактов'), 'contact_title'),
+                                Text::make(__('Адрес'), 'contact_address'),
+                                Text::make('Телефон 1', 'contact_phone1'),
+                                Text::make('Телефон 2', 'contact_phone2'),
+                                Text::make('Email', 'contact_email'),
+                                TinyMce::make('Описание контактов', 'contact_desc'),
+                            ])->columnSpan(12)
 
-                    ]),
-                    Tab::make(__('Меню'), [
-
+                        ]),
                     ]),
                 ]),
 

@@ -8,10 +8,20 @@ use Illuminate\Http\Request;
 
 class AjaxController
 {
-    public function autocomplete(Request $request)
+    public function bigAutocomplete(Request $request)
     {
 
-        $result = AutoCompleteViewModel::make()->search($request);
+        $result = AutoCompleteViewModel::make()->bigSearch($request);
+
+        header('Content-Type: application/json');
+        return response()->json($result);
+
+    }
+
+    public function topAutocomplete(Request $request)
+    {
+
+        $result = AutoCompleteViewModel::make()->topSearch($request);
 
         header('Content-Type: application/json');
         return response()->json($result);
