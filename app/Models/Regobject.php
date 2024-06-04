@@ -20,12 +20,19 @@ class Regobject extends Model
         'main_desc',
         'main_right_img',
         'main_right_img_text',
-        'contact_title',
+
+        'gallery',
+        'gallery_title',
+        'gallery_desc',
+        'gallery_img',
+        'gallery_img_title',
+
         'contact_address',
         'contact_phone1',
         'contact_phone2',
         'contact_email',
         'contact_desc',
+        'contact_yandex_map',
         'a_desc',
         'a_img',
         'a_desc2',
@@ -46,7 +53,12 @@ class Regobject extends Model
 
     protected $casts = [
         'params' => 'collection',
+        'gallery' => 'collection'
+
     ];
+
+
+
 
     public function religion():BelongsTo
     {

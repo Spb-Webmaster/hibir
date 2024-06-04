@@ -5,7 +5,8 @@
         <ul class="top_menu">
             <li class="{{ active_linkMenu(asset(route('page.object', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}"><a class="add__mobile_menu "
                                                                                                                                                     href="{{ route('page.object', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Главная</span></a></li>
-            <li class=""><a class="add__mobile_menu " href="/about"><span>Фотогалерея</span></a></li>
+
+            <li class="{{ active_linkMenu(asset(route('page.object.gallery', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}"><a class="add__mobile_menu"  href="{{ route('page.object.gallery', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Фотогалерея</span></a></li>
             <li class="">
                 <a class="  add__mobile_menu "
                    href="https://seatranslog.ru/services"><span>Вопрос-ответ </span></a>

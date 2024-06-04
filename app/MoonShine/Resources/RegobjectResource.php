@@ -18,6 +18,7 @@ use MoonShine\Decorations\Tab;
 use MoonShine\Decorations\Tabs;
 use MoonShine\Enums\ClickAction;
 use MoonShine\Fields\Image;
+use MoonShine\Fields\Json;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
@@ -205,6 +206,29 @@ class RegobjectResource extends ModelResource
                             ])->columnSpan(12)
                         ]),
                     ]),
+                    Tab::make(__('Фотогалерея'), [
+
+                        Grid::make([
+
+                            Column::make([
+                                Text::make(__('Заголовок фотогалереи'), 'gallery_title'),
+                                Json::make('Галерея', 'gallery')->fields([
+
+                                    Image::make('Изображение', 'gallery_img')
+                                        ->hint('На витрину')
+                                        ->dir('gallery') /* Директория где будут хранится файлы в storage (по умолчанию /) */
+                                        ->disk('moonshine') // Filesystems disk
+                                        ->allowedExtensions(['jpg', 'gif', 'png', 'svg']) /* Допустимые расширения */
+                                        ->removable(),
+                                    Text::make('Описание', 'gallery_img_title'),
+                                ])->removable()
+                                   ,
+
+                                TinyMce::make('Название', 'gallery_desc'),
+                            ])->columnSpan(12)
+
+                        ]),
+                    ]),
                     Tab::make(__('Контакты'), [
 
                         Grid::make([
@@ -215,6 +239,7 @@ class RegobjectResource extends ModelResource
                                 Text::make('Телефон 1', 'contact_phone1'),
                                 Text::make('Телефон 2', 'contact_phone2'),
                                 Text::make('Email', 'contact_email'),
+                                Text::make('Координаты', 'contact_yandex_map'),
                                 TinyMce::make('Описание контактов', 'contact_desc'),
                             ])->columnSpan(12)
 

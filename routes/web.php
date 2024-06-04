@@ -61,6 +61,8 @@ Route::controller(ObjectController::class)->group(function () {
         ->name('page.object');
     Route::get('/r-{religion_slug}/{object_slug}/contacts', 'pageObjectContact')
         ->name('page.object.contact');
+    Route::get('/r-{religion_slug}/{object_slug}/gallery', 'pageObjectGallery')
+        ->name('page.object.gallery');
 });
 
 Route::controller(AjaxController::class)->group(function () {

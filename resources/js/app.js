@@ -23,7 +23,11 @@ import './ui/jquery-ui.min';
 
 /*import '@selectize/selectize/dist/js/selectize.min';*/
 
+import './yandex_map';
+
 import './select';
+
 import './script';
+
 import './fancybox';
 
