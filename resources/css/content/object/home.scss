@@ -33,12 +33,14 @@ $maxWidth: 1440;
 
 .page_l {
     display: flex;
+    padding: 20px 0 0 0;
     .page_l__left {
         width: 75%;
-        padding: 24px 4% 0 0;
+        padding: 4px 4% 0 0;
     }
     .page_l__right {
         width: 25%;
+        background: #f9f9fa;
         .desc_main__imgR {
             text-align: center;
             img {

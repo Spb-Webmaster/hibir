@@ -24,8 +24,16 @@ class Regobject extends Model
         'gallery',
         'gallery_title',
         'gallery_desc',
-        'gallery_img',
-        'gallery_img_title',
+
+
+
+        'info_title',
+        'info_img',
+        'info_desc',
+
+        'faq_title',
+        'faq',
+        'faq_desc',
 
         'contact_address',
         'contact_phone1',
@@ -53,7 +61,8 @@ class Regobject extends Model
 
     protected $casts = [
         'params' => 'collection',
-        'gallery' => 'collection'
+        'gallery' => 'collection',
+        'faq' => 'collection'
 
     ];
 

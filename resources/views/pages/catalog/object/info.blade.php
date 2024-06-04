@@ -20,7 +20,7 @@
 
             <div class="ob_main_contact block block_850">
 
-gallery
+info
             </div>
         </div>
     </main>
