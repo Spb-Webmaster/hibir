@@ -1,0 +1,17 @@
+.page_l {
+  display: flex;
+  padding: 20px 0 0 0; }
+  .page_l .page_l__left {
+    width: 75%;
+    padding: 4px 4% 0 0; }
+  .page_l .page_l__right {
+    width: 25%;
+    background: #f9f9fa; }
+    .page_l .page_l__right .desc_main__imgR {
+      text-align: center; }
+      .page_l .page_l__right .desc_main__imgR img {
+        border-radius: 4px; }
+    .page_l .page_l__right .desc_main__signature_img {
+      padding: 16px 10px; }
+
+/*# sourceMappingURL=home.css.map */
