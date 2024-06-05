@@ -88,6 +88,15 @@ class ObjectController extends Controller
       return ObjectsViewModel::make()->objects($religion, $selected_area, $selected_religion_category);
 
     }
+    /**
+     * @return array
+     * страница новости объекта
+     */
+
+    public function new($slug){
+      return ObjectsViewModel::make()->new($slug);
+
+    }
 
 
     /**
@@ -335,6 +344,91 @@ class ObjectController extends Controller
                 'item' => $item,
                 'religion_categories' => $religion_categories,
                 'selected_religion_category' => $selected_religion_category,
+            ]);
+    }
+
+
+   /**
+     * view
+     * страница  новостей - категория
+     */
+
+    public function pageObjectNewCategory($religion_slug, $object_slug)
+    {
+
+
+        $item = $this->item($object_slug); /** Религиозный объект **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        $religion =  $this->religion($religion_slug); /** активная религия **/
+        if(!$religion) {
+            abort(404);
+        }
+
+        $religions =  $this->religions();  /** все религии **/
+        $areas = $this->areas(); /** Все субъекты РФ **/
+        $selected_area = $this->area($item->area->id); /** Один субъект РФ **/
+        $religion_categories = $this->categories($religion->id); /** спискоk категорий определенной религии **/
+        $selected_religion_category = $this->category($item->catregobject->id); /**  категория определенной религии **/
+        $items = $this->items($religion, $selected_area, $selected_religion_category);
+        /** список объектов определенной категории и региона */
+
+        return view('pages.catalog.object.new_category',
+            [
+                'religion' => $religion,
+                'religions' => $religions,
+                'areas' => $areas,
+                'selected_area' => $selected_area,
+                'items' => $items,
+                'item' => $item,
+                'religion_categories' => $religion_categories,
+                'selected_religion_category' => $selected_religion_category,
+            ]);
+    }
+
+   /**
+     * view
+     * страница  новостей - полная страница
+     */
+
+    public function pageObjectNew($religion_slug, $object_slug, $new_slug )
+    {
+
+
+        $item = $this->item($object_slug); /** Религиозный объект **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        $religion =  $this->religion($religion_slug); /** активная религия **/
+        if(!$religion) {
+            abort(404);
+        }
+
+        $religions =  $this->religions();  /** все религии **/
+        $areas = $this->areas(); /** Все субъекты РФ **/
+        $selected_area = $this->area($item->area->id); /** Один субъект РФ **/
+        $religion_categories = $this->categories($religion->id); /** спискоk категорий определенной религии **/
+        $selected_religion_category = $this->category($item->catregobject->id); /**  категория определенной религии **/
+        $items = $this->items($religion, $selected_area, $selected_religion_category);
+        $new = $this->new($new_slug);
+        /** список объектов определенной категории и региона */
+
+        return view('pages.catalog.object.new',
+            [
+                'religion' => $religion,
+                'religions' => $religions,
+                'areas' => $areas,
+                'selected_area' => $selected_area,
+                'items' => $items,
+                'item' => $item,
+                'religion_categories' => $religion_categories,
+                'selected_religion_category' => $selected_religion_category,
+                'new' => $new,
             ]);
     }
 

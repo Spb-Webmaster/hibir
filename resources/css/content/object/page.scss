@@ -172,3 +172,33 @@ $maxWidth: 1440;
     padding: 26px 0 0 0;
 }
 
+.desc_faq {
+
+
+    h1, h2, h3, h4 {
+        line-height: 1.1em !important;
+        padding: 10px 0 !important;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 24px !important;
+        color: #000;
+    }
+}
+.faq_question {
+
+    font-size: 18px;
+
+    color: $colorGrey;
+    p {
+        font-size: 18px;
+        color: $colorGrey;
+    }
+}
+.faq_h3 {
+    line-height: 1.1em !important;
+    padding: 10px 0 !important;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 24px !important;
+    color: #999999;
+}

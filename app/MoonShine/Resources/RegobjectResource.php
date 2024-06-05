@@ -19,6 +19,7 @@ use MoonShine\Decorations\Tabs;
 use MoonShine\Enums\ClickAction;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
+use MoonShine\Fields\Position;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
@@ -206,6 +207,7 @@ class RegobjectResource extends ModelResource
                             ])->columnSpan(12)
                         ]),
                     ]),
+
                     Tab::make(__('Фотогалерея'), [
 
                         Grid::make([
@@ -214,21 +216,45 @@ class RegobjectResource extends ModelResource
                                 Text::make(__('Заголовок фотогалереи'), 'gallery_title'),
                                 Json::make('Галерея', 'gallery')->fields([
 
-                                    Image::make('Изображение', 'gallery_img')
-                                        ->hint('На витрину')
-                                        ->dir('gallery') /* Директория где будут хранится файлы в storage (по умолчанию /) */
+                                    Image::make('Изображение (30)', 'gallery_img')
+                                        //->hint('На витрину')
+                                        ->dir('gallery')/* Директория где будут хранится файлы в storage (по умолчанию /) */
                                         ->disk('moonshine') // Filesystems disk
-                                        ->allowedExtensions(['jpg', 'gif', 'png', 'svg']) /* Допустимые расширения */
+                                        ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
                                         ->removable(),
-                                    Text::make('Описание', 'gallery_img_title'),
-                                ])->removable()
-                                   ,
+                                    Text::make('Описание изображения', 'gallery_img_title'),
+                                ])->vertical()->creatable(limit: 30)->removable(),
 
-                                TinyMce::make('Название', 'gallery_desc'),
+                                TinyMce::make('Описание', 'gallery_desc'),
                             ])->columnSpan(12)
 
                         ]),
                     ]),
+
+                    Tab::make(__('Вопрос-ответ'), [
+
+                        Grid::make([
+
+                            Column::make([
+                                Text::make(__('Заголовок вопрос-ответ'), 'faq_title'),
+
+
+                                Json::make('Вопрос-ответ (15)', 'faq')->fields([
+                                            Position::make(),
+                                            Text::make('Заголовок', 'faq_t'),
+                                            TinyMce::make('Вопрос', 'faq_question'),
+                                            TinyMce::make('Ответ', 'faq_response'),
+
+
+                                ])->vertical()->creatable(limit: 15)
+                                    ->removable(),
+
+                                TinyMce::make('Описание', 'faq_desc'),
+                            ])->columnSpan(12)
+
+                        ]),
+                    ]),
+
                     Tab::make(__('Контакты'), [
 
                         Grid::make([

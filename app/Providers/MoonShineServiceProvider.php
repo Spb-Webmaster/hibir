@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\Models\MenuTopItem;
+use App\Models\RegobjectNew;
 use App\MoonShine\Resources\AreaResource;
 use App\MoonShine\Resources\CatRegobjectResource;
 use App\MoonShine\Resources\InfoResource;
 use App\MoonShine\Resources\ItemRegobjectResource;
 use App\MoonShine\Resources\MenuBottomResource;
 use App\MoonShine\Resources\MenuTopResource;
+use App\MoonShine\Resources\RegobjectNewResource;
 use App\MoonShine\Resources\RegobjectResource;
 use App\MoonShine\Resources\ReligionResource;
 use App\MoonShine\Resources\SeoResource;
@@ -70,7 +72,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 MenuItem::make(
                     static fn() => __('Объекты'),
                     new RegobjectResource()
-                )->icon('heroicons.bars-arrow-up')
+                )->icon('heroicons.bars-arrow-up'),
+                MenuItem::make(
+                    static fn() => __('Новости объектов'),
+                    new RegobjectNewResource()
+                )->icon('heroicons.newspaper')
 
             ]),
 

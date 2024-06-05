@@ -102,4 +102,27 @@
 .ob_main_contact__content {
   padding: 26px 0 0 0; }
 
+.desc_faq h1, .desc_faq h2, .desc_faq h3, .desc_faq h4 {
+  line-height: 1.1em !important;
+  padding: 10px 0 !important;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px !important;
+  color: #000; }
+
+.faq_question {
+  font-size: 18px;
+  color: #667085; }
+  .faq_question p {
+    font-size: 18px;
+    color: #667085; }
+
+.faq_h3 {
+  line-height: 1.1em !important;
+  padding: 10px 0 !important;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px !important;
+  color: #999999; }
+
 /*# sourceMappingURL=page.css.map */

@@ -20,7 +20,6 @@
 
             <div class="ob_main_page block block_1123 page_l">
                 <div class="page_l__left">
-
                     @if($item->main_title)
                         <h2 class="_h2">
                             {{ $item->main_title  }}

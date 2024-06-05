@@ -56,17 +56,13 @@ class Regobject extends Model
         'keywords',
         'sorting',
 
-
     ];
 
     protected $casts = [
         'params' => 'collection',
         'gallery' => 'collection',
         'faq' => 'collection'
-
     ];
-
-
 
 
     public function religion():BelongsTo
@@ -84,6 +80,12 @@ class Regobject extends Model
         return $this->belongsTo(CatRegobject::class, 'cat_regobject_id');
 
     }
+
+    public function regobject_new(): HasMany
+    {
+        return $this->hasMany(RegobjectNew::class, 'regobject_id');
+    }
+
 
     protected static function boot()
     {

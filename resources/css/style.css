@@ -462,6 +462,13 @@ end responce -------------------------------------------------------------------
   padding: 9px 0;
   font-weight: 400;
   font-style: normal; }
+.desc h1 {
+  line-height: 1.1em;
+  padding: 13px 0;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 36px;
+  color: #000; }
 .desc h2 {
   line-height: 1.1em;
   padding: 13px 0;

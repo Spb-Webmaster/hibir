@@ -49,6 +49,7 @@ class CatRegobjectResource extends TreeResource
 
         ];
     }
+
     public function formFields(): array
     {
         return [

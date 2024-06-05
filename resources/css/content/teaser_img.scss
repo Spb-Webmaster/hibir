@@ -84,4 +84,48 @@ $maxWidth: 1440;
 }
 
 
+.ob_category_teaser {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+
+    .pc_category_img {
+        border-radius: 12px !important;
+    }
+    .slide_link {
+        max-width: 266px;
+
+    }
+
+    .slick_slide {
+        padding: 16px 7px 0 7px;
+    }
+
+
+    .s_title {
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.2em;
+        padding: 22px 0 12px 5px;
+
+        a {
+            color: $color;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $colorRed;
+            text-decoration: none;
+        }
+    }
+
+    .s_date {
+        color: $colorGrey;
+        font-size: 14px;
+        padding: 0 0 16px 5px;
+    }
+
+}
+
+
 

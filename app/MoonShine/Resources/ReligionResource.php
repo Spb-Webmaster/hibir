@@ -13,7 +13,9 @@ use App\Models\Religion;
 use Leeto\MoonShineTree\Resources\TreeResource;
 use MoonShine\Enums\ClickAction;
 use MoonShine\Fields\Image;
+use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Slug;
+use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
@@ -40,6 +42,9 @@ class ReligionResource extends TreeResource
 
 
     protected ?ClickAction $clickAction = ClickAction::EDIT;
+
+
+
 
     public function indexFields(): array
     {

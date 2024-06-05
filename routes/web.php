@@ -71,6 +71,13 @@ Route::controller(ObjectController::class)->group(function () {
         ->name('page.object.video');
     Route::get('/r-{religion_slug}/{object_slug}/contacts', 'pageObjectContact')
         ->name('page.object.contact');
+
+    Route::get('/r-{religion_slug}/{object_slug}/news', 'pageObjectNewCategory')
+        ->name('page.object.new_category');
+    Route::get('/r-{religion_slug}/{object_slug}/news/{new_slug}', 'pageObjectNew')
+        ->name('page.object.new');
+
+
 });
 
 Route::controller(AjaxController::class)->group(function () {
