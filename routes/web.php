@@ -5,9 +5,12 @@ use App\Http\Controllers\Catalog\CatalogController;
 use App\Http\Controllers\Catalog\ObjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
+use App\Http\Controllers\Video\VideoController;
 use Illuminate\Support\Facades\Route;
 
-
+/**
+ * страницы
+ */
 Route::controller(HomeController::class)->group(function () {
 
     Route::get('/', 'index')
@@ -21,7 +24,20 @@ Route::controller(InfoController::class)->group(function () {
     Route::get('/'.config('links.link.news').'/{slug}', 'info')
         ->name('info');
 });
+Route::controller(VideoController::class)->group(function () {
 
+    Route::get('/'.config('links.link.video'), 'videos')
+        ->name('videos');
+    Route::get('/'.config('links.link.video').'/{slug}', 'video')
+        ->name('video');
+});
+
+/**
+ * страницы
+ */
+/**
+ * каталог
+ */
 Route::controller(CatalogController::class)->group(function () {
 
     Route::get('/r-{slug}', 'religion')
@@ -86,5 +102,7 @@ Route::controller(AjaxController::class)->group(function () {
     Route::post('/search/top_autocomplete', 'topAutocomplete');
 
 });
-
+/**
+ * каталог
+ */
 

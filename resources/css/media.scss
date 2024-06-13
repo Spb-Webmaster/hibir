@@ -1,0 +1,356 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+$colorGreen: #0f6567;
+
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
+}
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
+@media screen and (max-width: 1324px) {
+
+
+}
+
+@media screen and (max-width: 1268px) {
+    .block {
+
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+}
+
+@media screen and (max-width: 1168px) {
+    .top_logo {
+        .logo__text {
+            @include adaptiv-font(29, 20);
+
+        }
+    }
+    .h_b_right__text {
+        @include adaptiv-font(23, 20);
+
+    }
+    .sections__flex {
+        .sect .h1 {
+
+            @include adaptiv-font(29, 20);
+        }
+    }
+    ._h1.color_green {
+        @include adaptiv-font(29, 20);
+
+    }
+    .box_title_flex ._h2 {
+        @include adaptiv-font(29, 20);
+
+    }
+    .slick_slider__carusel .s_title {
+        @include adaptiv-font(20, 19);
+
+    }
+    .box_title_block ._h2 {
+        @include adaptiv-font(29, 19);
+
+    }
+    .box_title_block ._h2sub {
+        @include adaptiv-font(20, 18);
+
+    }
+
+}
+
+
+@media screen and (max-width: 921px) {
+    .sections__flex .sect .sect__img {
+        padding: 0 18px 0 0;
+    }
+    .sect_hristianstvo {
+
+        .sect__background-image {
+            width: 30px !important;
+            height: 50px !important;
+            background-size: 100%;
+        }
+    }
+
+    .sect_islam {
+
+        .sect__background-image {
+            width: 40px !important;
+            height: 50px !important;
+            background-size: 100%;
+
+        }
+    }
+
+    .sect_buddizm {
+
+        .sect__background-image {
+            width: 45px !important;
+            height: 50px !important;
+            background-size: 100%;
+
+        }
+
+    }
+
+    .sect_iudaizm {
+
+        .sect__background-image {
+            width: 40px !important;
+            height: 50px !important;
+            background-size: 100%;
+
+        }
+    }
+    .h_b_right__text {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .top_logo .logo__text {
+
+        padding: 0 50px 0 40px;
+
+    }
+
+    .h_row.block {
+        display: block;
+
+        .h_col__faq {
+            width: 100%;
+            padding: 0;
+        }
+
+        .h_col__responce {
+            width: 100%;
+            padding: 0;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 868px) {
+    .calendal_events {
+        padding: 0 30px 0 0;
+    }
+    .h_t_right {
+
+        padding: 0 16px 0 36px;
+    }
+    .h_t_right {
+        font-size: 15px;
+    }
+
+}
+
+
+/* pocofon  x3 */
+@media (max-width: 793px) {
+    .sections__flex {
+        flex-wrap: wrap;
+        height: auto;
+
+        .sect_hristianstvo {
+
+            width: 50% !important;
+            min-width: 50% !important;
+
+            .sect__background-image {
+                width: 30px !important;
+                height: 50px !important;
+                background-size: 100%;
+            }
+        }
+
+        .sect_islam {
+
+            width: 50% !important;
+            min-width: 50% !important;
+
+            .sect__background-image {
+                width: 40px !important;
+                height: 50px !important;
+                background-size: 100%;
+
+            }
+        }
+
+        .sect_buddizm {
+
+            width: 50% !important;
+            min-width: 50% !important;
+
+            .sect__background-image {
+                width: 45px !important;
+                height: 50px !important;
+                background-size: 100%;
+
+            }
+
+        }
+
+        .sect_iudaizm {
+
+            width: 50% !important;
+            min-width: 50% !important;
+
+            .sect__background-image {
+                width: 40px !important;
+                height: 50px !important;
+                background-size: 100%;
+
+            }
+
+
+        }
+
+        .sect .sect__img {
+            padding: 0 45px 0 0;
+        }
+    }
+
+    /* Переход на мобильную версию */
+
+
+    /* Переход на мобильную версию */
+
+
+}
+
+/* pocofon  x3 */
+
+/* xiaomi pro6 */
+@media (max-width: 742px) {
+
+    .h_b_right__text {
+        display: none !important;
+    }
+    .calendal_events {
+        padding: 0 10px 0 0;
+    }
+}
+
+/* xiaomi pro6 */
+
+@media (max-width: 666px) {
+
+    .sections__flex {
+        flex-wrap: wrap;
+        height: auto;
+        padding-left: 30px;
+
+        .sect_hristianstvo {
+
+            width: 100% !important;
+            min-width: 100% !important;
+            padding-bottom: 16px;
+
+            .sect__background-image {
+                width: 35px !important;
+                height: 50px !important;
+                background-size: 100%;
+            }
+        }
+
+        .sect_islam {
+
+            width: 100% !important;
+            min-width: 100% !important;
+            padding-bottom: 16px;
+
+            .sect__background-image {
+                width: 40px !important;
+                height: 50px !important;
+                background-size: 100%;
+
+            }
+        }
+
+        .sect_buddizm {
+
+            width: 100% !important;
+            min-width: 100% !important;
+            padding-bottom: 16px;
+
+            .sect__background-image {
+                width: 40px !important;
+                height: 50px !important;
+                background-size: 100%;
+
+            }
+
+        }
+
+        .sect_iudaizm {
+
+            width: 100% !important;
+            min-width: 100% !important;
+
+            .sect__background-image {
+                width: 40px !important;
+                height: 50px !important;
+                background-size: 100%;
+
+            }
+
+
+        }
+
+        .sect .sect__img {
+            padding: 0 45px 0 0;
+        }
+    }
+
+    .calendal_events {
+        display: none !important;
+
+    }
+    .h_t_center {
+        max-width: 590px;
+        width: 50%;
+    }
+    .h_t_right {
+        width: 40%;
+        justify-content: flex-end;
+        padding-right: 0;
+
+    }
+}
+
+@media (max-width: 568px) {
+    .h_t_right {
+        display: none !important;
+    }
+    .h_t_center {
+        max-width: 568px;
+        width: 100%;
+    }
+}
+

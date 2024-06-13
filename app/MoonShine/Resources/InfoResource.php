@@ -16,6 +16,7 @@ use MoonShine\Decorations\Tabs;
 use MoonShine\Enums\ClickAction;
 use MoonShine\Fields\Date;
 use MoonShine\Fields\Image;
+use MoonShine\Fields\Json;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Slug;
@@ -35,7 +36,7 @@ class InfoResource extends ModelResource
 {
     protected string $model = Info::class;
 
-    protected string $title = 'Infos';
+    protected string $title = 'Новости';
 
     protected string $column = 'created_at';
 
@@ -170,8 +171,26 @@ class InfoResource extends ModelResource
                     ]),
 
 
-                    Tab::make(__('Дополнительно'), [
+                    Tab::make(__('Галерея'), [
+                        Grid::make([
 
+                            Column::make([
+                                Text::make(__('Заголовок фотогалереи'), 'gallery_title'),
+                                Json::make('Галерея', 'gallery')->fields([
+
+                                    Image::make('Изображение (30)', 'gallery_img')
+                                        //->hint('На витрину')
+                                        ->dir('gallery')/* Директория где будут хранится файлы в storage (по умолчанию /) */
+                                        ->disk('moonshine') // Filesystems disk
+                                        ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
+                                        ->removable(),
+                                    Text::make('Описание изображения', 'gallery_img_title'),
+                                ])->vertical()->creatable(limit: 30)->removable(),
+
+                                TinyMce::make('Описание', 'gallery_desc'),
+                            ])->columnSpan(12)
+
+                        ]),
 
                     ]),
                 ]),

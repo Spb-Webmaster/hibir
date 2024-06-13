@@ -37,6 +37,7 @@ if (!function_exists('cache_clear ')) {
     {
         Cache::forget('top_menu');
         Cache::forget('bottom_menu');
+        Cache::forget('slider_videos');
         Cache::forget('slider_infos');
         Cache::forget('religion_list');
         Cache::forget('area_list');
@@ -199,6 +200,30 @@ if (!function_exists('shortcode')) {
 return $html;
         }
         return  $html;
+     }
+}
+
+if (!function_exists('youtube')) {
+    function youtube($html, $w = null, $h = null )
+    {
+
+        $link = $html;
+        $video_id = explode("?v=", $link); // For videos like http://www.youtube.com/watch?v=...
+        if (empty($video_id[1])) {
+            $video_id = explode("/v/", $link); // For videos like http://www.youtube.com/watch/v/..
+        }
+        $video_id = explode("&", $video_id[1]); // Deleting any other params
+        $video_id = $video_id[0];
+
+        $style = 'style="width:';
+        $wi = ($w)?$w.'px':'100%';
+        $style .= $wi. '"';
+        $he = ($h)?:'auto';
+        $style .= 'height="'.$he.'"';
+
+        return
+         '<embed '. $style.' src="https://www.youtube.com/embed/'.$video_id.'" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></embed>';
+
      }
 }
 

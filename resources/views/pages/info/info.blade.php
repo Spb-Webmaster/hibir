@@ -1,7 +1,9 @@
 @extends('layouts.layout')
-@section('title', ($seo_title)??null)
-@section('description', ($seo_description)??null)
-@section('keywords', ($seo_keywords)??null)
+<x-seo.meta
+    title="{{(isset($info->metatitle)) ? $info->metatitle : $info->title}}"
+    description="{{($info->description)?:null}}"
+    keywords="{{($info->keywords)?:null}}"
+/>
 @section('content')
     <main>
 

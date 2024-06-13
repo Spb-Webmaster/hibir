@@ -8,7 +8,7 @@
         @include('include.blocks.religions.religions_index')
         @include('include.blocks.slider.top_slider')
         @include('include.blocks.slider.news_slider')
-        @include('include.blocks.slider.video_slider')
+        @include('include.blocks.slider.videos_slider')
         <div class="h_row block">
             <div class="h_col h_col__faq">
                 @include('include.blocks.faq.teaser_faq')

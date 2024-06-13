@@ -34,6 +34,8 @@ protected $table = 'infos';
 
     protected $casts = [
         'params' => 'collection',
+        'gallery' => 'collection',
+
     ];
 
 /*    public function parent():BelongsTo

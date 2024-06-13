@@ -19,6 +19,8 @@ return new class extends Migration
 
             $table->string('img')->nullable();
             $table->text('gallery')->nullable();
+            $table->string('gallery_title')->nullable();
+            $table->text('gallery_desc')->nullable();
             $table->text('smalltext')->nullable();
             $table->text('text')->nullable();
             $table->string('pageimg1')->nullable();

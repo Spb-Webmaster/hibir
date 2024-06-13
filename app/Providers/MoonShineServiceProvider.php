@@ -16,6 +16,7 @@ use App\MoonShine\Resources\RegobjectNewResource;
 use App\MoonShine\Resources\RegobjectResource;
 use App\MoonShine\Resources\ReligionResource;
 use App\MoonShine\Resources\SeoResource;
+use App\MoonShine\Resources\VideoResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -57,6 +58,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     static fn() => __('Новости'),
                     new InfoResource()
                 )->icon('heroicons.newspaper'),
+                MenuItem::make(
+                    static fn() => __('Видеоматериалы'),
+                    new VideoResource()
+                )->icon('heroicons.video-camera'),
 
 
             ]),

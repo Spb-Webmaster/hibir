@@ -88,6 +88,9 @@
   .slick_slider__carusel .slick-next, .slick_slider__carusel .slick-next:hover {
     top: 107px !important; }
 
+.s_img a {
+  position: relative; }
+
 /* end slider teaser */
 
 /*# sourceMappingURL=click.css.map */

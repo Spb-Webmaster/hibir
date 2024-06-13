@@ -31,7 +31,8 @@
   flex-wrap: wrap;
   padding: 0; }
   .ob_category_teaser .pc_category_img {
-    border-radius: 12px !important; }
+    border-radius: 12px !important;
+    display: block; }
   .ob_category_teaser .slide_link {
     max-width: 266px; }
   .ob_category_teaser .slick_slide {

@@ -20,6 +20,36 @@
     line-height: 1.2em;
     text-align: center; }
 
+.ob_date {
+  color: #667085;
+  text-align: center;
+  font-size: 14px;
+  padding: 4px 0; }
+
+.ob_controls {
+  padding: 40px 0 20px 0;
+  text-align: center;
+  border-bottom: 1px solid #dddddd; }
+  .ob_controls video {
+    border-radius: 12px;
+    margin: 0 auto; }
+
+.ob_controls:last-child {
+  border-bottom: none; }
+
+.video_video_title {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 24px; }
+  .video_video_title h1, .video_video_title h2, .video_video_title h3, .video_video_title h4 {
+    font-weight: 600;
+    color: #999; }
+
+.video_video_desc {
+  padding: 16px 0;
+  max-width: 900px;
+  margin: 0 auto; }
+
 .ob_line_wrap {
   background-position: 0 67px;
   background-repeat: repeat-x;
