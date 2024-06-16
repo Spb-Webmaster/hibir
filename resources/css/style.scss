@@ -525,6 +525,23 @@ end parallelogram --------------------------------------------------------------
         padding-left: 20px;
     }
 }
+.cat_title {
+    padding: 20px 0 0 0;
+    overflow: hidden;
+    .box_title_flex {
+        padding-left: 20px;
+        height: 110px;
+    }
+}
+
+.cat__padding_margin {
+    padding-top: 0 !important;
+    margin-top:0 !important;
+    .slick_slide {
+        padding-top: 0;
+        padding-bottom: 26px;
+    }
+}
 
 .box_title_flex {
 
@@ -695,7 +712,7 @@ end responce -------------------------------------------------------------------
         padding: 13px 0;
         font-weight: 700;
         font-style: normal;
-        font-size: 36px;
+        font-size: 32px;
         color: #000;
     }
 
@@ -704,7 +721,7 @@ end responce -------------------------------------------------------------------
         padding: 13px 0;
         font-weight: 700;
         font-style: normal;
-        font-size: 36px;
+        font-size: 29px;
         color: #000;
     }
 
@@ -713,7 +730,7 @@ end responce -------------------------------------------------------------------
         padding: 9px 0;
         font-weight: 700;
         font-style: normal;
-        font-size: 30px;
+        font-size: 26px;
         color: #000;
     }
 
@@ -722,7 +739,7 @@ end responce -------------------------------------------------------------------
         padding: 8px 0;
         font-weight: 700;
         font-style: normal;
-        font-size: 26px;
+        font-size: 24px;
         color: $color;
     }
 

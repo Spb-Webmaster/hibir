@@ -53,5 +53,27 @@ $maxWidth: 1440;
     }
 }
 
+.page_r {
+    display: flex;
+    padding: 20px 0 0 0;
+    .page_r__left {
+        width: 46%;
+        padding: 4px 4% 0 0;
+        .desc_main__imgR {
+            text-align: center;
+            img {
+                border-radius: 4px;
+            }
+        }
+        .desc_main__signature_img {
+            padding: 16px 10px;
+        }
+    }
+    .page_r__right {
+        width: 54%;
+
+    }
+}
+
 
 

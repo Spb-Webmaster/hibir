@@ -21,9 +21,15 @@
                                 <div class="white_circle responce_item__circle">
                                     <span class="white_circle__redplay"></span>
                                 </div>
-                                <img class="pc_category_img" width="380" height="220" loading="lazy"
-                                     src="{{ asset(intervention('380x220', $video->img, 'videos')) }}"
-                                     alt="{{$video->title}}">
+                                @if($video->img)
+                                    <img class="pc_category_img" width="380" height="220" loading="lazy"
+                                         src="{{ asset(intervention('380x220', $video->img, 'videos')) }}"
+                                         alt="{{$video->title}}">
+                                @else
+                                    <img class="pc_category_img" width="380" height="220" loading="lazy"
+                                         src="{{ asset(Storage::disk('public')->url('images/video_poster.jpg')) }}"
+                                         alt="{{$video->title}}">
+                                @endif
                             </a>
                         </div>
                         <div class="s_title">

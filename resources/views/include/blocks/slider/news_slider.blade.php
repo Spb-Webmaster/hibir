@@ -18,9 +18,21 @@
                     <div class="slide_link slick_slider__1">
                         <div class="s_img">
                             <a href="{{asset(route('info', $new->slug))}}">
-                           <img class="pc_category_img" width="380" height="220" loading="lazy"
-                                 src="{{ asset(intervention('380x220', $new->img, 'infos')) }}"
-                                 alt="{{$new->title}}">
+
+
+                                @if($new->img)
+                                    <img class="pc_category_img" width="380" height="220" loading="lazy"
+                                         src="{{ asset(intervention('380x220', $new->img, 'infos')) }}"
+                                         alt="{{$new->title}}">
+                                @else
+                                    <img class="pc_category_img" width="380" height="220" loading="lazy"
+                                         src="{{ asset(Storage::disk('public')->url('images/video_poster.jpg')) }}"
+                                         alt="{{$new->title}}">
+                                @endif
+
+
+
+
                             </a>
                         </div>
                         <div class="s_title">

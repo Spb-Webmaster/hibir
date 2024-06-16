@@ -4,24 +4,23 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\Models\MenuTopItem;
-use App\Models\RegobjectNew;
 use App\MoonShine\Resources\AreaResource;
 use App\MoonShine\Resources\CatRegobjectResource;
 use App\MoonShine\Resources\InfoResource;
 use App\MoonShine\Resources\ItemRegobjectResource;
 use App\MoonShine\Resources\MenuBottomResource;
 use App\MoonShine\Resources\MenuTopResource;
+use App\MoonShine\Resources\PageResource;
 use App\MoonShine\Resources\RegobjectNewResource;
 use App\MoonShine\Resources\RegobjectResource;
 use App\MoonShine\Resources\ReligionResource;
 use App\MoonShine\Resources\SeoResource;
 use App\MoonShine\Resources\VideoResource;
+use App\MoonShine\Resources\MoonShineUserResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuItem;
-use MoonShine\Resources\MoonShineUserResource;
 use MoonShine\Resources\MoonShineUserRoleResource;
 
 class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
@@ -40,19 +39,16 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
     {
         return [
 
-            MenuGroup::make(static fn() => __('moonshine::ui.resource.system'), [
+            MenuGroup::make(static fn() => __('Система'), [
                MenuItem::make(
-                   static fn() => __('moonshine::ui.resource.admins_title'),
+                   static fn() => __('Админ'),
                    new MoonShineUserResource()
                ),
-               MenuItem::make(
-                   static fn() => __('moonshine::ui.resource.role_title'),
-                   new MoonShineUserRoleResource()
-               ),
+
             ]),
 
 
-            MenuGroup::make(static fn() => __('Страницы сайта'), [
+            MenuGroup::make(static fn() => __('Категории'), [
 
                 MenuItem::make(
                     static fn() => __('Новости'),
@@ -62,6 +58,16 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     static fn() => __('Видеоматериалы'),
                     new VideoResource()
                 )->icon('heroicons.video-camera'),
+
+
+            ]),
+
+            MenuGroup::make(static fn() => __('Материалы'), [
+
+                MenuItem::make(
+                    static fn() => __('Статичные страницы'),
+                    new PageResource()
+                )->icon('heroicons.newspaper')
 
 
             ]),

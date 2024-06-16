@@ -2,9 +2,6 @@
 
 namespace App\Providers;
 
-
-
-
 use App\View\Composers\AreaComposer;
 use App\View\Composers\InfoComposer;
 

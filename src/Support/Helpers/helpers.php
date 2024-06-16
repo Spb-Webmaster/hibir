@@ -161,17 +161,29 @@ if (!function_exists('active_linkMenu')) {
 if (!function_exists('active_linkParse')) {
     function active_linkParse($url, string $find = null, string $class = 'active'): string|null
     {
+
+        $parse_url =  parse_url(url()->current(), PHP_URL_PATH)?? '/' ;
+
+        if($parse_url == '/') { /** * мы на главной  */
+
+            if ($url == $parse_url) {
+                return $class;
+            }
+        }
+
         if($find) {
+            if($url == '/') { /** * мы на главной (дальше не ходим) */
+                return null;
+            }
             if(str_starts_with(parse_url(url()->current(), PHP_URL_PATH), trim($url))) {
                 return $class;
             }
             return  null;
-
         }
-           $parse_url =  parse_url(url()->current(), PHP_URL_PATH)?? '/' ;
 
-        return ($url == $parse_url) ? $class : null;
-    }
+
+
+        return ($url == url()->current() ) ? $class : null;    }
 }
 
 
