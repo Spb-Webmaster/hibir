@@ -3,7 +3,7 @@
 @section('description', ($seo_description)??null)
 @section('keywords', ($seo_keywords)??null)
 @section('content')
-    <section class="good_summer"></section>
+    <section class="good_summer good_summer__home "></section>
     <main>
         @include('include.blocks.religions.religions_index')
         @include('include.blocks.slider.top_slider')
