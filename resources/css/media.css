@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@media screen and (max-width: 1268px) {
+  .block {
+    padding-right: 15px;
+    padding-left: 15px; } }
+@media screen and (max-width: 1168px) {
+  .top_logo .logo__text {
+    font-size: calc(20px + 9 * ((100vw - 320px) / 1120)); }
+
+  .h_b_right__text {
+    font-size: calc(20px + 3 * ((100vw - 320px) / 1120)); }
+
+  .sections__flex .sect .h1 {
+    font-size: calc(20px + 9 * ((100vw - 320px) / 1120)); }
+
+  ._h1.color_green {
+    font-size: calc(20px + 9 * ((100vw - 320px) / 1120)); }
+
+  .box_title_flex ._h2 {
+    font-size: calc(20px + 9 * ((100vw - 320px) / 1120)); }
+
+  .slick_slider__carusel .s_title {
+    font-size: calc(19px + 1 * ((100vw - 320px) / 1120)); }
+
+  .box_title_block ._h2 {
+    font-size: calc(19px + 10 * ((100vw - 320px) / 1120)); }
+
+  .box_title_block ._h2sub {
+    font-size: calc(18px + 2 * ((100vw - 320px) / 1120)); } }
+@media screen and (max-width: 921px) {
+  .sections__flex .sect .sect__img {
+    padding: 0 18px 0 0; }
+
+  .sect_hristianstvo .sect__background-image {
+    width: 30px !important;
+    height: 50px !important;
+    background-size: 100%; }
+
+  .sect_islam .sect__background-image {
+    width: 40px !important;
+    height: 50px !important;
+    background-size: 100%; }
+
+  .sect_buddizm .sect__background-image {
+    width: 45px !important;
+    height: 50px !important;
+    background-size: 100%; }
+
+  .sect_iudaizm .sect__background-image {
+    width: 40px !important;
+    height: 50px !important;
+    background-size: 100%; }
+
+  .h_b_right__text {
+    padding-right: 15px;
+    padding-left: 15px; }
+
+  .top_logo .logo__text {
+    padding: 0 50px 0 40px; }
+
+  .h_row.block {
+    display: block; }
+    .h_row.block .h_col__faq {
+      width: 100%;
+      padding: 0; }
+    .h_row.block .h_col__responce {
+      width: 100%;
+      padding: 0; } }
+@media screen and (max-width: 868px) {
+  .calendal_events {
+    padding: 0 30px 0 0; }
+
+  .h_t_right {
+    padding: 0 16px 0 36px; }
+
+  .h_t_right {
+    font-size: 15px; } }
+/* pocofon  x3 */
+@media (max-width: 793px) {
+  .sections__flex {
+    flex-wrap: wrap;
+    height: auto; }
+    .sections__flex .sect_hristianstvo {
+      width: 50% !important;
+      min-width: 50% !important; }
+      .sections__flex .sect_hristianstvo .sect__background-image {
+        width: 30px !important;
+        height: 50px !important;
+        background-size: 100%; }
+    .sections__flex .sect_islam {
+      width: 50% !important;
+      min-width: 50% !important; }
+      .sections__flex .sect_islam .sect__background-image {
+        width: 40px !important;
+        height: 50px !important;
+        background-size: 100%; }
+    .sections__flex .sect_buddizm {
+      width: 50% !important;
+      min-width: 50% !important; }
+      .sections__flex .sect_buddizm .sect__background-image {
+        width: 45px !important;
+        height: 50px !important;
+        background-size: 100%; }
+    .sections__flex .sect_iudaizm {
+      width: 50% !important;
+      min-width: 50% !important; }
+      .sections__flex .sect_iudaizm .sect__background-image {
+        width: 40px !important;
+        height: 50px !important;
+        background-size: 100%; }
+    .sections__flex .sect .sect__img {
+      padding: 0 45px 0 0; }
+
+  /* Переход на мобильную версию */
+  /* Переход на мобильную версию */ }
+/* pocofon  x3 */
+/* xiaomi pro6 */
+@media (max-width: 742px) {
+  .h_b_right__text {
+    display: none !important; }
+
+  .calendal_events {
+    padding: 0 10px 0 0; } }
+/* xiaomi pro6 */
+@media (max-width: 666px) {
+  .sections__flex {
+    flex-wrap: wrap;
+    height: auto;
+    padding-left: 30px; }
+    .sections__flex .sect_hristianstvo {
+      width: 100% !important;
+      min-width: 100% !important;
+      padding-bottom: 16px; }
+      .sections__flex .sect_hristianstvo .sect__background-image {
+        width: 35px !important;
+        height: 50px !important;
+        background-size: 100%; }
+    .sections__flex .sect_islam {
+      width: 100% !important;
+      min-width: 100% !important;
+      padding-bottom: 16px; }
+      .sections__flex .sect_islam .sect__background-image {
+        width: 40px !important;
+        height: 50px !important;
+        background-size: 100%; }
+    .sections__flex .sect_buddizm {
+      width: 100% !important;
+      min-width: 100% !important;
+      padding-bottom: 16px; }
+      .sections__flex .sect_buddizm .sect__background-image {
+        width: 40px !important;
+        height: 50px !important;
+        background-size: 100%; }
+    .sections__flex .sect_iudaizm {
+      width: 100% !important;
+      min-width: 100% !important; }
+      .sections__flex .sect_iudaizm .sect__background-image {
+        width: 40px !important;
+        height: 50px !important;
+        background-size: 100%; }
+    .sections__flex .sect .sect__img {
+      padding: 0 45px 0 0; }
+
+  .calendal_events {
+    display: none !important; }
+
+  .h_t_center {
+    max-width: 590px;
+    width: 50%; }
+
+  .h_t_right {
+    width: 40%;
+    justify-content: flex-end;
+    padding-right: 0; } }
+@media (max-width: 568px) {
+  .h_t_right {
+    display: none !important; }
+
+  .h_t_center {
+    max-width: 568px;
+    width: 100%; } }
+
+/*# sourceMappingURL=media.css.map */
