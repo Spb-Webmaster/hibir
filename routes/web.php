@@ -63,10 +63,10 @@ Route::controller(CatalogController::class)->group(function () {
 
     /** search */
 
-    Route::post('/search.big-search', 'bigSearch')
+    Route::post('/search/big-search', 'bigSearch')
         ->name('form.search.big_search');
 
-    Route::post('/search.top-search', 'topSearch')
+    Route::post('/search/top-search', 'topSearch')
         ->name('form.search.top_search');
 
     /** //search */
@@ -113,6 +113,7 @@ Route::controller(AjaxController::class)->group(function () {
 Route::controller(PageController::class)->group(function () {
 
     Route::get('{page:slug}', 'page')->name('page');
+    Route::get('/religion/religion-list', 'religionList')->name('religion.list');
 
 });
 /**

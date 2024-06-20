@@ -11,11 +11,11 @@ class MenuViewModel
     use Makeable;
 
     public function top_menu() {
-        return MenuTopItem::query()->where('published', 1)->get();
+        return MenuTopItem::query()->where('published', 1)->orderBy('sorting')->get();
     }
 
     public function bottom_menu() {
-        return MenuBottomItem::query()->where('published', 1)->get();
+        return MenuBottomItem::query()->where('published', 1)->orderBy('sorting')->get();
 
     }
 

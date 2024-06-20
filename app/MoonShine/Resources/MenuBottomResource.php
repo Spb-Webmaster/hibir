@@ -9,6 +9,7 @@ use App\MoonShine\Pages\CategoryTreePage;
 use Illuminate\Database\Eloquent\Model;
 
 use Leeto\MoonShineTree\Resources\TreeResource;
+use MoonShine\Fields\Select;
 use MoonShine\Fields\Text;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
@@ -37,7 +38,14 @@ class MenuBottomResource extends TreeResource
                 ID::make()->sortable(),
                 Text::make(__('Заголовок'), 'title'),
                 Text::make(__('URL адрес'), 'slug'),
+                Select::make('Религии', 'religion')
+                    ->options([
+                        '1' => 'Ислам',
+                        '2' => 'Христианство',
+                        '3' => 'Буддизм',
+                        '4' => 'Иудаизм',
 
+                    ])->multiple()->searchable()->hideOnIndex(),
             ]),
         ];
     }

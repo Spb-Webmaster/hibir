@@ -187,6 +187,30 @@ if (!function_exists('active_linkParse')) {
 }
 
 
+if (!function_exists('active_linkReligion')) {
+    function active_linkReligion($array  = null,  string $class = 'active'): string|null
+    {
+
+        $parse_url =  parse_url(url()->current(), PHP_URL_PATH)?? '/' ;
+
+        if($array) {
+            foreach ($array as $item) {
+
+                if(str_starts_with(parse_url(url()->current(), PHP_URL_PATH), trim($item))) {
+                    return $class;
+                }
+
+            }
+
+        }
+
+
+
+        return null;
+    }
+}
+
+
 
 if (!function_exists('route_name')) {
     function route_name():string|null

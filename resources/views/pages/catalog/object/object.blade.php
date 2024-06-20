@@ -18,7 +18,7 @@
 
            @include('include.menu.object_menu')
 
-            <div class="ob_main_page block block_1123 page_l">
+            <div class="ob_main_pageHtml ob_main_page block block_1123 page_l">
                 <div class="page_l__left">
                     @if($item->main_title)
                         <h2 class="_h2">

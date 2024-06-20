@@ -17,8 +17,71 @@
 
             @include('include.menu.object_menu')
 
-            <div class="ob_main_contact block block_850">
-                video
+
+
+
+            <div class="ob_main_pageHtml ob_main_video block block_850">
+
+                @if($item->video_title)
+                    <h2 class="_h2" align="center">
+                        {{ $item->video_title  }}
+                    </h2>
+                @else
+                    <h2 class="_h2" align="center">
+                        {{ __('Видеоматериалы') }}
+                    </h2>
+                @endif
+
+            @if(isset($item->video))
+                    <div class="block">
+                        <div class="ob_video">
+                            @if($item->video)
+                                @foreach($item->video as $v)
+
+                                    <div class="ob_controls">
+                                        @if($v['video_video_title'])
+                                            <div class="desc ">
+                                                <h4 class="pad_b26_important">{{$v['video_video_title']}}</h4>
+                                            </div>
+                                        @endif
+                                        @if($v['video_video_video'])
+
+                                            <video controls width="860" height="484"
+                                                   @if($item->above) poster="{{ asset(intervention('860x484', $item->img, 'videos')) }}" @endif>
+                                                <source src="{{ asset('/storage/' .$v['video_video_video'])  }}"
+                                                        type="video/mp4">
+                                            </video>
+                                        @endif
+
+                                        @if($v['video_video_youtube'])
+                                            {!!   youtube($v['video_video_youtube'], 860,484) !!}
+                                        @endif
+
+                                        @if($v['video_video_desc'])
+                                            <div class="video_video_desc desc">
+                                                {!! $v['video_video_desc'] !!}
+                                            </div>
+                                        @endif
+                                    </div>
+
+                                @endforeach
+                            @endif
+                        </div>
+                    </div>
+                @endif
+
+            </div>
+
+            <div class="block block_1123">
+
+                    @if(isset($item->video_desc))
+                            <div class="block page_l2">
+                                <div class="page_page__desc2 desc">
+                                    {!! $item->video_desc !!}
+                                </div>
+                            </div>
+                   @endif
+
             </div>
 
         </div>

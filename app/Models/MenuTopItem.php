@@ -8,13 +8,24 @@ use Illuminate\Support\Facades\Cache;
 
 class MenuTopItem extends Model
 {
+
     protected $table = 'menu_top_items';
+
     protected $fillable = [
         'title',
         'sorting',
         'slug',
-        'published'
+        'published',
+        'religion'
     ];
+
+    protected $casts = [
+        'religion' => 'collection',
+
+    ];
+
+
+
     protected static function boot()
     {
         parent::boot();

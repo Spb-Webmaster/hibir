@@ -61,7 +61,8 @@ class Regobject extends Model
     protected $casts = [
         'params' => 'collection',
         'gallery' => 'collection',
-        'faq' => 'collection'
+        'faq' => 'collection',
+        'video' => 'collection'
     ];
 
 

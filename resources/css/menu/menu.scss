@@ -322,20 +322,39 @@ background:none !important;
 
 .bottom__menu {
     overflow: hidden;
-    li.active a {
-        color: #acacac;
-        transition: 0.2s;
 
-        span {
-            transition: 0.2s;
-            border-bottom: 1px solid #acacac;
-        }
-    }
-     li   a:hover {
-            color: #acacac;
-            span {
-                border-bottom: 1px solid #acacac;
+    .top_menu {
+
+        li {
+            a {
+                color: #acacac;
+                transition: 0.2s;
             }
+
+            span {
+                transition: 0.2s;
+                border-bottom: 1px solid #acacac !important;
+            }
+        }
+
+        li.active a {
+            color: #fff;
+            transition: 0.2s;
+
+            span {
+                transition: 0.2s;
+                border-bottom: 1px solid #fff !important;
+            }
+        }
+
+        li a:hover {
+            color: #fff;
+
+            span {
+                border-bottom: 1px solid #fff !important;
+            }
+        }
+
     }
 }
 

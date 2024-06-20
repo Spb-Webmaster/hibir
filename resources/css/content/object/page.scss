@@ -89,6 +89,9 @@ $maxWidth: 1440;
     }
 }
 
+
+
+
 .page_page {
     .ob_controls:first-child {
         padding-top: 0;
@@ -96,6 +99,17 @@ $maxWidth: 1440;
     }
     .ob_video {
         ul { text-align: left}
+    }
+}
+
+.ob_main_video {
+    .ob_controls:first-child {
+        padding-top: 10px;
+    }
+    .ob_controls {
+        h4 {
+            font-size: 22px;
+        }
     }
 }
 .ob_controls:last-child {
@@ -195,8 +209,11 @@ $maxWidth: 1440;
 
 }
 
-.ob_main_contact {
+.ob_main_pageHtml {
     padding: 24px 0 40px 0;
+}
+
+.ob_main_contact {
 }
 
 .ob_main_contact__flex {

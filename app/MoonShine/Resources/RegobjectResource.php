@@ -17,6 +17,7 @@ use MoonShine\Decorations\Grid;
 use MoonShine\Decorations\Tab;
 use MoonShine\Decorations\Tabs;
 use MoonShine\Enums\ClickAction;
+use MoonShine\Fields\File;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
 use MoonShine\Fields\Position;
@@ -253,6 +254,35 @@ class RegobjectResource extends ModelResource
                             ])->columnSpan(12)
 
                         ]),
+                    ]),
+
+                    Tab::make(__('Видеоматериалы'), [
+                        Grid::make([
+
+                            Column::make([
+
+                                Text::make(__('Заголовок Видеоматериалов'), 'video_title'),
+
+                                Json::make('Видеоматериал', 'video')->fields([
+                                    Text::make('Заголовок  Видеоматериала', 'video_video_title'),
+
+                                    File::make('Видео', 'video_video_video')
+                                        ->dir('video')/* Директория где будут хранится файлы в storage (по умолчанию /) */
+                                        ->disk('moonshine') // Filesystems disk
+                                        //  ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
+                                        ->removable(),
+                                    Text::make('Ссылка на видео (YouTube)', 'video_video_youtube'),
+
+                                    TinyMce::make('Описание Видеоматериала', 'video_video_desc'),
+                                ])->vertical()->creatable(limit: 30)->removable(),
+
+                                TinyMce::make('Описание', 'video_desc'),
+
+
+                            ])->columnSpan(12)
+
+                        ]),
+
                     ]),
 
                     Tab::make(__('Контакты'), [

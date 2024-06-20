@@ -203,16 +203,22 @@ a.lodge {
 
 .bottom__menu {
   overflow: hidden; }
-  .bottom__menu li.active a {
+  .bottom__menu .top_menu li a {
     color: #acacac;
     transition: 0.2s; }
-    .bottom__menu li.active a span {
+  .bottom__menu .top_menu li span {
+    transition: 0.2s;
+    border-bottom: 1px solid #acacac !important; }
+  .bottom__menu .top_menu li.active a {
+    color: #fff;
+    transition: 0.2s; }
+    .bottom__menu .top_menu li.active a span {
       transition: 0.2s;
-      border-bottom: 1px solid #acacac; }
-  .bottom__menu li a:hover {
-    color: #acacac; }
-    .bottom__menu li a:hover span {
-      border-bottom: 1px solid #acacac; }
+      border-bottom: 1px solid #fff !important; }
+  .bottom__menu .top_menu li a:hover {
+    color: #fff; }
+    .bottom__menu .top_menu li a:hover span {
+      border-bottom: 1px solid #fff !important; }
 
 /* memu объектов  */
 .ob_menu_hor {

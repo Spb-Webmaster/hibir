@@ -18,7 +18,7 @@
 
             @include('include.menu.object_menu')
 
-            <div class="ob_main_contact block block_850">
+            <div class="ob_main_pageHtml ob_main_gallery block block_1123">
                 @if($item->gallery_title)
                     <h2 class="_h2" align="center">
                         {{ $item->gallery_title  }}
@@ -28,6 +28,24 @@
                         {{ __('Фотогалерея') }}
                     </h2>
                 @endif
+
+                    @if(isset($item->gallery))
+
+                        <div class="block ob_gallery pad_t36  pad_b20 ">
+
+                            @foreach($item->gallery as $g)
+                                <div class="mItem">
+                                    <a href="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
+                                       data-fancybox="gallery"><img class="pc_category_img" style="width: 264px; height: auto"
+                                                                    loading="lazy"
+                                                                    src="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
+                                                                    alt="{{($item->gallery_img_title)??''}}"></a></div>
+                            @endforeach
+
+                        </div>
+                    @endif
+
+
             </div>
         </div>
     </main>

@@ -54,7 +54,7 @@ class PageResource extends ModelResource
             ID::make()
                 ->sortable(),
 
-            Image::make(__('Изображение'), 'img'),
+            Image::make(__('Изображение'), 'pageimg1'),
 
             Text::make(__('Заголовок'), 'title'),
             Slug::make(__('Алиас'), 'slug'),
@@ -82,6 +82,7 @@ class PageResource extends ModelResource
                 Tabs::make([
 
                     Tab::make(__('Общие настройки'), [
+
                         Grid::make([
                             Column::make([
 
@@ -152,6 +153,7 @@ class PageResource extends ModelResource
 
 
                         Divider::make(),
+
                         TinyMce::make('Описание', 'text2')
                             ->hint('На всю ширину макета'),
 

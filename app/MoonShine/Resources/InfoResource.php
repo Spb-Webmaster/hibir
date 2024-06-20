@@ -102,9 +102,6 @@ class InfoResource extends ModelResource
                                     ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                     ->removable(),
 
-                                Column::make([
-                                    TinyMce::make('Краткое описание', 'smalltext')
-                                ])
 
 
                             ])
@@ -131,47 +128,59 @@ class InfoResource extends ModelResource
                                 ->columnSpan(6)
 
                         ]),
-                        Divider::make(),
 
-                        Column::make([
-                            TinyMce::make('Описание', 'text')
-                        ])
-                            ->columnSpan(12),
-                        Divider::make('Дополнительное изображение на страницу'),
 
-                        Image::make(__('Изображение'), 'pageimg1')
-                            ->showOnExport()
-                            ->disk(config('moonshine.disk', 'moonshine'))
-                            ->dir('category')
-                            ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
-                            ->removable()
-                            ->hint('Растягивается на 100% ширины'),
 
                         Divider::make(),
 
-                        Column::make([
-                            TinyMce::make('Дополнительное описание', 'text2')
-                        ])
-                            ->columnSpan(12),
+                        Grid::make([
+                            Column::make([
+                                TinyMce::make('Описание', 'text')
+                                    ->hint('Встраивается слева, не оптекает'),
 
-                        Image::make(__('Изображение'), 'pageimg2')
-                            ->showOnExport()
-                            ->disk(config('moonshine.disk', 'moonshine'))
-                            ->dir('category')
-                            ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
-                            ->removable()
-                            ->hint('Растягивается на 100% ширины'),
+                            ])->columnSpan(8),
+                            Column::make([
+
+                                Image::make(__('Изображение'), 'pageimg1')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('info')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Встраивается справа'),
+
+                            ])
+                                ->columnSpan(4),
+                        ]),
+
+
+
+
 
                         Divider::make(),
 
-                        Column::make([
-                            TinyMce::make('Дополнительное описание', 'text3')
-                        ])
-                            ->columnSpan(12),
+                        TinyMce::make('Текст', 'text2')
+                            ->hint('На всю ширину макета'),
+
+                                Image::make(__('Изображение'), 'pageimg2')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('info')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('На всю ширину макета'),
+
+
+                        Divider::make(),
+
+                        TinyMce::make('Описание', 'text3')
+                            ->hint('На всю ширину макета'),
+
+
+
                     ]),
 
-
-                    Tab::make(__('Галерея'), [
+                        Tab::make(__('Галерея'), [
                         Grid::make([
 
                             Column::make([

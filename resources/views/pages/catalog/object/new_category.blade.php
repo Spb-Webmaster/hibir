@@ -18,7 +18,7 @@
 
             @include('include.menu.object_menu')
 
-            <div class="ob_main_contact block block_850">
+            <div class="ob_main_pageHtml ob_main_new_cat block block_850">
 
                     <h2 class="_h2" align="center">
                         {{ __('Новости') }}

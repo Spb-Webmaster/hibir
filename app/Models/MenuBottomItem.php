@@ -12,8 +12,15 @@ class MenuBottomItem extends Model
         'title',
         'slug',
         'sorting',
-        'published'
+        'published',
+        'religion'
+
     ];
+    protected $casts = [
+        'religion' => 'collection',
+
+    ];
+
     protected static function boot()
     {
         parent::boot();
