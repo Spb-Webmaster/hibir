@@ -77,13 +77,13 @@
 
 
             </div>
+            </div>
 
             <div class="JFormFieldMap_wrapper">
                 <div id="loader_wrapper" class="loader_wrapper active ">
                     <x-forms.loader class="br_12 active"/>
                 </div>
                 <div id="JFormFieldMap" class="JFormFieldMap" style="width: 100%; height: 550px"></div>
-            </div>
             </div>
         </div>
     </main>
