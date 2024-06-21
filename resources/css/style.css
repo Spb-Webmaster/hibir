@@ -753,4 +753,7 @@ breadcrumbs
   .s_img a:hover .white_circle__redplay {
     border-left: 11px solid #00AFEF; }
 
+.ob_gamburger, .ob_menu_hor__css {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */

@@ -85,7 +85,6 @@
                 </div>
             @endif
 
-
             @if($page->text4)
                 <hr class="p_hr">
                 <div class="block page_l2">
@@ -132,18 +131,18 @@
                                             <h4 class="pad_b26_important">{{$v['video_video_title']}}</h4>
                                         </div>
                                     @endif
-                                    @if($v['video_video_video'])
+                                        @if($v['video_video_video'])
 
-                                        <video controls width="860" height="484"
-                                               @if($page->above) poster="{{ asset(intervention('860x484', $page->img, 'videos')) }}" @endif>
-                                            <source src="{{ asset('/storage/' .$v['video_video_video'])  }}"
-                                                    type="video/mp4">
-                                        </video>
-                                    @endif
+                                            <video controls width="840" height="473"  @if($page->above) poster="{{ asset(intervention('840x4473', $page->img, 'videos')) }}" @endif>
+                                                <source src="{{ asset('/storage/' .$v['video_video_video'])  }}"
+                                                        type="video/mp4">
+                                            </video>
+                                        @endif
 
-                                    @if($v['video_video_youtube'])
-                                        {!!   youtube($v['video_video_youtube'], 860,484) !!}
-                                    @endif
+                                        @if($v['video_video_youtube'])
+                                            {!!   youtube($v['video_video_youtube'], 840,473) !!}
+                                        @endif
+
 
                                     @if($v['video_video_desc'])
                                         <div class="video_video_desc desc">

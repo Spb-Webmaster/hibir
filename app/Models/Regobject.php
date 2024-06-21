@@ -84,7 +84,7 @@ class Regobject extends Model
 
     public function regobject_new(): HasMany
     {
-        return $this->hasMany(RegobjectNew::class, 'regobject_id');
+        return $this->hasMany(RegobjectNew::class, 'regobject_id')->orderBy('created_at', 'desc');
     }
 
 

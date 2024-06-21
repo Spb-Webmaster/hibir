@@ -134,9 +134,51 @@ class RegobjectNewResource extends ModelResource
 
 
                         Divider::make(),
+
                         Grid::make([
                             Column::make([
-                                Image::make(__('Изображение'), 'a_img')
+                                TinyMce::make('Описание', 'text')
+                                    ->hint('Встраивается слева, не оптекает'),
+
+                            ])->columnSpan(8),
+                            Column::make([
+
+                                Image::make(__('Изображение'), 'pageimg1')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('objects')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Встраивается справа'),
+
+                            ])
+                                ->columnSpan(4),
+                        ]),
+
+
+
+
+
+                        Divider::make(),
+
+                        TinyMce::make('Описание', 'text2')
+                            ->hint('На всю ширину макета'),
+
+                        Image::make(__('Изображение'), 'pageimg2')
+                            ->showOnExport()
+                            ->disk(config('moonshine.disk', 'moonshine'))
+                            ->dir('object_news')
+                            ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                            ->removable()
+                            ->hint('Растягивается на 100% ширины'),
+
+                        Divider::make(),
+
+
+
+                        Grid::make([
+                            Column::make([
+                                Image::make(__('Изображение'), 'pageimg3')
                                     ->showOnExport()
                                     ->disk(config('moonshine.disk', 'moonshine'))
                                     ->dir('object_news')
@@ -146,53 +188,23 @@ class RegobjectNewResource extends ModelResource
 
                             ])->columnSpan(6),
                             Column::make([
-                                TinyMce::make('Текст', 'a_desc')
+                                TinyMce::make('Текст', 'text3')
                                     ->hint('Встраивается справа, не оптекает'),
                             ])
                                 ->columnSpan(6)
                         ]),
-                        Divider::make(),
-                        TinyMce::make('Описание', 'a_desc2')
-                            ->hint('На всю ширину макета'),
 
-                        Image::make(__('Изображение'), 'a_img2')
-                            ->showOnExport()
-                            ->disk(config('moonshine.disk', 'moonshine'))
-                            ->dir('object_news')
-                            ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
-                            ->removable()
-                            ->hint('Растягивается на 100% ширины'),
 
-                        Divider::make(),
-                        Grid::make([
-                            Column::make([
-                                TinyMce::make('Описание', 'a_desc3')
-                                    ->hint('Встраивается слева, не оптекает'),
-
-                            ])->columnSpan(6),
-                            Column::make([
-
-                                Image::make(__('Изображение'), 'a_img3')
-                                    ->showOnExport()
-                                    ->disk(config('moonshine.disk', 'moonshine'))
-                                    ->dir('object_news')
-                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
-                                    ->removable()
-                                    ->hint('Встраивается справа'),
-
-                            ])
-                                ->columnSpan(6),
-                        ]),
 
 
                         Divider::make(),
                         Grid::make([
 
                             Column::make([
-                                TinyMce::make('Описание', 'a_desc4')
+                                TinyMce::make('Описание', 'text4')
                                     ->hint('На всю ширину макета'),
 
-                                Image::make(__('Изображение'), 'a_img4')
+                                Image::make(__('Изображение'), 'pageimg4')
                                     ->showOnExport()
                                     ->disk(config('moonshine.disk', 'moonshine'))
                                     ->dir('object_news')

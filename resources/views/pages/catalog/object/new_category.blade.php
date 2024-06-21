@@ -20,34 +20,33 @@
 
             <div class="ob_main_pageHtml ob_main_new_cat block block_850">
 
-                    <h2 class="_h2" align="center">
-                        {{ __('Новости') }}
-                    </h2>
+                <h2 class="_h2" align="center">
+                    {{ __('Новости') }}
+                </h2>
 
-                    <br>
-<div class="category_teaser ob_category_teaser">
-                @foreach($item->regobject_new as $new)
-                    <div class=" slick_slide">
-                        <div class="slide_link slick_slider__1">
-                            <div class="s_img">
-                                <a href="{{asset(route('page.object.new', ['religion_slug'=> $religion->slug,'object_slug'=>$item->slug, 'new_slug' => $new->slug ] ))}}">
-                                    <img class="pc_category_img" width="260" height="151" loading="lazy"
-                                         src="{{ asset(intervention('260x151', $new->img, 'object_news')) }}"
-                                         alt="{{$new->title}}">
-                                </a>
-                            </div>
-                            <div class="s_title">
-                                <a href="{{asset(route('page.object.new', ['religion_slug'=> $religion->slug,'object_slug'=>$item->slug, 'new_slug' => $new->slug ] ))}}"><span>{{ $new->title }}</span></a>
-                            </div>
-                            <div class="s_date">
-                                <span>{{ rusdate3($new->created_at) }}</span>
-                            </div>
+                <div class="category_teaser ob_category_teaser">
+                    @foreach($item->regobject_new as $new)
+                        <div class=" slick_slide">
+                            <div class="slide_link slick_slider__1">
+                                <div class="s_img">
+                                    <a href="{{asset(route('page.object.new', ['religion_slug'=> $religion->slug,'object_slug'=>$item->slug, 'new_slug' => $new->slug ] ))}}">
+                                        <img class="pc_category_img" width="260" height="151" loading="lazy"
+                                             src="{{ asset(intervention('260x151', $new->img, 'object_news')) }}"
+                                             alt="{{$new->title}}">
+                                    </a>
+                                </div>
+                                <div class="s_title">
+                                    <a href="{{asset(route('page.object.new', ['religion_slug'=> $religion->slug,'object_slug'=>$item->slug, 'new_slug' => $new->slug ] ))}}"><span>{{ $new->title }}</span></a>
+                                </div>
+                                <div class="s_date">
+                                    <span>{{ rusdate3($new->created_at) }}</span>
+                                </div>
 
+                            </div>
                         </div>
-                    </div>
 
-                @endforeach
-</div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </main>

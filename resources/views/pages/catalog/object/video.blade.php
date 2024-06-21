@@ -18,22 +18,19 @@
             @include('include.menu.object_menu')
 
 
-
-
             <div class="ob_main_pageHtml ob_main_video block block_850">
+                <div class="block">
+                    @if($item->video_title)
+                        <h2 class="_h2" align="center">
+                            {{ $item->video_title  }}
+                        </h2>
+                    @else
+                        <h2 class="_h2" align="center">
+                            {{ __('Видеоматериалы') }}
+                        </h2>
+                    @endif
 
-                @if($item->video_title)
-                    <h2 class="_h2" align="center">
-                        {{ $item->video_title  }}
-                    </h2>
-                @else
-                    <h2 class="_h2" align="center">
-                        {{ __('Видеоматериалы') }}
-                    </h2>
-                @endif
-
-            @if(isset($item->video))
-                    <div class="block">
+                    @if(isset($item->video))
                         <div class="ob_video">
                             @if($item->video)
                                 @foreach($item->video as $v)
@@ -46,16 +43,17 @@
                                         @endif
                                         @if($v['video_video_video'])
 
-                                            <video controls width="860" height="484"
-                                                   @if($item->above) poster="{{ asset(intervention('860x484', $item->img, 'videos')) }}" @endif>
+                                            <video controls width="840" height="473"
+                                                   @if($item->above) poster="{{ asset(intervention('840x473', $item->img, 'videos')) }}" @endif>
                                                 <source src="{{ asset('/storage/' .$v['video_video_video'])  }}"
                                                         type="video/mp4">
                                             </video>
                                         @endif
 
                                         @if($v['video_video_youtube'])
-                                            {!!   youtube($v['video_video_youtube'], 860,484) !!}
+                                            {!!   youtube($v['video_video_youtube'], 840,473) !!}
                                         @endif
+
 
                                         @if($v['video_video_desc'])
                                             <div class="video_video_desc desc">
@@ -67,20 +65,21 @@
                                 @endforeach
                             @endif
                         </div>
-                    </div>
-                @endif
 
+                    @endif
+
+                </div>
             </div>
 
             <div class="block block_1123">
 
-                    @if(isset($item->video_desc))
-                            <div class="block page_l2">
-                                <div class="page_page__desc2 desc">
-                                    {!! $item->video_desc !!}
-                                </div>
-                            </div>
-                   @endif
+                @if(isset($item->video_desc))
+                    <div class="block page_l2">
+                        <div class="page_page__desc2 desc">
+                            {!! $item->video_desc !!}
+                        </div>
+                    </div>
+                @endif
 
             </div>
 

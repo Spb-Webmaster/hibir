@@ -18,6 +18,7 @@
             @include('include.menu.object_menu')
 
             <div class="ob_main_pageHtml ob_main_contact block block_850">
+              <div class="block">
                 @if($item->contact_title)
                     <h2 class="_h2" align="center">
                         {{ $item->contact_title  }}
@@ -83,7 +84,7 @@
                 </div>
                 <div id="JFormFieldMap" class="JFormFieldMap" style="width: 100%; height: 550px"></div>
             </div>
-
+            </div>
         </div>
     </main>
     @if($item->contact_yandex_map)

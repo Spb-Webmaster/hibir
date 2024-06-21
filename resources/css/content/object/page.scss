@@ -299,19 +299,34 @@ $maxWidth: 1440;
 }
     @media (max-width: 1199px) {
         .ob_gallery {
+            column-count: 4;
+        }
+    }
+
+    @media (max-width: 1135px) {
+        .mItem {
+            text-align: center;
+        }
+        .ob_gallery {
             column-count: 3;
         }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 868px) {
         .ob_gallery {
             column-count: 2;
         }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 607px) {
         .ob_gallery {
-            column-count: 1;
+            column-count: 2;
+        }
+        .mItem {
+            .pc_category_img {
+                width: 100% !important;
+                height: auto !important;
+            }
         }
     }
 

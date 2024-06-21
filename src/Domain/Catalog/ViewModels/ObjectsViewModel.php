@@ -36,6 +36,7 @@ class ObjectsViewModel
         return Regobject::query()
             ->where('published', 1)
             ->where('slug', $slug)
+            ->with('regobject_new')
             ->first();
 
     }

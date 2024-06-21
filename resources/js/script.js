@@ -228,6 +228,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /*//  .autocomplete-ajax */
 
+    $('.ob_menu_hor__ul li').each(function (index ){
+       $('.ob_menu_hor__js').append($(this).html());
+    })
 
+
+    $('body').on('click', '.ob_gamburger', function (event) {
+
+        $('.ob_menu_hor__js').slideToggle();
+
+    });
+
+
+//
 
 });

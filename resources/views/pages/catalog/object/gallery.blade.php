@@ -19,6 +19,7 @@
             @include('include.menu.object_menu')
 
             <div class="ob_main_pageHtml ob_main_gallery block block_1123">
+               <div class="block">
                 @if($item->gallery_title)
                     <h2 class="_h2" align="center">
                         {{ $item->gallery_title  }}
@@ -31,7 +32,7 @@
 
                     @if(isset($item->gallery))
 
-                        <div class="block ob_gallery pad_t36  pad_b20 ">
+                        <div class="ob_gallery pad_t36  pad_b20 ">
 
                             @foreach($item->gallery as $g)
                                 <div class="mItem">
@@ -45,7 +46,7 @@
                         </div>
                     @endif
 
-
+               </div>
             </div>
         </div>
     </main>

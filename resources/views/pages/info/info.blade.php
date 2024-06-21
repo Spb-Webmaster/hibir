@@ -7,7 +7,8 @@
 @section('content')
     <main>
         <div class="page_page">
-            <div class="block pad_t40">
+            @include('pages.info.partial._breadcrumbs')
+            <div class="block">
                 <div class="ob_title">
                     <h1 class="h1_title">{{ $new->title }}</h1>
                     @if($new->subtitle)

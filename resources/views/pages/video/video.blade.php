@@ -27,14 +27,14 @@
                                 @endif
                                 @if($v['video_video_video'])
 
-                                    <video controls width="860" height="484"  @if($video->above) poster="{{ asset(intervention('860x484', $video->img, 'videos')) }}" @endif>
+                                    <video controls width="840" height="473"  @if($video->above) poster="{{ asset(intervention('840x473', $video->img, 'videos')) }}" @endif>
                                         <source src="{{ asset('/storage/' .$v['video_video_video'])  }}"
                                                 type="video/mp4">
                                     </video>
                                 @endif
 
                                 @if($v['video_video_youtube'])
-                                    {!!   youtube($v['video_video_youtube'], 860,484) !!}
+                                    {!!   youtube($v['video_video_youtube'], 840,473) !!}
                                 @endif
 
                                 @if($v['video_video_desc'])

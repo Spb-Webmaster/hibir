@@ -18,7 +18,9 @@
 
            @include('include.menu.object_menu')
 
-            <div class="ob_main_pageHtml ob_main_page block block_1123 page_l">
+            <div class="ob_main_pageHtml ob_main_page block block_1123 ">
+<div class="block">
+                <div class="page_l">
                 <div class="page_l__left">
                     @if($item->main_title)
                         <h2 class="_h2">
@@ -31,7 +33,6 @@
 
                 </div>
                 <div class="page_l__right">
-
 
                     @if($item->main_right_img )
                         <div class="desc desc_main__imgR pad_t33">
@@ -50,8 +51,8 @@
 
 
                 </div>
-
-
+                </div>
+</div>
             </div>
 
         </div>
