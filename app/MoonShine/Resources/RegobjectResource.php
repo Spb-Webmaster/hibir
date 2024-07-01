@@ -285,6 +285,23 @@ class RegobjectResource extends ModelResource
 
                     ]),
 
+                    Tab::make(__('Полезная информация'), [
+
+                        Grid::make([
+
+                            Column::make([
+
+                                Text::make(__('Заголовок'), 'info_title'),
+
+                                TinyMce::make('Описание', 'info_desc'),
+
+
+                            ])->columnSpan(12)
+
+                        ]),
+
+                    ]),
+
                     Tab::make(__('Контакты'), [
 
                         Grid::make([

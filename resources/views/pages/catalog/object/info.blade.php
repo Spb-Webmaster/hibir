@@ -29,6 +29,10 @@
                     </h2>
                 @endif
 
+                    @if($item->info_desc)
+                        <div class="desc info_desc pad_t20 pad_b20">{!!  $item->info_desc  !!}</div>
+                    @endif
+
             </div>
         </div>
     </main>
