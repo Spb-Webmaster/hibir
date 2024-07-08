@@ -14,6 +14,19 @@
     .page_l .page_l__right .desc_main__signature_img {
       padding: 16px 10px; }
 
+.page_l__revers.page_l .page_l__left {
+  width: 25%;
+  background: #f9f9fa; }
+.page_l__revers.page_l .page_l__right {
+  width: 75%;
+  padding: 4px 0 0 4%;
+  background: #fff; }
+
+.page_l.no_back .page_l__left {
+  background: #fff; }
+.page_l.no_back .page_l__right {
+  background: #fff; }
+
 .page_r {
   display: flex;
   padding: 20px 0 0 0; }
