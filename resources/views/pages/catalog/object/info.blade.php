@@ -19,6 +19,7 @@
             @include('include.menu.object_menu')
 
             <div class="ob_main_pageHtml ob_main_info block block_850">
+                <div class="block">
                 @if($item->info_title)
                     <h2 class="_h2" align="center">
                         {{ $item->info_title  }}
@@ -32,7 +33,7 @@
                     @if($item->info_desc)
                         <div class="desc info_desc pad_t20 pad_b20">{!!  $item->info_desc  !!}</div>
                     @endif
-
+                </div>
             </div>
         </div>
     </main>

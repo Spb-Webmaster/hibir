@@ -45,7 +45,7 @@
 
                         </div>
                     @endif
-                    
+
                     @if($item->gallery_desc)
                         <div class="gallery_desc desc">
                             {!! $item->gallery_desc  !!}

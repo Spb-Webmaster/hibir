@@ -222,6 +222,10 @@
   .ob_main_page .page_l .page_l__right {
     width: 40%; }
 
+  .page_l__revers.page_l .page_l__right {
+    padding-right: 0;
+    padding-left: 0; }
+
   .big_search__box {
     padding-top: 10px; }
 

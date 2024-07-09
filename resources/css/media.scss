@@ -36,9 +36,9 @@ $maxWidth: 1440;
     .teaser_4 {
         .t_item_4__img {
 
-                width:100%;
-                height: auto;
-                min-width: 1px;
+            width: 100%;
+            height: auto;
+            min-width: 1px;
 
 
             img {
@@ -67,10 +67,11 @@ $maxWidth: 1440;
     }
 
     .ob_main_new_cat {
-        .ob_category_teaser  {
-         justify-content: center;
+        .ob_category_teaser {
+            justify-content: center;
+
             .slick_slide {
-               width:270px;
+                width: 270px;
             }
         }
     }
@@ -214,10 +215,12 @@ $maxWidth: 1440;
         padding-left: 30px;
         height: 52px;
         overflow: hidden;
+
         .gamburger {
 
 
         }
+
         .ob_gamburger__menu {
             color: $colorGrey;
             position: relative;
@@ -229,15 +232,17 @@ $maxWidth: 1440;
 
     .ob_menu_hor__css {
         top: -15px;
+
         a {
             width: 100%;
-            padding: 0 10px 0 45px ;
+            padding: 0 10px 0 45px;
             height: 48px;
             border-bottom: 1px solid #fff;
             display: flex;
             align-items: center;
             background: #fdf9f9;
         }
+
         a.active {
             color: $colorRed;
             background: #abdfdf;
@@ -252,16 +257,16 @@ $maxWidth: 1440;
     .ob_menu_hor__css {
         position: relative;
 
-                a {
-                    font-size: 15px;
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                    color: $color;
-                    text-decoration: none;
-                }
-
+        a {
+            font-size: 15px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            color: $color;
+            text-decoration: none;
         }
+
+    }
 
 
 }
@@ -396,6 +401,7 @@ $maxWidth: 1440;
         }
     }
 }
+
 /* pocofon  x3 */
 @media (max-width: 793px) {
 
@@ -405,11 +411,20 @@ $maxWidth: 1440;
             .page_l__left {
                 width: 60%;
             }
+
             .page_l__right {
                 width: 40%;
             }
         }
 
+    }
+
+
+    .page_l__revers.page_l {
+        .page_l__right {
+            padding-right: 0;
+            padding-left: 0;
+        }
     }
 
 
@@ -574,6 +589,7 @@ $maxWidth: 1440;
 
         .teaser_4__item {
             width: 50%;
+
             .t_item_4__img {
 
                 width: 100%;
@@ -687,13 +703,15 @@ $maxWidth: 1440;
 @media (max-width: 568px) {
 
     .ob_main_contact__flex {
-   padding-top: 10px;
+        padding-top: 10px;
         display: block;
+
         .ob_main_contact__left {
             width: 100%;
             padding: 5px 0;
 
         }
+
         .ob_main_contact__right {
             width: 100%;
             padding: 5px 0;
@@ -705,6 +723,7 @@ $maxWidth: 1440;
         .teaser_4__item {
             width: 100%;
             display: flex;
+
             .t_item_4__img {
 
                 width: 30%;
@@ -743,14 +762,15 @@ $maxWidth: 1440;
 @media (max-width: 468px) {
 
 
-
-    .ob_main_page ,.ob_main_new {
+    .ob_main_page, .ob_main_new {
         .page_l {
             flex-direction: column-reverse;
+
             .page_l__left {
                 width: 100%;
                 padding: 20px 0 0 0;
             }
+
             .page_l__right {
                 width: 100%;
 
@@ -760,16 +780,15 @@ $maxWidth: 1440;
     }
 
 
-
-
     .teaser_mini_img .tmg__titleText a {
         font-size: 16px;
-        padding:0 0 10px 0;
+        padding: 0 0 10px 0;
     }
     .__contacts {
         span {
             display: block;
             padding: 6px 0;
+
             .sle {
                 display: none;
             }
