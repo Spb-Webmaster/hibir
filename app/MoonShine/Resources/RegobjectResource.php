@@ -6,6 +6,7 @@ namespace App\MoonShine\Resources;
 
 use App\Models\CatRegobject;
 
+use App\Models\RegobjectFile;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Regobject;
@@ -22,6 +23,7 @@ use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
 use MoonShine\Fields\Position;
 use MoonShine\Fields\Relationships\BelongsTo;
+use MoonShine\Fields\Relationships\HasOne;
 use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
@@ -315,6 +317,33 @@ class RegobjectResource extends ModelResource
                                 Text::make('Координаты', 'contact_yandex_map'),
                                 TinyMce::make('Описание контактов', 'contact_desc'),
                             ])->columnSpan(12)
+
+                        ]),
+                    ]),
+
+                    Tab::make(__('Файлы'), [
+
+                        Grid::make([
+
+                            Column::make([
+
+                                        Json::make('Файлы (150)', 'files')->fields([
+                                            File::make('Файл', 'file_file')->dir('object_files')
+                                            ->disk('moonshine'),
+                                            Text::make('Url', 'file_url')->readonly(),
+
+                                        ])->creatable(limit: 150)->removable(),
+
+
+
+                            ])->columnSpan(9),
+                                  Column::make([
+
+
+
+
+
+                            ])->columnSpan(3)
 
                         ]),
                     ]),

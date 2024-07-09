@@ -144,11 +144,11 @@
                                         @endif
 
 
-                                    @if($v['video_video_desc'])
                                         <div class="video_video_desc desc">
-                                            {!! $v['video_video_desc'] !!}
+                                            @if($v['video_video_desc'])
+                                                {!! $v['video_video_desc'] !!}
+                                            @endif
                                         </div>
-                                    @endif
                                 </div>
 
                             @endforeach

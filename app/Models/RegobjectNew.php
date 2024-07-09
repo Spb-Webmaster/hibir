@@ -9,13 +9,16 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class RegobjectNew extends Model
 {
+
 protected $table = 'regobject_news';
+
 protected $fillable = [
     'title',
     'slug',
     'img',
     'text',
     'pageimg1',
+    'regobject_id',
     'text2',
     'pageimg2',
     'text3',

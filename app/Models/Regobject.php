@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Support\Facades\Storage;
 
 class Regobject extends Model
 {
@@ -49,6 +51,8 @@ class Regobject extends Model
         'a_img3',
         'a_desc4',
         'a_img4',
+
+        'files',
         'params',
         'published',
         'metatitle',
@@ -62,8 +66,11 @@ class Regobject extends Model
         'params' => 'collection',
         'gallery' => 'collection',
         'faq' => 'collection',
-        'video' => 'collection'
+        'video' => 'collection',
+        'files' => 'collection'
     ];
+
+
 
 
     public function religion():BelongsTo
@@ -95,6 +102,19 @@ class Regobject extends Model
 
         # Проверка данных пользователя перед сохранением
         static::saving(function ($Moonshine) {
+
+
+        //    dd(json_decode($Moonshine->files));
+
+            $files = json_decode($Moonshine->files);
+
+            foreach ($files as $k =>$f) {
+             //   dd($files[$k]->file_file);
+                $files[$k]->file_url = '/storage/' . $f->file_file;
+            }
+            $Moonshine->files = collect($files);
+/*dump($Moonshine->files);
+dd(collect($files));*/
             $cat_regobject_id = $Moonshine->cat_regobject_id;
             $cat_regobject = CatRegobject::query()->where('id', $cat_regobject_id)->first();
             $religion = Religion::query()->where('id', $cat_regobject->religion_id)->first();
