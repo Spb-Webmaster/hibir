@@ -53,7 +53,7 @@
 
 
                     @if($item->a_img )
-                        <div class="page_l page_l__revers">
+                        <div class="page_l page_l__revers no_back">
 
                             <div class="page_l__left">
                                 @if($item->a_img )

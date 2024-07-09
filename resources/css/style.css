@@ -481,28 +481,28 @@ end responce -------------------------------------------------------------------
   padding: 13px 0;
   font-weight: 700;
   font-style: normal;
-  font-size: 32px;
+  font-size: 30px;
   color: #000; }
 .desc h2 {
   line-height: 1.1em;
   padding: 13px 0;
   font-weight: 700;
   font-style: normal;
-  font-size: 29px;
+  font-size: 24px;
   color: #000; }
 .desc h3 {
   line-height: 1.1em;
   padding: 9px 0;
   font-weight: 700;
   font-style: normal;
-  font-size: 26px;
+  font-size: 22px;
   color: #000; }
 .desc h4 {
   line-height: 1.1em;
   padding: 8px 0;
   font-weight: 700;
   font-style: normal;
-  font-size: 24px;
+  font-size: 20px;
   color: #282828; }
 .desc iframe, .desc embed {
   box-sizing: border-box;

@@ -28,7 +28,6 @@ class Regobject extends Model
         'gallery_desc',
 
 
-
         'info_title',
         'info_img',
         'info_desc',
@@ -71,19 +70,17 @@ class Regobject extends Model
     ];
 
 
-
-
-    public function religion():BelongsTo
+    public function religion(): BelongsTo
     {
         return $this->belongsTo(Religion::class);
     }
 
-    public function area():BelongsTo
+    public function area(): BelongsTo
     {
         return $this->belongsTo(Area::class);
     }
 
-    public function catregobject():BelongsTo
+    public function catregobject(): BelongsTo
     {
         return $this->belongsTo(CatRegobject::class, 'cat_regobject_id');
 
@@ -104,17 +101,18 @@ class Regobject extends Model
         static::saving(function ($Moonshine) {
 
 
-        //    dd(json_decode($Moonshine->files));
+            //    dd(json_decode($Moonshine->files));
 
             $files = json_decode($Moonshine->files);
+            if (count($files)) {
+                foreach ($files as $k => $f) {
+                    //   dd($files[$k]->file_file);
+                    $files[$k]->file_url = '/storage/' . $f->file_file;
+                }
 
-            foreach ($files as $k =>$f) {
-             //   dd($files[$k]->file_file);
-                $files[$k]->file_url = '/storage/' . $f->file_file;
+                $Moonshine->files = collect($files);
             }
-            $Moonshine->files = collect($files);
-/*dump($Moonshine->files);
-dd(collect($files));*/
+
             $cat_regobject_id = $Moonshine->cat_regobject_id;
             $cat_regobject = CatRegobject::query()->where('id', $cat_regobject_id)->first();
             $religion = Religion::query()->where('id', $cat_regobject->religion_id)->first();
@@ -125,20 +123,20 @@ dd(collect($files));*/
             $cat_area_id = $Moonshine->area_id;
             $area = Area::query()->where('id', $cat_area_id)->first();
 
-            if(!$Moonshine->keywords) {
-                $keywords = $religion->title . ' | '. $Moonshine->title;
-                if($Moonshine->subtitle) {
-                    $keywords .= ' | ' .$Moonshine->subtitle;
+            if (!$Moonshine->keywords) {
+                $keywords = $religion->title . ' | ' . $Moonshine->title;
+                if ($Moonshine->subtitle) {
+                    $keywords .= ' | ' . $Moonshine->subtitle;
                 }
-                $keywords .= ' | '. $area->title;
+                $keywords .= ' | ' . $area->title;
                 $Moonshine->keywords = $keywords;
             }
-            if(!$Moonshine->metatitle) {
-                $metatitle = $Moonshine->title.', '. $area->title;
+            if (!$Moonshine->metatitle) {
+                $metatitle = $Moonshine->title . ', ' . $area->title;
                 $Moonshine->metatitle = $metatitle;
             }
-            if(!$Moonshine->description) {
-                $description = 'Местоположение - '. $area->title .', религия  - '. $religion->title.', категория - '. $cat_regobject->title .' , название - '. $Moonshine->title;
+            if (!$Moonshine->description) {
+                $description = 'Местоположение - ' . $area->title . ', религия  - ' . $religion->title . ', категория - ' . $cat_regobject->title . ' , название - ' . $Moonshine->title;
                 $Moonshine->description = $description;
             }
         });
@@ -161,3 +159,4 @@ dd(collect($files));*/
 
 
 }
+

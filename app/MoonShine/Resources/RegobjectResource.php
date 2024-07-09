@@ -14,6 +14,7 @@ use App\Models\Regobject;
 use MoonShine\Decorations\Collapse;
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Divider;
+use MoonShine\Decorations\Flex;
 use MoonShine\Decorations\Grid;
 use MoonShine\Decorations\Tab;
 use MoonShine\Decorations\Tabs;
@@ -328,18 +329,18 @@ class RegobjectResource extends ModelResource
                             Column::make([
 
                                         Json::make('Файлы (150)', 'files')->fields([
-                                            File::make('Файл', 'file_file')->dir('object_files')
-                                            ->disk('moonshine'),
-                                            Text::make('Url', 'file_url')->readonly(),
+
+                                              File::make('Файл', 'file_file')->dir('object_files')->disk('moonshine'),
+
+                                                Text::make('Url', 'file_title')->hint('НЕ выводится на сайте'),
+                                                Text::make('Url', 'file_url')->readonly(),
 
                                         ])->creatable(limit: 150)->removable(),
-
-
-                            ])->columnSpan(9),
+                            ])->columnSpan(10),
                                   Column::make([
 
 
-                           ])->columnSpan(3)
+                           ])->columnSpan(2)
 
                         ]),
                     ]),

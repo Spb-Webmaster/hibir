@@ -51,6 +51,9 @@ $maxWidth: 1440;
             padding: 16px 10px;
         }
     }
+    .desc_main__imgR {
+        text-align: center;
+    }
 }
 
 .page_l__revers.page_l {
@@ -58,6 +61,7 @@ $maxWidth: 1440;
     .page_l__left {
         width: 25%;
         background: #f9f9fa;
+        padding-right: 0;
     }
 
     .page_l__right {
