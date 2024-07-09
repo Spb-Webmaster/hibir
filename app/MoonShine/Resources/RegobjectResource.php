@@ -335,15 +335,11 @@ class RegobjectResource extends ModelResource
                                         ])->creatable(limit: 150)->removable(),
 
 
-
                             ])->columnSpan(9),
                                   Column::make([
 
 
-
-
-
-                            ])->columnSpan(3)
+                           ])->columnSpan(3)
 
                         ]),
                     ]),
