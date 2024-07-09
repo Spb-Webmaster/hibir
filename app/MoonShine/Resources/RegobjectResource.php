@@ -332,7 +332,7 @@ class RegobjectResource extends ModelResource
 
                                               File::make('Файл', 'file_file')->dir('object_files')->disk('moonshine'),
 
-                                                Text::make('Url', 'file_title')->hint('НЕ выводится на сайте'),
+                                                Text::make('Заголовок', 'file_title')->hint('НЕ выводится на сайте'),
                                                 Text::make('Url', 'file_url')->readonly(),
 
                                         ])->creatable(limit: 150)->removable(),
