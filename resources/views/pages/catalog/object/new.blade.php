@@ -117,6 +117,9 @@
                     @endif
 
             </div>
+
+            @include('pages.catalog.object.partial._object_menu__js')
+
         </div>
     </main>
 

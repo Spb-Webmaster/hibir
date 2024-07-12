@@ -79,6 +79,8 @@
             </div>
             </div>
 
+            @include('pages.catalog.object.partial._object_menu__js')
+
             <div class="JFormFieldMap_wrapper">
                 <div id="loader_wrapper" class="loader_wrapper active ">
                     <x-forms.loader class="br_12 active"/>

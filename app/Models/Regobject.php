@@ -91,6 +91,11 @@ class Regobject extends Model
         return $this->hasMany(RegobjectNew::class, 'regobject_id')->orderBy('created_at', 'desc');
     }
 
+    public function regobject_page(): HasMany
+    {
+        return $this->hasMany(RegobjectPage::class, 'regobject_id')->orderBy('created_at', 'desc');
+    }
+
 
     protected static function boot()
     {

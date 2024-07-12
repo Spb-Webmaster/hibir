@@ -43,8 +43,31 @@ protected $fillable = [
 
 
 
+    public function getVideoVisibleAttribute() {
+
+        foreach ($this->video as $v) {
+
+            if(!$v['video_video_video']) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+    public function getGalleryVisibleAttribute() {
+
+        foreach ($this->gallery as $g) {
+
+            if($g['gallery_img']) { // если хоть одно фото, то нужно!
+                return true;
+            }
 
 
+
+        }
+        return false;
+
+    }
 
     protected static function boot()
     {

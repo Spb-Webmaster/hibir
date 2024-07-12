@@ -34,7 +34,7 @@
   display: flex;
   padding: 20px 0 0 0; }
   .page_r .page_r__left {
-    width: 46%;
+    width: 50%;
     padding: 4px 4% 0 0; }
     .page_r .page_r__left .desc_main__imgR {
       text-align: center; }
@@ -43,6 +43,6 @@
     .page_r .page_r__left .desc_main__signature_img {
       padding: 16px 10px; }
   .page_r .page_r__right {
-    width: 54%; }
+    width: 50%; }
 
 /*# sourceMappingURL=home.css.map */

@@ -230,6 +230,7 @@ a.lodge {
   padding: 0;
   max-width: 1000px;
   margin: 0 auto;
+  /*margin: 0;*/
   display: table; }
   .ob_menu_hor__ul .top_menu {
     padding-left: 25px;
@@ -253,6 +254,23 @@ a.lodge {
       margin-top: 0;
       top: 46px; }
 
+.ob_gamburger, .ob_menu_hor__css, .ob_menu__for_leftmenu {
+  display: none; }
+
+/*.ob_menu_hor_flex {
+    justify-content: space-between;
+
+    .ob_menu_hor_flex__left {
+        width: 10%;
+        padding-left: 5px
+    }
+
+    .ob_menu_hor_flex__right {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+}*/
 /* ////memu объектов  */
 
 /*# sourceMappingURL=menu.css.map */

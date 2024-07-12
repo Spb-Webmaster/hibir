@@ -1,11 +1,10 @@
-
 <div class="ob_menu_hor">
     <div class="ob_gamburger">
-    <div class="gamburger menu-trigger">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+        <div class="gamburger menu-trigger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
         <div class="ob_gamburger__menu"><span>{{ __('Menu') }}</span></div>
     </div>

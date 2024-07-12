@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
   Globals
 */
@@ -9,7 +10,7 @@ nav#slide-menu {
   display: block;
   float: left;
   width: 100%;
-  max-width: 300px;
+  max-width: 335px;
   height: 100%;
   -moz-transition: all 500ms;
   -webkit-transition: all 500ms;
@@ -56,6 +57,10 @@ nav#slide-menu {
       transition: 0.3s; }
     nav#slide-menu .nav_close_wrap .nav_close__:hover {
       opacity: 0.4; }
+  nav#slide-menu li.active a {
+    color: #EF533F; }
+    nav#slide-menu li.active a span {
+      border-color: #EF533F; }
 
 body.menu-active nav#slide-menu {
   left: 0; }
@@ -103,5 +108,32 @@ div#content {
 body.menu-active div#content {
   left: 30%;
   border-radius: 7px 0 0 7px; }
+
+.scroll-container {
+  position: absolute;
+  height: 88% !important;
+  max-height: 88%;
+  overflow: auto;
+  /*    scrollbar-width: thin;
+      scrollbar-color: green black;*/
+  /* postcss-scrollbar will add the -webkit version automatically! */ }
+  .scroll-container li {
+    padding-right: 20px; }
+
+.scroll-container::-webkit-scrollbar {
+  width: 6px;
+  /* Ширина всего элемента навигации */ }
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #fff;
+  /* Цвет дорожки */ }
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #abdfdf;
+  /* Цвет бегунка */
+  border-radius: 20px;
+  /* Округление бегунка */
+  border: 3px solid #abdfdf;
+  /* Оформление границ бегунка */ }
 
 /*# sourceMappingURL=left_menu.css.map */

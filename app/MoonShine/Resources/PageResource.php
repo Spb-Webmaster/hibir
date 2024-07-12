@@ -216,8 +216,7 @@ class PageResource extends ModelResource
                                 Json::make('Галерея', 'gallery')->fields([
 
                                     Image::make('Изображение (30)', 'gallery_img')
-                                        //->hint('На витрину')
-                                        ->dir('gallery')/* Директория где будут хранится файлы в storage (по умолчанию /) */
+                                        ->dir('gallery')
                                         ->disk('moonshine') // Filesystems disk
                                         ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
                                         ->removable(),
@@ -238,7 +237,7 @@ class PageResource extends ModelResource
                                     Text::make('Описание Видеоматериала', 'video_video_title'),
 
                                     File::make('Видео', 'video_video_video')
-                                        ->dir('video')/* Директория где будут хранится файлы в storage (по умолчанию /) */
+                                        ->dir('video')
                                         ->disk('moonshine') // Filesystems disk
                                         //  ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
                                         ->removable(),

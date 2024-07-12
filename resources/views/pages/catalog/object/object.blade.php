@@ -57,7 +57,7 @@
 
                             <div class="page_l__left">
                                 @if($item->a_img )
-                                    <div class="desc desc_main__imgR pad_t33">
+                                    <div class="desc desc_main__imgR pad_t1">
                                         <img class="pc_category_img" width="228" height="270" loading="lazy"
                                              src="{{ asset(intervention('228x270', $item->a_img, 'objects')) }}"
                                              alt="{{$item->a_img}}">
@@ -66,7 +66,7 @@
                             </div>
 
                             <div class="page_l__right">
-                                <div class="desc desc_main__content">
+                                <div class="desc desc_main__content pad_t16">
                                     {!! $item->a_desc !!}
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                     @endif
 
                     @if($item->a_img2)
-                        <div class="desc a_desc2 pad_t20">
+                        <div class="desc a_desc2 pad_t26">
                             <img class="pc_category_img" width="100%" style="width: 100%; height: auto" loading="lazy"
                                                                      src="{{ asset(Storage::disk('public')->url($item->a_img2)) }}"
                                                                      alt="photo" />
@@ -113,7 +113,7 @@
                     @endif
 
                     @if($item->a_img3)
-                        <div class="desc a_desc2 pad_t20">
+                        <div class="desc a_desc2 pad_t26">
                             <img class="pc_category_img" width="100%" style="width: 100%; height: auto" loading="lazy"
                                  src="{{ asset(Storage::disk('public')->url($item->a_img3)) }}"
                                  alt="photo" />
@@ -121,12 +121,12 @@
                     @endif
 
 
-
-
                 </div>
 
-
             </div>
+
+
+            @include('pages.catalog.object.partial._object_menu__js')
 
         </div>
     </main>

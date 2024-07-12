@@ -4,6 +4,7 @@ namespace Domain\Catalog\ViewModels;
 use App\Models\CatRegobject;
 use App\Models\Regobject;
 use App\Models\RegobjectNew;
+use App\Models\RegobjectPage;
 use App\Models\Religion;
 use Illuminate\Support\Facades\Cache;
 use Support\Traits\Makeable;
@@ -37,6 +38,7 @@ class ObjectsViewModel
             ->where('published', 1)
             ->where('slug', $slug)
             ->with('regobject_new')
+            ->with('regobject_page')
             ->first();
 
     }
@@ -51,6 +53,15 @@ class ObjectsViewModel
     public function new($slug)
     {
         return RegobjectNew::query()
+            ->where('published', 1)
+            ->where('slug', $slug)
+            ->first();
+
+    }
+    public function object_page($slug)
+    {
+
+        return RegobjectPage::query()
             ->where('published', 1)
             ->where('slug', $slug)
             ->first();

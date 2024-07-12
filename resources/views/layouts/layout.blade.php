@@ -22,8 +22,7 @@
 
 <nav id="slide-menu">
     <div class="nav_close_wrap"><div id="nav_close__" class="nav_close__"></div></div>
-
-    <ul>
+    <ul class="replace_menu replace_menu__js scroll-container">
         <li class=""><a href=""><span>Координационные советы</span></a></li>
         <li class=""><a href=""><span>Межрелигиозная деятельность</span></a></li>
         <li class=""><a href=""><span>Межрелигиозный совет России</span></a></li>
@@ -35,6 +34,7 @@
 
     </ul>
 </nav>
+
     <div id="content" class="content_ ">
 
 

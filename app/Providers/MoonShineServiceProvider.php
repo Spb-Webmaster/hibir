@@ -12,6 +12,7 @@ use App\MoonShine\Resources\MenuBottomResource;
 use App\MoonShine\Resources\MenuTopResource;
 use App\MoonShine\Resources\PageResource;
 use App\MoonShine\Resources\RegobjectNewResource;
+use App\MoonShine\Resources\RegobjectPageResource;
 use App\MoonShine\Resources\RegobjectResource;
 use App\MoonShine\Resources\ReligionResource;
 use App\MoonShine\Resources\SeoResource;
@@ -87,12 +88,16 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 MenuItem::make(
                     static fn() => __('Новости объектов'),
                     new RegobjectNewResource()
-                )->icon('heroicons.newspaper')
+                )->icon('heroicons.newspaper'),
+                MenuItem::make(
+                    static fn() => __('Страницы объектов'),
+                    new RegobjectPageResource()
+                )->icon('heroicons.clipboard-document-list')
 
             ]),
 
 
-            MenuGroup::make(static fn() => __('Страницы объектов'), [
+/*            MenuGroup::make(static fn() => __('Страницы объектов'), [
 
                MenuItem::make(
                     static fn() => __('Страницы'),
@@ -100,7 +105,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 )->icon('heroicons.outline.flag'),
 
 
-            ]),
+            ]),*/
 
 
 

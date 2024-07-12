@@ -103,7 +103,8 @@
                 </div>
             @endif
 
-            @if(isset($page->gallery))
+            @if($page->gallery_visible)
+
 
                 <div class="block ob_gallery pad_t26  pad_b20 ">
 
@@ -118,7 +119,10 @@
 
                 </div>
             @endif
-            @if(isset($page->video))
+
+            @if($page->video_visible)
+
+
                 <div class="block">
                     <hr class="p_hr">
                     <div class="ob_video">

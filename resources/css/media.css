@@ -82,7 +82,11 @@
     font-size: calc(19px + 10 * ((100vw - 320px) / 1120)); }
 
   .box_title_block ._h2sub {
-    font-size: calc(18px + 2 * ((100vw - 320px) / 1120)); } }
+    font-size: calc(18px + 2 * ((100vw - 320px) / 1120)); }
+
+  .page_r .page_r__left a img {
+    width: 100%;
+    height: auto !important; } }
 @media screen and (max-width: 968px) {
   .footer__copy {
     padding: 26px 0;
@@ -217,10 +221,15 @@
     width: 75%; } }
 /* pocofon  x3 */
 @media (max-width: 793px) {
-  .ob_main_page .page_l .page_l__left {
+  .ob_main_page .page_l .page_l__left, .page_page .page_l .page_l__left {
     width: 60%; }
-  .ob_main_page .page_l .page_l__right {
+  .ob_main_page .page_l .page_l__right, .page_page .page_l .page_l__right {
     width: 40%; }
+
+  .page_r .page_r__left {
+    width: 40%; }
+  .page_r .page_r__right {
+    width: 60%; }
 
   .page_l__revers.page_l .page_l__right {
     padding-right: 0;
@@ -335,6 +344,14 @@
     padding: 0 10px 0 0; } }
 /* xiaomi pro6 */
 @media (max-width: 666px) {
+  .page_r {
+    display: block !important; }
+    .page_r .page_r__left {
+      width: 100%; }
+    .page_r .page_r__right {
+      width: 100%;
+      padding-top: 26px; }
+
   .sections__flex {
     flex-wrap: wrap;
     height: auto;
@@ -419,12 +436,12 @@
     max-width: 568px;
     width: 100%; } }
 @media (max-width: 468px) {
-  .ob_main_page .page_l, .ob_main_new .page_l {
+  .ob_main_page .page_l, .ob_main_new .page_l, .page_page .page_l {
     flex-direction: column-reverse; }
-    .ob_main_page .page_l .page_l__left, .ob_main_new .page_l .page_l__left {
+    .ob_main_page .page_l .page_l__left, .ob_main_new .page_l .page_l__left, .page_page .page_l .page_l__left {
       width: 100%;
       padding: 20px 0 0 0; }
-    .ob_main_page .page_l .page_l__right, .ob_main_new .page_l .page_l__right {
+    .ob_main_page .page_l .page_l__right, .ob_main_new .page_l .page_l__right, .page_page .page_l .page_l__right {
       width: 100%; }
 
   .teaser_mini_img .tmg__titleText a {

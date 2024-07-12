@@ -95,7 +95,8 @@ ul.top_menu li:first-child {
 
         }
     }
-        li > a.active {
+
+    li > a.active {
         border-radius: 20px;
         border: 1px solid #929292;
 
@@ -288,9 +289,10 @@ a.lodge {
         z-index: 10;
 
         &:before {
-background:none !important;
+            background: none !important;
 
         }
+
         &:before {
             width: 100px !important;
             height: 36px !important;
@@ -359,18 +361,20 @@ background:none !important;
 }
 
 
-
 /* memu объектов  */
 .ob_menu_hor {
     position: relative;
     z-index: 35;
     top: -16px;
 }
+
 .ob_menu_hor__ul {
     padding: 0;
     max-width: 1000px;
     margin: 0 auto;
+    /*margin: 0;*/
     display: table;
+
     .top_menu {
         padding-left: 25px;
         padding-right: 25px;
@@ -378,9 +382,11 @@ background:none !important;
         width: 100%;
         background: #f0f1f3;
         border-radius: 25px;
+
         li {
             z-index: 35;
         }
+
         a {
             color: $color;
             text-decoration: none;
@@ -404,4 +410,27 @@ background:none !important;
         }
     }
 }
+
+
+
+.ob_gamburger ,.ob_menu_hor__css ,.ob_menu__for_leftmenu {
+    display: none;
+}
+
+/*.ob_menu_hor_flex {
+    justify-content: space-between;
+
+    .ob_menu_hor_flex__left {
+        width: 10%;
+        padding-left: 5px
+    }
+
+    .ob_menu_hor_flex__right {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+}*/
+
+
 /* ////memu объектов  */

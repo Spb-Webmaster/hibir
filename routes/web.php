@@ -93,6 +93,8 @@ Route::controller(ObjectController::class)->group(function () {
         ->name('page.object.new_category');
     Route::get('/r-{religion_slug}/{object_slug}/news/{new_slug}', 'pageObjectNew')
         ->name('page.object.new');
+    Route::get('/r-{religion_slug}/{object_slug}/page/{page_slug}', 'pageObjectPage')
+        ->name('page.object.page');
 
 
 });
@@ -106,6 +108,8 @@ Route::controller(AjaxController::class)->group(function () {
 /**
  * каталог
  */
+
+
 /**
  * страницы
  */
