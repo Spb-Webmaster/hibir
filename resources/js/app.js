@@ -6,6 +6,7 @@
 /* composer require rap2hpoutre/fast-excel установка fast-excel*/
 /* composer require intervention/image установка intervention */
 /* composer require spatie/laravel-honeypot - анти спам (@honeypot) https://codebrisk.com/blog/laravel-honeypot-prevent-spam-submitted-through-forms
+composer require barryvdh/laravel-debugbar --dev
 * php artisan lang:publish
 * */
 import './bootstrap';

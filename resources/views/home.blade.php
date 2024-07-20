@@ -4,7 +4,7 @@
 @section('keywords', ($seo_keywords)??null)
 @section('content')
     <section class="good_summer good_summer__home"></section>
-    <main>
+    <main class="wwwwwww">
         @include('include.blocks.religions.religions_index')
         @include('include.blocks.slider.top_slider')
         @include('include.blocks.slider.news_slider')

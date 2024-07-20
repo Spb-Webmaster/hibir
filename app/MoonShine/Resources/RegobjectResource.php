@@ -92,7 +92,6 @@ class RegobjectResource extends ModelResource
                                         ->hint('Подбирайте размер изображения правильно. Стороны у логотипа должны быть равными. В противном случае лишнее будет обрезано.
 '),])->show(),
 
-
                             ])->columnSpan(6),
                             Column::make([
 
