@@ -13,6 +13,7 @@
 
                 @foreach($item->regobject_page as  $link)
 
+
                     @if($link->url)
 
                         <li><a target="_blank" href="{{$link->url}}"><span>{{ $link->title }}</span></a></li>

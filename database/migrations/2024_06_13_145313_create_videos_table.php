@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('gallery_title')->nullable();
             $table->text('gallery_desc')->nullable();
 
+
+
+
             $table->string('img')->nullable();
             $table->text('youtube')->nullable();
             $table->text('video')->nullable();

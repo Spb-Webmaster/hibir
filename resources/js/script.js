@@ -228,15 +228,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /*//  .autocomplete-ajax */
 
-    $('.ob_menu_hor__ul li').each(function (index ){
-       $('.ob_menu_hor__js').append($(this).html());
+    $('.ob_menu_hor__ul a').each(function (index, h ){
+
+    //    console.log($(this).parent('li').find('.submenu').html());
+
+        let Href, Text, Class;
+        if($(this).hasClass('add__mobile_menu')) {
+            Href = $(h).attr('href');
+            Text = $(h).text();
+            Class = $(h).attr('class');
+            $('.ob_menu_hor__js').append('<a class="'+Class+'" href="'+ Href+'">'+Text+'</a>');
+        }
+
     })
 
 
     $('body').on('click', '.ob_gamburger', function (event) {
-
         $('.ob_menu_hor__js').slideToggle();
-
     });
 
     /*
@@ -244,7 +252,6 @@ document.addEventListener('DOMContentLoaded', function () {
      */
 
     if($('.m_l__js').length) {
-
         $('.replace_menu__js').html($('.m_l__js').html());
     }
 

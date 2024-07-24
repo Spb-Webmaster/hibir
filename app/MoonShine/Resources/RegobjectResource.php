@@ -89,8 +89,7 @@ class RegobjectResource extends ModelResource
                                         ->dir('objects')
                                         ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                         ->removable()
-                                        ->hint('Подбирайте размер изображения правильно. Стороны у логотипа должны быть равными. В противном случае лишнее будет обрезано.
-'),])->show(),
+                                        ->hint('Подбирайте размер изображения правильно. Стороны у логотипа должны быть равными. В противном случае лишнее будет обрезано.'),])->show(),
 
                             ])->columnSpan(6),
                             Column::make([

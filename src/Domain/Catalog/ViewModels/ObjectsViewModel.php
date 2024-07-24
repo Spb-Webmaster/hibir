@@ -3,6 +3,8 @@ namespace Domain\Catalog\ViewModels;
 
 use App\Models\CatRegobject;
 use App\Models\Regobject;
+use App\Models\RegobjectInfo;
+use App\Models\RegobjectMedia;
 use App\Models\RegobjectNew;
 use App\Models\RegobjectPage;
 use App\Models\Religion;
@@ -62,6 +64,24 @@ class ObjectsViewModel
     {
 
         return RegobjectPage::query()
+            ->where('published', 1)
+            ->where('slug', $slug)
+            ->first();
+
+    }
+    public function object_info($slug)
+    {
+
+        return RegobjectInfo::query()
+            ->where('published', 1)
+            ->where('slug', $slug)
+            ->first();
+
+    }
+    public function object_media($slug)
+    {
+
+        return RegobjectMedia::query()
             ->where('published', 1)
             ->where('slug', $slug)
             ->first();

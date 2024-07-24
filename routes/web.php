@@ -76,16 +76,27 @@ Route::controller(CatalogController::class)->group(function () {
 Route::controller(ObjectController::class)->group(function () {
     Route::get('/r-{religion_slug}/{object_slug}', 'pageObjectHome')
         ->name('page.object');
-
+/*
     Route::get('/r-{religion_slug}/{object_slug}/gallery', 'pageObjectGallery')
-        ->name('page.object.gallery');
+        ->name('page.object.gallery');  // удалил */
+
+
+    Route::get('/r-{religion_slug}/{object_slug}/media/{slug}', 'pageObjectMedia')
+        ->name('page.object.media');
 
     Route::get('/r-{religion_slug}/{object_slug}/faq', 'pageObjectFaq')
         ->name('page.object.faq');
+    
     Route::get('/r-{religion_slug}/{object_slug}/info', 'pageObjectInfo')
         ->name('page.object.info');
+
+    Route::get('/r-{religion_slug}/{object_slug}/info/{slug}', 'pageObjectInfoPage')
+        ->name('page.object.info.page');
+/*
     Route::get('/r-{religion_slug}/{object_slug}/video', 'pageObjectVideo')
-        ->name('page.object.video');
+        ->name('page.object.video'); // удалил */
+
+
     Route::get('/r-{religion_slug}/{object_slug}/contacts', 'pageObjectContact')
         ->name('page.object.contact');
 

@@ -27,6 +27,8 @@ class Regobject extends Model
         'gallery_title',
         'gallery_desc',
 
+        'video',
+        'video_desc',
 
         'info_title',
         'info_img',
@@ -42,6 +44,7 @@ class Regobject extends Model
         'contact_email',
         'contact_desc',
         'contact_yandex_map',
+
         'a_desc',
         'a_img',
         'a_desc2',
@@ -94,6 +97,16 @@ class Regobject extends Model
     public function regobject_page(): HasMany
     {
         return $this->hasMany(RegobjectPage::class, 'regobject_id')->orderBy('created_at', 'desc');
+    }
+
+    public function regobject_info(): HasMany
+    {
+        return $this->hasMany(RegobjectInfo::class, 'regobject_id')->orderBy('created_at', 'desc');
+    }
+
+    public function regobject_media(): HasMany
+    {
+        return $this->hasMany(RegobjectMedia::class, 'regobject_id')->orderBy('created_at', 'desc');
     }
 
 

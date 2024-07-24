@@ -11,6 +11,8 @@ use App\MoonShine\Resources\ItemRegobjectResource;
 use App\MoonShine\Resources\MenuBottomResource;
 use App\MoonShine\Resources\MenuTopResource;
 use App\MoonShine\Resources\PageResource;
+use App\MoonShine\Resources\RegobjectInfoResource;
+use App\MoonShine\Resources\RegobjectMediaResource;
 use App\MoonShine\Resources\RegobjectNewResource;
 use App\MoonShine\Resources\RegobjectPageResource;
 use App\MoonShine\Resources\RegobjectResource;
@@ -90,8 +92,16 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new RegobjectNewResource()
                 )->icon('heroicons.newspaper'),
                 MenuItem::make(
-                    static fn() => __('Страницы объектов'),
+                    static fn() => __('Левое меню объектов'),
                     new RegobjectPageResource()
+                )->icon('heroicons.clipboard-document-list'),
+                MenuItem::make(
+                    static fn() => __('Медиа объектов'),
+                    new RegobjectMediaResource()
+                )->icon('heroicons.clipboard-document-list'),
+                MenuItem::make(
+                    static fn() => __('Информация объектов'),
+                    new RegobjectInfoResource()
                 )->icon('heroicons.clipboard-document-list')
 
             ]),

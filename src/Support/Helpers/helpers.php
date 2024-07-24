@@ -244,7 +244,13 @@ if (!function_exists('youtube')) {
     {
 
         $link = $html;
+
+        if(mb_substr_count($html, 'youtube.com') == 0) {
+            return  false;
+        }
+
         $video_id = explode("?v=", $link); // For videos like http://www.youtube.com/watch?v=...
+
         if (empty($video_id[1])) {
             $video_id = explode("/v/", $link); // For videos like http://www.youtube.com/watch/v/..
         }

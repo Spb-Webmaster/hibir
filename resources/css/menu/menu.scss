@@ -397,16 +397,35 @@ a.lodge {
             color: $colorRed;
         }
 
-        li.active {
-            a {
+        li.active > a{
                 border: none;
                 text-decoration: underline;
-            }
+
         }
 
         .submenu {
             margin-top: 0;
             top: 46px;
+            width: 350px;
+
+
+            li a {
+                font-size: 15px;
+                min-height: 44px;
+                height: auto;
+                padding: 10px;
+                transition: 0.3s linear;
+                display: flex;
+                align-items: center;
+                color: $color;
+                border-radius: 0;
+
+            }
+            li.active {
+                a {
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
@@ -432,5 +451,27 @@ a.lodge {
     }
 }*/
 
+
+.arrow_down {
+    span {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    span:after {
+        margin: 0 0 0 7px;
+        position: relative;
+        transform: rotate(90deg);
+        content: '';
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNyAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyLjE0MDYgOC4xMTQ1OEMxMi4xNDA2IDcuOTE5MjUgMTIuMDYyNSA3LjczOTU3IDExLjkxNDEgNy41OTg5NEw1LjcyNjU2IDEuNTM2NDRDNS41ODU5NCAxLjQwMzYzIDUuNDE0MDYgMS4zMzMzMSA1LjIxMDk0IDEuMzMzMzFDNC44MTI1IDEuMzMzMzEgNC41IDEuNjM4IDQuNSAyLjA0NDI1QzQuNSAyLjIzOTU3IDQuNTc4MTMgMi40MTkyNSA0LjcwMzEzIDIuNTUyMDZMMTAuMzkwNiA4LjExNDU4TDQuNzAzMTMgMTMuNjc3QzQuNTc4MTMgMTMuODA5OCA0LjUgMTMuOTgxOCA0LjUgMTQuMTg0OEM0LjUgMTQuNTkxMSA0LjgxMjUgMTQuODk1OCA1LjIxMDk0IDE0Ljg5NThDNS40MTQwNiAxNC44OTU4IDUuNTg1OTQgMTQuODI1NSA1LjcyNjU2IDE0LjY4NDhMMTEuOTE0MSA4LjYzMDE4QzEyLjA2MjUgOC40ODE3OCAxMi4xNDA2IDguMzA5ODUgMTIuMTQwNiA4LjExNDU4WiIgZmlsbD0iIzI4MjgyOCIvPgo8L3N2Zz4K');
+    }
+}
 
 /* ////memu объектов  */
