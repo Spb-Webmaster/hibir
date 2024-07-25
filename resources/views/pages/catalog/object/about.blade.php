@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 <x-seo.meta
-    title="Полезная информация - {{($item->title)?:null}}"
-    description="Полезная информация - {{($item->description)?:null}}"
-    keywords="Полезная информация - {{($item->keywords)?:null}}"
+    title="О нас  - {{($item->title)?:null}}"
+    description="О нас  -  {{($item->description)?:null}}"
+    keywords="О нас  -  {{($item->keywords)?:null}}"
 />
 @section('content')
     <section class="good_summer"></section>
@@ -18,22 +18,27 @@
 
             @include('include.menu.object_menu')
 
-            <div class="ob_main_pageHtml ob_main_info block block_850">
-                <div class="block">
-                @if($item->info_title)
+            <div class="ob_main_pageHtml ob_main_gallery block block_1123">
+               <div class="block">
+                @if($item->about_title)
                     <h2 class="_h2" align="center">
-                        {{ $item->info_title  }}
+                        {{ $item->about_title  }}
                     </h2>
                 @else
                     <h2 class="_h2" align="center">
-                        {{ __('Полезная информация') }}
+                        {{ __('О нас') }}
                     </h2>
                 @endif
 
-                    @if($item->info_desc)
-                        <div class="desc info_desc pad_t20 pad_b20">{!!  $item->info_desc  !!}</div>
+
+                    @if($item->about_desc)
+                        <div class="about_desc desc pad_t20">
+                            {!! $item->about_desc  !!}
+                        </div>
                     @endif
-                </div>
+
+
+               </div>
             </div>
 
             @include('pages.catalog.object.partial._object_menu__js')

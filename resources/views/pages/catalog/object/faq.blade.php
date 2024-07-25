@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 <x-seo.meta
-    title="{{($item->title)?:null}}"
-    description="{{($item->description)?:null}}"
-    keywords="{{($item->keywords)?:null}}"
+    title="Вопрос-ответ | {{($item->title)?:null}}"
+    description="Вопрос-ответ |  {{($item->description)?:null}}"
+    keywords="Вопрос-ответ |  {{($item->keywords)?:null}}"
 />
 @section('content')
     <section class="good_summer"></section>

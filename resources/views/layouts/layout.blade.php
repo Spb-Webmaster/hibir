@@ -21,33 +21,22 @@
 <body>
 
 <nav id="slide-menu">
-    <div class="nav_close_wrap"><div id="nav_close__" class="nav_close__"></div></div>
-    <ul class="replace_menu replace_menu__js scroll-container">
-        <li class=""><a href=""><span>Координационные советы</span></a></li>
-        <li class=""><a href=""><span>Межрелигиозная деятельность</span></a></li>
-        <li class=""><a href=""><span>Межрелигиозный совет России</span></a></li>
-        <li class=""><a href=""><span>Электронная библиoтека</span></a></li>
-        <li class=""><a href=""><span>Видеоконференции</span></a></li>
-        <li class=""><a href=""><span>Благотворительность</span></a></li>
-        <li class=""><a href=""><span>Волонтерская деятельность</span></a></li>
-        <li class=""><a href=""><span>Медиатека</span></a></li>
-
-    </ul>
+    <div class="nav_close_wrap">
+        <div id="nav_close__" class="nav_close__"></div>
+    </div>
+@include('include.menu.left_menu')
 </nav>
 
-    <div id="content" class="content_ ">
+<div id="content" class="content_ ">
 
 
-
-        <x-message.message/>
-        <x-message.message_error/>
-        @include('include.header', ['route' => route_name()]) {{--{{ 'Для стиля главной' }}--}}
-        @yield('content')
-    </div><!--.content_-->
+    <x-message.message/>
+    <x-message.message_error/>
+    @include('include.header', ['route' => route_name()]) {{--{{ 'Для стиля главной' }}--}}
+    @yield('content')
+</div><!--.content_-->
 
 @include('include.footer')
-
-
 
 
 </body>

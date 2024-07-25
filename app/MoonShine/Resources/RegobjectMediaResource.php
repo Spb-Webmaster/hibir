@@ -215,7 +215,7 @@ class RegobjectMediaResource extends ModelResource
 
 
 
-                    Tab::make(__('Фотогалерея'), [
+                    Tab::make(__('Галерея'), [
 
                         Grid::make([
 
@@ -239,7 +239,7 @@ class RegobjectMediaResource extends ModelResource
                     ]),
 
 
-                    Tab::make(__('Видеоматериалы'), [
+                    Tab::make(__('Видео'), [
                         Grid::make([
 
                             Column::make([

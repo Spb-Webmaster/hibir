@@ -186,6 +186,11 @@
       width: 100%;
       padding: 0; } }
 @media screen and (max-width: 868px) {
+  .ob_controls embed, .ob_controls video {
+    max-width: 100%;
+    width: 100% !important;
+    margin: 0 auto !important; }
+
   .ob_video video {
     width: 100% !important;
     height: auto !important; }

@@ -210,24 +210,17 @@ class RegobjectResource extends ModelResource
                         ]),
                     ]),
 
-                    Tab::make(__('Фотогалерея'), [
+                    Tab::make(__('О нас'), [
+
 
                         Grid::make([
 
                             Column::make([
-                                Text::make(__('Заголовок фотогалереи'), 'gallery_title'),
-                                Json::make('Галерея', 'gallery')->fields([
 
-                                    Image::make('Изображение (30)', 'gallery_img')
-                                        //->hint('На витрину')
-                                        ->dir('gallery')/* Директория где будут хранится файлы в storage (по умолчанию /) */
-                                        ->disk('moonshine') // Filesystems disk
-                                        ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
-                                        ->removable(),
-                                    Text::make('Описание изображения', 'gallery_img_title'),
-                                ])->vertical()->creatable(limit: 30)->removable(),
+                                Text::make(__('Заголовок'), 'about_title'),
+                                TinyMce::make('Описание', 'about_desc'),
 
-                                TinyMce::make('Описание', 'gallery_desc'),
+
                             ])->columnSpan(12)
 
                         ]),
@@ -257,34 +250,7 @@ class RegobjectResource extends ModelResource
                         ]),
                     ]),
 
-                    Tab::make(__('Видеоматериалы'), [
-                        Grid::make([
 
-                            Column::make([
-
-                                Text::make(__('Заголовок Видеоматериалов'), 'video_title'),
-
-                                Json::make('Видеоматериал', 'video')->fields([
-                                    Text::make('Заголовок  Видеоматериала', 'video_video_title'),
-
-                                    File::make('Видео', 'video_video_video')
-                                        ->dir('video')/* Директория где будут хранится файлы в storage (по умолчанию /) */
-                                        ->disk('moonshine') // Filesystems disk
-                                        //  ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
-                                        ->removable(),
-                                    Text::make('Ссылка на видео (YouTube)', 'video_video_youtube'),
-
-                                    TinyMce::make('Описание Видеоматериала', 'video_video_desc'),
-                                ])->vertical()->creatable(limit: 30)->removable(),
-
-                                TinyMce::make('Описание', 'video_desc'),
-
-
-                            ])->columnSpan(12)
-
-                        ]),
-
-                    ]),
 
                     Tab::make(__('Полезная информация'), [
 

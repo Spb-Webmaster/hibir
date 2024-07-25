@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 <x-seo.meta
-    title="{{($page->title)?:null}}"
+    title="{{($page->metatitle)?:null}}"
     description="{{($page->description)?:null}}"
     keywords="{{($page->keywords)?:null}}"
 />
@@ -23,10 +23,7 @@
                     <h2 class="_h2" align="center">
                         {{ $page->title  }}
                     </h2>
-
                 @endif
-
-
 
                 @if($page->text)
                     <div class="block  pad_t26_important  @if($page->a_img) page_l @endif">

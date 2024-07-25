@@ -36,9 +36,9 @@
 
                             @if($item->main_right_img )
                                 <div class="desc desc_main__imgR pad_t33">
-                                    <img class="pc_category_img" width="228" height="270" loading="lazy"
+                                    <a href="{{ route('page.object.about', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><img class="pc_category_img" width="228" height="270" loading="lazy"
                                          src="{{ asset(intervention('228x270', $item->main_right_img, 'objects')) }}"
-                                         alt="{{$item->main_right_img}}">
+                                                    alt="{{$item->main_right_img}}"></a>
                                 </div>
                                 @if($item->main_right_img_text )
                                     <div class="desc desc_main__signature_img">

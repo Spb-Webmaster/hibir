@@ -18,6 +18,7 @@ use MoonShine\Fields\Date;
 use MoonShine\Fields\File;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
+use MoonShine\Fields\Number;
 use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
@@ -58,12 +59,10 @@ class PageResource extends ModelResource
 
             Text::make(__('Заголовок'), 'title'),
             Slug::make(__('Алиас'), 'slug'),
-            Date::make(__('Дата публикации'), 'created_at')
-                ->format("d.m.Y")
-                ->default(now()->toDateTimeString())
-                ->sortable()
-                ->hideOnForm(),
+            Number::make('Сортировка','sorting')->buttons()->default(0),
+
             Switcher::make('Публикация', 'published')->updateOnPreview(),
+            Switcher::make('Л.Меню', 'left_menu'),
             Switcher::make('Desc', 'description'),
             Switcher::make('Key', 'keywords'),
             //      Number::make('Сорт.', 'sorting')->sortable()
@@ -95,6 +94,16 @@ class PageResource extends ModelResource
 
 
                                 Text::make(__('Подзаголовок'), 'subtitle'),
+
+
+                                Collapse::make('Левое меню', [
+                                    Switcher::make('Добавить в левое меню', 'left_menu')->default(0),
+                                    Text::make('Заголовок в меню', 'left_menutitle'),
+                                    Number::make('Сортировка','sorting')->buttons()->default(0)
+
+                                ]),
+
+
 
 
 

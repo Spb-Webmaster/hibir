@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 <x-seo.meta
-    title="{{($item->title)?:null}}"
-    description="{{($item->description)?:null}}"
-    keywords="{{($item->keywords)?:null}}"
+    title="Новости - {{$item->title}}"
+    description="Новости - {{($item->description)?:null}}"
+    keywords="Новости - {{($item->keywords)?:null}}"
 />
 @section('content')
     <section class="good_summer"></section>
@@ -24,7 +24,7 @@
                     {{ __('Новости') }}
                 </h2>
 
-                <div class="category_teaser ob_category_teaser">
+                <div class="category_teaser ob_category_teaser pad_t20_important">
                     @foreach($item->regobject_new as $new)
                         <div class=" slick_slide">
                             <div class="slide_link slick_slider__1">

@@ -76,6 +76,9 @@ Route::controller(CatalogController::class)->group(function () {
 Route::controller(ObjectController::class)->group(function () {
     Route::get('/r-{religion_slug}/{object_slug}', 'pageObjectHome')
         ->name('page.object');
+
+    Route::get('/r-{religion_slug}/{object_slug}/about', 'pageObjectAbout')
+        ->name('page.object.about');
 /*
     Route::get('/r-{religion_slug}/{object_slug}/gallery', 'pageObjectGallery')
         ->name('page.object.gallery');  // удалил */
@@ -86,7 +89,7 @@ Route::controller(ObjectController::class)->group(function () {
 
     Route::get('/r-{religion_slug}/{object_slug}/faq', 'pageObjectFaq')
         ->name('page.object.faq');
-    
+
     Route::get('/r-{religion_slug}/{object_slug}/info', 'pageObjectInfo')
         ->name('page.object.info');
 

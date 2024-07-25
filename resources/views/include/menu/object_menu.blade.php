@@ -15,7 +15,7 @@
         <ul class="top_menu">
             <li class="{{ active_linkMenu(asset(route('page.object', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}"><a class="{{ active_linkMenu(asset(route('page.object', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu upper_level" href="{{ route('page.object', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Главная</span></a></li>
 
-            <li class=""><a class="add__mobile_menu upper_level" href="#"><span>О нас</span></a></li>
+            <li class="{{ active_linkMenu(asset(route('page.object.about', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}"><a class="{{ active_linkMenu(asset(route('page.object.about', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu upper_level" href="{{ route('page.object.about', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>О нас</span></a></li>
 
             <li class="{{ active_linkMenu(asset(route('page.object.new_category', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ), 'find') }}"><a class="{{ active_linkMenu(asset(route('page.object.new_category', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ), 'find') }} add__mobile_menu upper_level"  href="{{ route('page.object.new_category', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Новости</span></a></li>
 
@@ -49,7 +49,7 @@
                 </ul>
             </li>
 
-            <li class="{{ active_linkMenu(asset(route('page.object.contact', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}"><a class="{{ active_linkMenu(asset(route('page.object.contact', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu upper_level"  href="{{ route('page.object.contact', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Контакты</span></a></li>
+            <li class="{{ active_linkMenu(asset(route('page.object.contact', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}"><a class="{{ active_linkMenu(asset(route('page.object.contact', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu upper_level"  href="{{ route('page.object.contact', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Контактная информация</span></a></li>
 
         </ul>
     </div>

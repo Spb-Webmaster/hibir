@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 <x-seo.meta
-    title="{{($page->title)?:null}}"
+    title="{{($page->metatitle)?:null}}"
     description="{{($page->description)?:null}}"
     keywords="{{($page->keywords)?:null}}"
 />
@@ -78,7 +78,8 @@
 
                                 @if($page->a_img3)
                                     <a href="{{ asset(Storage::disk('public')->url($page->a_img3)) }}"
-                                       data-fancybox=""><img class="pc_category_img" width="500" height="376" loading="lazy"
+                                       data-fancybox=""><img class="pc_category_img" width="500" height="376"
+                                                             loading="lazy"
                                                              src="{{ asset(intervention('500x376', $page->a_img3, 'objects')) }}"
                                                              alt="{{$page->title}}"></a>
 
@@ -116,81 +117,78 @@
 
 
 
-
-            @if(isset($page->video))
-                <div class="ob_video">
-                    @if($page->video)
-                        @foreach($page->video as $v)
-
-                            <div class="ob_controls">
-                                @if($v['video_video_title'])
-                                    <div class="desc ">
-                                        <h4 class="pad_b26_important">{{$v['video_video_title']}}</h4>
-                                    </div>
-                                @endif
-                                @if($v['video_video_video'])
-
-                                    <video controls width="840" height="473"
-                                           @if($page->above) poster="{{ asset(intervention('840x473', $page->img, 'videos')) }}" @endif>
-                                        <source src="{{ asset('/storage/' .$v['video_video_video'])  }}"
-                                                type="video/mp4">
-                                    </video>
-                                @endif
-
-                                @if($v['video_video_youtube'])
-                                    {!!   youtube($v['video_video_youtube'], 840,473) !!}
-                                @endif
-
-
-                                <div class="video_video_desc desc">
-                                    @if($v['video_video_desc'])
-                                        {!! $v['video_video_desc'] !!}
-                                    @endif
-                                </div>
-                            </div>
-
-                        @endforeach
-                    @endif
-                </div>
-
-            @endif
-
-                    @if(isset($page->video_desc))
-                        <div class="block page_l2">
-                            <div class="page_page__desc2 desc">
-                                {!! $page->video_desc !!}
-                            </div>
-                        </div>
-                    @endif
-
-
                     @if(isset($page->gallery))
-
-                        <div class="ob_gallery pad_t36  pad_b20 ">
-
-                            @foreach($page->gallery as $g)
-                                <div class="mItem">
-                                    <a href="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
-                                       data-fancybox="gallery"><img class="pc_category_img" style="width: 264px; height: auto"
-                                                                    loading="lazy"
-                                                                    src="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
-                                                                    alt="{{($page->gallery_img_title)??''}}"></a></div>
-                            @endforeach
-
+                        <div class="block">
+                            <div class="ob_gallery pad_t36 ">
+                                @foreach($page->gallery as $g)
+                                    <div class="mItem">
+                                        <a href="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
+                                           data-fancybox="gallery"><img class="pc_category_img"
+                                                                        style="width: 264px; height: auto"
+                                                                        loading="lazy"
+                                                                        src="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
+                                                                        alt="{{($page->gallery_img_title)??''}}"></a></div>
+                                @endforeach
+                            </div>
                         </div>
                     @endif
 
                     @if($page->gallery_desc)
-                        <div class="gallery_desc desc">
-                            {!! $page->gallery_desc  !!}
+                        <div class="block">
+                            <div class="gallery_desc desc">
+                                {!! $page->gallery_desc  !!}
+                            </div>
                         </div>
                     @endif
 
 
+                @if(isset($page->video))
+                    <div class="block">
+                        <div class="ob_video">
+                            @if($page->video)
+                                @foreach($page->video as $v)
+
+                                    <div class="ob_controls">
+                                        @if($v['video_video_title'])
+                                            <div class="desc ">
+                                                <h4 class="pad_b26_important">{{$v['video_video_title']}}</h4>
+                                            </div>
+                                        @endif
+                                        @if($v['video_video_video'])
+
+                                            <video controls width="840" height="473"
+                                                   @if($page->above) poster="{{ asset(intervention('840x473', $page->img, 'videos')) }}" @endif>
+                                                <source src="{{ asset('/storage/' .$v['video_video_video'])  }}"
+                                                        type="video/mp4">
+                                            </video>
+                                        @endif
+
+                                        @if($v['video_video_youtube'])
+                                            {!!   youtube($v['video_video_youtube'], 840,473) !!}
+                                        @endif
 
 
+                                        <div class="video_video_desc desc">
+                                            @if($v['video_video_desc'])
+                                                {!! $v['video_video_desc'] !!}
+                                            @endif
+                                        </div>
+                                    </div>
 
+                                @endforeach
+                            @endif
+                        </div>
+                    </div>
 
+                @endif
+
+                @if(isset($page->video_desc))
+                    <div class="block page_l2">
+                        <div class="page_page__desc2 desc">
+                            {!! $page->video_desc !!}
+                        </div>
+                    </div>
+                @endif
 
 
 

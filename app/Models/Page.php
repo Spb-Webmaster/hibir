@@ -24,6 +24,8 @@ protected $fillable = [
     'pageimg2',
 
     'text3',
+    'left_menu',
+    'left_menutitle',
 
     'pageimg3',
     'text4',
