@@ -120,6 +120,33 @@ class ObjectController extends Controller
 
     }
 
+    /**
+     * @return array
+     * страница в полезную информацию
+     */
+
+    public function object_about($slug) {
+      return ObjectsViewModel::make()->object_about($slug);
+
+    }
+    /**
+     * @return array
+     * страница в деятельность
+     */
+
+    public function object_activity($slug) {
+      return ObjectsViewModel::make()->object_activity($slug);
+
+    }    /**
+     * @return array
+     * страница в обряды
+     */
+
+    public function object_ritual($slug) {
+      return ObjectsViewModel::make()->object_ritual($slug);
+
+    }
+
 
     /**
      * @return array
@@ -135,7 +162,7 @@ class ObjectController extends Controller
 
     /**
      * view
-     * страница  объекта
+     * страница  объекта исключена!!!
      */
 
     public function pageObjectHome($religion_slug, $object_slug)
@@ -176,47 +203,6 @@ class ObjectController extends Controller
     }
 
 
-    /**
-     * view
-     * страница  gallery не работаети  !!!!!!
-     */
-
-
-    public function pageObjectGallery($religion_slug, $object_slug)
-    {
-
-
-        $item = $this->item($object_slug); /** Религиозный объект **/
-
-        if(!$item) {
-            abort(404);
-        }
-
-        $religion =  $this->religion($religion_slug); /** активная религия **/
-        if(!$religion) {
-            abort(404);
-        }
-
-        $religions =  $this->religions();  /** все религии **/
-        $areas = $this->areas(); /** Все субъекты РФ **/
-        $selected_area = $this->area($item->area->id); /** Один субъект РФ **/
-        $religion_categories = $this->categories($religion->id); /** спискоk категорий определенной религии **/
-        $selected_religion_category = $this->category($item->catregobject->id); /**  категория определенной религии **/
-        $items = $this->items($religion, $selected_area, $selected_religion_category);
-        /** список объектов определенной категории и региона */
-
-        return view('pages.catalog.object.gallery',
-            [
-                'religion' => $religion,
-                'religions' => $religions,
-                'areas' => $areas,
-                'selected_area' => $selected_area,
-                'items' => $items,
-                'item' => $item,
-                'religion_categories' => $religion_categories,
-                'selected_religion_category' => $selected_religion_category,
-            ]);
-    }
 
     /**
      * view
@@ -259,6 +245,244 @@ class ObjectController extends Controller
                 'selected_religion_category' => $selected_religion_category,
             ]);
     }
+
+
+    /**
+     * view
+     * страница  о нас внутренние
+     */
+
+
+    public function pageObjectAboutPage($religion_slug, $object_slug, $slug)
+    {
+
+
+        $item = $this->item($object_slug); /** Религиозный объект **/
+        $page = $this->object_about($slug); /** Страница в выпадающем списке "О нас" **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        if(!$page) {
+            abort(404);
+        }
+
+        $religion =  $this->religion($religion_slug); /** активная религия **/
+        if(!$religion) {
+            abort(404);
+        }
+
+        $religions =  $this->religions();  /** все религии **/
+        $areas = $this->areas(); /** Все субъекты РФ **/
+        $selected_area = $this->area($item->area->id); /** Один субъект РФ **/
+        $religion_categories = $this->categories($religion->id); /** спискоk категорий определенной религии **/
+        $selected_religion_category = $this->category($item->catregobject->id); /**  категория определенной религии **/
+        $items = $this->items($religion, $selected_area, $selected_religion_category);
+        /** список объектов определенной категории и региона */
+
+        return view('pages.catalog.object.inside.about',
+            [
+                'religion' => $religion,
+                'religions' => $religions,
+                'areas' => $areas,
+                'selected_area' => $selected_area,
+                'items' => $items,
+                'item' => $item,
+                'page' => $page,
+                'religion_categories' => $religion_categories,
+                'selected_religion_category' => $selected_religion_category,
+            ]);
+    }
+
+
+
+    /**
+     * view
+     * страница  деятельность
+     */
+
+
+    public function pageObjectActivity($religion_slug, $object_slug)
+    {
+
+
+        $item = $this->item($object_slug); /** Религиозный объект **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        $religion =  $this->religion($religion_slug); /** активная религия **/
+        if(!$religion) {
+            abort(404);
+        }
+
+        $religions =  $this->religions();  /** все религии **/
+        $areas = $this->areas(); /** Все субъекты РФ **/
+        $selected_area = $this->area($item->area->id); /** Один субъект РФ **/
+        $religion_categories = $this->categories($religion->id); /** спискоk категорий определенной религии **/
+        $selected_religion_category = $this->category($item->catregobject->id); /**  категория определенной религии **/
+        $items = $this->items($religion, $selected_area, $selected_religion_category);
+        /** список объектов определенной категории и региона */
+
+        return view('pages.catalog.object.activity',
+            [
+                'religion' => $religion,
+                'religions' => $religions,
+                'areas' => $areas,
+                'selected_area' => $selected_area,
+                'items' => $items,
+                'item' => $item,
+                'religion_categories' => $religion_categories,
+                'selected_religion_category' => $selected_religion_category,
+            ]);
+    }
+
+
+    /**
+     * view
+     * страница  деятельность внутренние
+     */
+
+
+    public function pageObjectActivityPage($religion_slug, $object_slug, $slug)
+    {
+
+
+        $item = $this->item($object_slug); /** Религиозный объект **/
+        $page = $this->object_activity($slug); /** Страница в выпадающем списке "О нас" **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        if(!$page) {
+            abort(404);
+        }
+
+        $religion =  $this->religion($religion_slug); /** активная религия **/
+        if(!$religion) {
+            abort(404);
+        }
+
+        $religions =  $this->religions();  /** все религии **/
+        $areas = $this->areas(); /** Все субъекты РФ **/
+        $selected_area = $this->area($item->area->id); /** Один субъект РФ **/
+        $religion_categories = $this->categories($religion->id); /** спискоk категорий определенной религии **/
+        $selected_religion_category = $this->category($item->catregobject->id); /**  категория определенной религии **/
+        $items = $this->items($religion, $selected_area, $selected_religion_category);
+        /** список объектов определенной категории и региона */
+
+        return view('pages.catalog.object.inside.activity',
+            [
+                'religion' => $religion,
+                'religions' => $religions,
+                'areas' => $areas,
+                'selected_area' => $selected_area,
+                'items' => $items,
+                'item' => $item,
+                'page' => $page,
+                'religion_categories' => $religion_categories,
+                'selected_religion_category' => $selected_religion_category,
+            ]);
+    }
+
+
+    /**
+     * view
+     * страница  деятельность
+     */
+
+
+    public function pageObjectRitual($religion_slug, $object_slug)
+    {
+
+
+        $item = $this->item($object_slug); /** Религиозный объект **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        $religion =  $this->religion($religion_slug); /** активная религия **/
+        if(!$religion) {
+            abort(404);
+        }
+
+        $religions =  $this->religions();  /** все религии **/
+        $areas = $this->areas(); /** Все субъекты РФ **/
+        $selected_area = $this->area($item->area->id); /** Один субъект РФ **/
+        $religion_categories = $this->categories($religion->id); /** спискоk категорий определенной религии **/
+        $selected_religion_category = $this->category($item->catregobject->id); /**  категория определенной религии **/
+        $items = $this->items($religion, $selected_area, $selected_religion_category);
+        /** список объектов определенной категории и региона */
+
+        return view('pages.catalog.object.ritual',
+            [
+                'religion' => $religion,
+                'religions' => $religions,
+                'areas' => $areas,
+                'selected_area' => $selected_area,
+                'items' => $items,
+                'item' => $item,
+                'religion_categories' => $religion_categories,
+                'selected_religion_category' => $selected_religion_category,
+            ]);
+    }
+
+
+    /**
+     * view
+     * страница  деятельность внутренние
+     */
+
+
+    public function pageObjectRitualPage($religion_slug, $object_slug, $slug)
+    {
+
+
+        $item = $this->item($object_slug); /** Религиозный объект **/
+        $page = $this->object_ritual($slug); /** Страница в выпадающем списке "О нас" **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        if(!$page) {
+            abort(404);
+        }
+
+        $religion =  $this->religion($religion_slug); /** активная религия **/
+        if(!$religion) {
+            abort(404);
+        }
+
+        $religions =  $this->religions();  /** все религии **/
+        $areas = $this->areas(); /** Все субъекты РФ **/
+        $selected_area = $this->area($item->area->id); /** Один субъект РФ **/
+        $religion_categories = $this->categories($religion->id); /** спискоk категорий определенной религии **/
+        $selected_religion_category = $this->category($item->catregobject->id); /**  категория определенной религии **/
+        $items = $this->items($religion, $selected_area, $selected_religion_category);
+        /** список объектов определенной категории и региона */
+
+        return view('pages.catalog.object.inside.ritual',
+            [
+                'religion' => $religion,
+                'religions' => $religions,
+                'areas' => $areas,
+                'selected_area' => $selected_area,
+                'items' => $items,
+                'item' => $item,
+                'page' => $page,
+                'religion_categories' => $religion_categories,
+                'selected_religion_category' => $selected_religion_category,
+            ]);
+    }
+
+
+
+
     /**
      * view
      * страница  media
@@ -633,6 +857,9 @@ class ObjectController extends Controller
         if(!$page) {
             abort(404);
         }
+
+
+
         /** список объектов определенной категории и региона */
 
         return view('pages.catalog.object.page',

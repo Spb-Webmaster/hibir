@@ -84,7 +84,8 @@ class RegobjectResource extends ModelResource
                                         ->dir('objects')
                                         ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                         ->removable()
-                                        ->hint('Основное изображение. Обязательное поле.'), Image::make(__('Логотип'), 'logo')
+                                        ->hint('Основное изображение. Обязательное поле.'),
+                                    Image::make(__('Логотип'), 'logo')
                                         ->disk(config('moonshine.disk', 'moonshine'))
                                         ->dir('objects')
                                         ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
@@ -115,7 +116,7 @@ class RegobjectResource extends ModelResource
                     ]),
 
 
-                    Tab::make(__('Главная'), [
+                    Tab::make(__('O нас'), [
 
                         Grid::make([
 
@@ -210,22 +211,6 @@ class RegobjectResource extends ModelResource
                         ]),
                     ]),
 
-                    Tab::make(__('О нас'), [
-
-
-                        Grid::make([
-
-                            Column::make([
-
-                                Text::make(__('Заголовок'), 'about_title'),
-                                TinyMce::make('Описание', 'about_desc'),
-
-
-                            ])->columnSpan(12)
-
-                        ]),
-                    ]),
-
                     Tab::make(__('Вопрос-ответ'), [
 
                         Grid::make([
@@ -250,6 +235,38 @@ class RegobjectResource extends ModelResource
                         ]),
                     ]),
 
+
+                    Tab::make(__('Деятельность'), [
+
+
+                        Grid::make([
+
+                            Column::make([
+
+                                Text::make(__('Заголовок'), 'activity_title'),
+                                TinyMce::make('Описание', 'activity_desc'),
+
+
+                            ])->columnSpan(12)
+
+                        ]),
+                    ]),
+
+                    Tab::make(__('Обряды'), [
+
+
+                        Grid::make([
+
+                            Column::make([
+
+                                Text::make(__('Заголовок'), 'ritual_title'),
+                                TinyMce::make('Описание', 'ritual_desc'),
+
+
+                            ])->columnSpan(12)
+
+                        ]),
+                    ]),
 
 
                     Tab::make(__('Полезная информация'), [

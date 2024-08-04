@@ -13,7 +13,7 @@
     <div class="ob_menu_hor__ul">
 
         <ul class="top_menu">
-            <li class="{{ active_linkMenu(asset(route('page.object', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}"><a class="{{ active_linkMenu(asset(route('page.object', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu" href="{{ route('page.object', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Главная</span></a></li>
+            <li class="{{ active_linkMenu(asset(route('page.object.about', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}"><a class="{{ active_linkMenu(asset(route('page.object.about', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu" href="{{ route('page.object', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Главная</span></a></li>
 
 
 

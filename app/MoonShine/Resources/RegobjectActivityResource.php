@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
-use App\Models\CatRegobject;
-use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\RegobjectMedia;
+use App\Models\RegobjectActivity;
 
 use MoonShine\Decorations\Collapse;
 use MoonShine\Decorations\Column;
@@ -17,38 +15,34 @@ use MoonShine\Decorations\Tab;
 use MoonShine\Decorations\Tabs;
 use MoonShine\Enums\ClickAction;
 use MoonShine\Fields\Date;
-use MoonShine\Fields\File;
 use MoonShine\Fields\Image;
-use MoonShine\Fields\Json;
-use MoonShine\Fields\Position;
 use MoonShine\Fields\Relationships\BelongsTo;
-use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Textarea;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Handlers\ExportHandler;
 use MoonShine\Handlers\ImportHandler;
-use MoonShine\QueryTags\QueryTag;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
 
 /**
- * @extends ModelResource<RegobjectMedia>
+ * @extends ModelResource<RegobjectActivity>
  */
-class RegobjectMediaResource extends ModelResource
+class RegobjectActivityResource extends ModelResource
 {
-    protected string $model = RegobjectMedia::class;
+    protected string $model = RegobjectActivity::class;
 
 
-    protected string $title = 'Медиа';
+    protected string $title = 'Деятельность';
 
     protected string $column = 'title';
 
     protected string $sortColumn = 'sorting';
 
     protected ?ClickAction $clickAction = ClickAction::EDIT;
+
 
     public function filters(): array
     {
@@ -140,7 +134,7 @@ class RegobjectMediaResource extends ModelResource
                                 Image::make(__('Изображение'), 'a_img')
                                     ->showOnExport()
                                     ->disk(config('moonshine.disk', 'moonshine'))
-                                    ->dir('object_media')
+                                    ->dir('object_infos')
                                     ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                     ->removable()
                                     ->hint('Встраивается справа'),
@@ -161,7 +155,7 @@ class RegobjectMediaResource extends ModelResource
                         Image::make(__('Изображение'), 'a_img2')
                             ->showOnExport()
                             ->disk(config('moonshine.disk', 'moonshine'))
-                            ->dir('object_media')
+                            ->dir('object_infos')
                             ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                             ->removable()
                             ->hint('Растягивается на 100% ширины'),
@@ -175,7 +169,7 @@ class RegobjectMediaResource extends ModelResource
                                 Image::make(__('Изображение'), 'a_img3')
                                     ->showOnExport()
                                     ->disk(config('moonshine.disk', 'moonshine'))
-                                    ->dir('object_media')
+                                    ->dir('object_infos')
                                     ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                     ->removable()
                                     ->hint('Встраивается слева'),
@@ -201,7 +195,7 @@ class RegobjectMediaResource extends ModelResource
                                 Image::make(__('Изображение'), 'a_img4')
                                     ->showOnExport()
                                     ->disk(config('moonshine.disk', 'moonshine'))
-                                    ->dir('object_media')
+                                    ->dir('object_infos')
                                     ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                     ->removable()
                                     ->hint('Растягивается на 100% ширины'),
@@ -214,59 +208,6 @@ class RegobjectMediaResource extends ModelResource
                     ]),
 
 
-
-                    Tab::make(__('Галерея'), [
-
-                        Grid::make([
-
-                            Column::make([
-                                Text::make(__('Заголовок фотогалереи'), 'gallery_title'),
-                                Json::make('Галерея', 'gallery')->fields([
-
-                                    Image::make('Изображение (30)', 'gallery_img')
-                                        //->hint('На витрину')
-                                        ->dir('gallery')/* Директория где будут хранится файлы в storage (по умолчанию /) */
-                                        ->disk('moonshine') // Filesystems disk
-                                        ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
-                                        ->removable(),
-                                    Text::make('Описание изображения', 'gallery_img_title'),
-                                ])->vertical()->creatable(limit: 30)->removable(),
-
-                                TinyMce::make('Описание', 'gallery_desc'),
-                            ])->columnSpan(12)
-
-                        ]),
-                    ]),
-
-
-                    Tab::make(__('Видео'), [
-                        Grid::make([
-
-                            Column::make([
-
-                                Text::make(__('Заголовок Видеоматериалов'), 'video_title'),
-
-                                Json::make('Видеоматериал', 'video')->fields([
-                                    Text::make('Заголовок  Видеоматериала', 'video_video_title'),
-
-                                    File::make('Видео', 'video_video_video')
-                                        ->dir('video')/* Директория где будут хранится файлы в storage (по умолчанию /) */
-                                        ->disk('moonshine') // Filesystems disk
-                                        //  ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
-                                        ->removable(),
-                                    Text::make('Ссылка на видео (YouTube)', 'video_video_youtube'),
-
-                                    TinyMce::make('Описание Видеоматериала', 'video_video_desc'),
-                                ])->vertical()->creatable(limit: 30)->removable(),
-
-                                TinyMce::make('Описание', 'video_desc'),
-
-
-                            ])->columnSpan(12)
-
-                        ]),
-
-                    ]),
 
                 ]),
 

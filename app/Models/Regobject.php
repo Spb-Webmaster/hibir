@@ -109,6 +109,22 @@ class Regobject extends Model
         return $this->hasMany(RegobjectMedia::class, 'regobject_id')->orderBy('created_at', 'desc');
     }
 
+    public function regobject_about(): HasMany
+    {
+        return $this->hasMany(RegobjectAbout::class, 'regobject_id')->orderBy('created_at', 'desc');
+    }
+
+    public function regobject_activity(): HasMany
+    {
+        return $this->hasMany(RegobjectActivity::class, 'regobject_id')->orderBy('created_at', 'desc');
+    }
+
+
+    public function regobject_ritual(): HasMany
+    {
+        return $this->hasMany(RegobjectRitual::class, 'regobject_id')->orderBy('created_at', 'desc');
+    }
+
 
     protected static function boot()
     {

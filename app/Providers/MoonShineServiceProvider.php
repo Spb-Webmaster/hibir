@@ -11,11 +11,14 @@ use App\MoonShine\Resources\ItemRegobjectResource;
 use App\MoonShine\Resources\MenuBottomResource;
 use App\MoonShine\Resources\MenuTopResource;
 use App\MoonShine\Resources\PageResource;
+use App\MoonShine\Resources\RegobjectAboutResource;
+use App\MoonShine\Resources\RegobjectActivityResource;
 use App\MoonShine\Resources\RegobjectInfoResource;
 use App\MoonShine\Resources\RegobjectMediaResource;
 use App\MoonShine\Resources\RegobjectNewResource;
 use App\MoonShine\Resources\RegobjectPageResource;
 use App\MoonShine\Resources\RegobjectResource;
+use App\MoonShine\Resources\RegobjectRitualResource;
 use App\MoonShine\Resources\ReligionResource;
 use App\MoonShine\Resources\SeoResource;
 use App\MoonShine\Resources\VideoResource;
@@ -87,21 +90,40 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     static fn() => __('Объекты'),
                     new RegobjectResource()
                 )->icon('heroicons.bars-arrow-up'),
+
                 MenuItem::make(
                     static fn() => __('Новости объектов'),
                     new RegobjectNewResource()
                 )->icon('heroicons.newspaper'),
+
                 MenuItem::make(
                     static fn() => __('Левое меню объектов'),
                     new RegobjectPageResource()
                 )->icon('heroicons.clipboard-document-list'),
+
                 MenuItem::make(
-                    static fn() => __('Медиа объектов'),
+                    static fn() => __('O нас'),
+                    new RegobjectAboutResource()
+                )->icon('heroicons.clipboard-document-list'),
+
+                MenuItem::make(
+                    static fn() => __('Медиа'),
                     new RegobjectMediaResource()
                 )->icon('heroicons.clipboard-document-list'),
+
                 MenuItem::make(
-                    static fn() => __('Информация объектов'),
+                    static fn() => __('Информация'),
                     new RegobjectInfoResource()
+                )->icon('heroicons.clipboard-document-list'),
+
+                MenuItem::make(
+                    static fn() => __('Деятельность'),
+                    new RegobjectActivityResource()
+                )->icon('heroicons.clipboard-document-list'),
+
+               MenuItem::make(
+                    static fn() => __('Обряды'),
+                    new RegobjectRitualResource()
                 )->icon('heroicons.clipboard-document-list')
 
             ]),

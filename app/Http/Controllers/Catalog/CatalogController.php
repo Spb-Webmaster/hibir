@@ -127,7 +127,7 @@ class CatalogController extends Controller
                 ->with('religion')
                 ->where('id', $request->object)->first();
             if (isset($object->religion)) {
-                return redirect()->route('page.object', ['religion_slug' => $object->religion->slug, 'object_slug' => $object->slug]);
+                return redirect()->route('page.object.about', ['religion_slug' => $object->religion->slug, 'object_slug' => $object->slug]);
             }
 
 

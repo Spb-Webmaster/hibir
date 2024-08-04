@@ -20,16 +20,16 @@ Route::controller(HomeController::class)->group(function () {
 
 Route::controller(InfoController::class)->group(function () {
 
-    Route::get('/'.config('links.link.news'), 'infos')
+    Route::get('/' . config('links.link.news'), 'infos')
         ->name('infos');
-    Route::get('/'.config('links.link.news').'/{slug}', 'info')
+    Route::get('/' . config('links.link.news') . '/{slug}', 'info')
         ->name('info');
 });
 Route::controller(VideoController::class)->group(function () {
 
-    Route::get('/'.config('links.link.video'), 'videos')
+    Route::get('/' . config('links.link.video'), 'videos')
         ->name('videos');
-    Route::get('/'.config('links.link.video').'/{slug}', 'video')
+    Route::get('/' . config('links.link.video') . '/{slug}', 'video')
         ->name('video');
 });
 
@@ -60,7 +60,6 @@ Route::controller(CatalogController::class)->group(function () {
         ->name('religion.area.category.list');
 
 
-
     /** search */
 
     Route::post('/search/big-search', 'bigSearch')
@@ -74,14 +73,32 @@ Route::controller(CatalogController::class)->group(function () {
 });
 
 Route::controller(ObjectController::class)->group(function () {
-    Route::get('/r-{religion_slug}/{object_slug}', 'pageObjectHome')
-        ->name('page.object');
 
+    /**  о нас  */
     Route::get('/r-{religion_slug}/{object_slug}/about', 'pageObjectAbout')
         ->name('page.object.about');
-/*
-    Route::get('/r-{religion_slug}/{object_slug}/gallery', 'pageObjectGallery')
-        ->name('page.object.gallery');  // удалил */
+
+    Route::get('/r-{religion_slug}/{object_slug}/about/{slug}', 'pageObjectAboutPage')
+        ->name('page.object.about.page');
+
+    /**  деятельность  */
+    Route::get('/r-{religion_slug}/{object_slug}/activity', 'pageObjectActivity')
+        ->name('page.object.activity');
+
+    Route::get('/r-{religion_slug}/{object_slug}/activity/{slug}', 'pageObjectActivityPage')
+        ->name('page.object.activity.page');
+
+    /**  обряды  */
+    Route::get('/r-{religion_slug}/{object_slug}/ritual', 'pageObjectRitual')
+        ->name('page.object.ritual');
+
+    Route::get('/r-{religion_slug}/{object_slug}/ritual/{slug}', 'pageObjectRitualPage')
+        ->name('page.object.ritual.page');
+
+
+    /*
+        Route::get('/r-{religion_slug}/{object_slug}/gallery', 'pageObjectGallery')
+            ->name('page.object.gallery');  // удалил */
 
 
     Route::get('/r-{religion_slug}/{object_slug}/media/{slug}', 'pageObjectMedia')
@@ -95,9 +112,9 @@ Route::controller(ObjectController::class)->group(function () {
 
     Route::get('/r-{religion_slug}/{object_slug}/info/{slug}', 'pageObjectInfoPage')
         ->name('page.object.info.page');
-/*
-    Route::get('/r-{religion_slug}/{object_slug}/video', 'pageObjectVideo')
-        ->name('page.object.video'); // удалил */
+    /*
+        Route::get('/r-{religion_slug}/{object_slug}/video', 'pageObjectVideo')
+            ->name('page.object.video'); // удалил */
 
 
     Route::get('/r-{religion_slug}/{object_slug}/contacts', 'pageObjectContact')

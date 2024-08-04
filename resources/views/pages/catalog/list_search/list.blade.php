@@ -22,7 +22,7 @@
                         @if(isset($item->religion))
                         <div class="tmg__img">
 
-                            <a href="{{route('page.object', ['religion_slug' => $item->religion->slug, 'object_slug' => $item->slug])}}"><img
+                            <a href="{{route('page.object.about', ['religion_slug' => $item->religion->slug, 'object_slug' => $item->slug])}}"><img
                                     width="70" height="70" loading="lazy"
                                     src="{{ asset(intervention('70x70', $item->img, 'objects')) }}"
                                     alt="{{$item->title}}"></a>
@@ -30,7 +30,7 @@
                         <div class="tmg__title">
 
                             <div class="tmg__titleText"><a
-                                    href="{{route('page.object', ['religion_slug' => $item->religion->slug, 'object_slug' => $item->slug])}}">{{ $item->title }}</a>
+                                    href="{{route('page.object.about', ['religion_slug' => $item->religion->slug, 'object_slug' => $item->slug])}}">{{ $item->title }}</a>
                             </div>
 
                             <div class="tmg__religion_area">
