@@ -78,4 +78,50 @@
   font-size: 14px;
   text-align: center; }
 
+.formLogin__wrapp {
+  max-width: 509px;
+  width: 509px;
+  margin: 0 auto;
+  padding: 8px;
+  border-radius: 24px;
+  background: #abdfdf; }
+
+.formLogin__enter {
+  width: 100%;
+  padding: 36px 36px 40px 36px;
+  border-radius: 16px;
+  background: #fff; }
+
+.blockForm__h1 {
+  font-weight: 600; }
+
+.formLogin .slotButtons {
+  width: 100%;
+  padding: 16px 0 0 0; }
+  .formLogin .slotButtons__flex {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 56px; }
+    .formLogin .slotButtons__flex a {
+      color: #667085; }
+  .formLogin .slotButtons__left {
+    width: 45%; }
+  .formLogin .slotButtons__right {
+    width: 55%; }
+  .formLogin .slotButtons__bottom {
+    width: 100%; }
+.formLogin .blockForm {
+  max-width: 500px;
+  width: 100%; }
+  .formLogin .blockForm h1 {
+    padding: 0 0 36px 0; }
+
+.auth {
+  background: #F1F1F1; }
+  .auth .formLogin__padd {
+    padding: 90px 0; }
+
 /*# sourceMappingURL=register.css.map */

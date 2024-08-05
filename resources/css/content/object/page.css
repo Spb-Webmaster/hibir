@@ -70,6 +70,25 @@
   max-width: 900px;
   margin: 0 auto; }
 
+figure.audio_figure {
+  margin: 3px 40px; }
+
+.audio_audio_audio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 60px;
+  flex-wrap: wrap; }
+  .audio_audio_audio .audio_left {
+    padding: 0 20px; }
+  .audio_audio_audio .audio_right {
+    padding: 0 20px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
 .ob_line_wrap {
   background-position: 0 67px;
   background-repeat: repeat-x;

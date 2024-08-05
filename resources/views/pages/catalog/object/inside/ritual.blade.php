@@ -25,13 +25,15 @@
                     </h2>
                 @endif
 
-                @if($page->text)
+                @if($page->a_desc)
                     <div class="block  pad_t26_important  @if($page->a_img) page_l @endif">
+
                         <div class="@if($page->a_img) page_l__left @endif">
                             <div class="page_page__desc1 desc">
                                 {!! $page->a_desc !!}
                             </div>
                         </div>
+
                         @if($page->a_img)
                             <div class="page_l__right">
 
@@ -40,7 +42,6 @@
                                         <img class="pc_category_img" width="228" height="270" loading="lazy"
                                              src="{{ asset(intervention('228x270', $page->a_img, 'objects')) }}"
                                              alt="{{$page->title}}">
-
                                     </div>
 
                                 @endif

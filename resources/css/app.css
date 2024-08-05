@@ -31,6 +31,7 @@
 @import "./menu/menu.scss";
 @import "./menu/left_menu.scss";
 @import "./auth/flash.scss";
+@import "./auth/register.scss";
 @import "./pagination.scss";
 @import "./content/object/page.scss";
 @import "./content/object/home.scss";

@@ -1,9 +1,12 @@
 @charset "utf-8";
 $color: #282828;
 $colorRed: #EF533F;
+$colorBlue: #0969A4;
 $colorCCC: #CCCCCC;
 $colorGrey: #667085;
-$colorBlue: #00AFEF;
+$colorBlue2: #00AFEF;
+$colorGreen: #00A357;
+
 
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {
@@ -14,10 +17,21 @@ $maxWidth: 1440;
 
 @mixin family {
     font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
 }
+
 @mixin family_Philosopher {
     font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
 }
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
 .F_h1 {
     padding: 5px 0 0 0;
     font-size: 24px;
@@ -128,4 +142,88 @@ line-height: 1.2em;
     font-size: 14px;
     text-align: center;
 }
+
+.formLogin__wrapp {
+    max-width: 509px;
+    width: 509px;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 24px;
+    background: rgb(171, 223, 223);
+
+}
+
+.formLogin__enter {
+
+    width: 100%;
+    padding: 36px 36px 40px 36px;
+    border-radius: 16px;
+    background: #fff;
+
+}
+
+.blockForm__h1  {
+    font-weight: 600;
+}
+
+
+.formLogin {
+
+    .slotButtons {
+        width: 100%;
+        padding: 16px 0 0 0;
+        // .slotButtons__flex
+        &__flex {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            min-height: 56px;
+
+            a {
+                color: $colorGrey;
+            }
+
+        }
+
+        // .slotButtons__left
+        &__left {
+            width: 45%;
+
+        }
+
+        // .slotButtons__right
+        &__right {
+            width: 55%;
+
+        }
+
+        // .slotButtons__bottom
+        &__bottom {
+            width: 100%;
+        }
+    }
+
+    .blockForm {
+        max-width: 500px;
+        width: 100%;
+
+        h1 {
+            padding: 0 0 36px 0;
+        }
+
+    }
+
+}
+.auth {
+    background: #F1F1F1;
+
+    .formLogin__padd {
+        padding: 90px 0;
+    }
+}
+
+
+
 

@@ -3,7 +3,8 @@ $color: #282828;
 $colorRed: #EF533F;
 $colorCCC: #CCCCCC;
 $colorGrey: #667085;
-$colorBlue: #00AFEF;
+$colorBlue: #0969A4;
+$colorBlue2: #00AFEF;
 @mixin search {
     background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iX9Ch0LvQvtC5XzEiIGRhdGEtbmFtZT0i0KHQu9C+0LkgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTUuNTYgMTUuNzEiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICNhNWE1YTQ7CiAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOwogICAgICAgIHN0cm9rZS13aWR0aDogMHB4OwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNS4yNywxNGwtMi43My0yLjczYy45MS0xLjE4LDEuNDYtMi42NiwxLjQ2LTQuMjcsMC0zLjg3LTMuMTMtNy03LTdTMCwzLjEzLDAsN3MzLjEzLDcsNyw3YzEuNTQsMCwyLjk1LS41LDQuMTEtMS4zNGwyLjc1LDIuNzVjLjM5LjM5LDEuMDIuMzksMS40MSwwLC4zOS0uMzkuMzktMS4wMiwwLTEuNDFaTTEuOTEsN0MxLjkxLDQuMTksNC4xOSwxLjkxLDcsMS45MXM1LjA5LDIuMjgsNS4wOSw1LjA5LTIuMjgsNS4wOS01LjA5LDUuMDlTMS45MSw5LjgxLDEuOTEsN1oiLz4KPC9zdmc+');
 }
@@ -38,19 +39,21 @@ input[type=text].inputClass, input[type=email].inputClass, input[type=date].inpu
 .labelInput {
     left: .8em;
     position: absolute;
-    top: 1.3em;
+    top: 1.6em;
     transition: all .1s linear;
     color: #667085
 }
 
 .inputClass:focus + .labelInput,
 .inputClass + .labelInput.show {
+
     border-radius: 4px;
-    color: $colorBlue;
+    color: $colorBlue2;
     left: .8em;
     padding: 0 .15em;
     top: 1em;
-    font-size: 11px
+    font-size: 13px;
+
 }
 
 .errorBlade {
@@ -197,5 +200,118 @@ textarea.input  {
         background-repeat: no-repeat;
         @include search;
 
+    }
+}
+
+
+
+.slotButtons {
+    text-decoration: none;
+    a {
+        text-decoration: none;
+
+    }
+    a.button_big,
+    button.button_big {
+
+        width: 100%;
+        height: 56px;
+        font-weight: 400;
+        letter-spacing: 0.7px;
+        font-size: 18px;
+        font-style: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        border: none;
+
+    }
+
+    .button_big {
+        span {
+            font-weight: 400;
+            letter-spacing: 0.7px;
+            font-size: 18px;
+            font-style: normal;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slotButtons {
+    text-decoration: none;
+    a {
+        text-decoration: none;
+
+    }
+    a.button_big,
+    button.button_big {
+
+        width: 100%;
+        height: 50px;
+        font-weight: 400;
+        letter-spacing: 0.7px;
+        font-size: 18px;
+        font-style: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        border: none;
+        border-radius:12px;
+
+    }
+
+    .button_big {
+        span {
+            font-weight: 400;
+            letter-spacing: 0.7px;
+            font-size: 18px;
+            font-style: normal;
+        }
+    }
+
+    // .button_gray
+    .button_gray {
+        background: #F6F6F2;
+        color: $color;
+
+    }
+
+    .button_gray:hover {
+        background: #5cb85c;
+        color: #fff;
+    }
+
+    .slotButtons__right {
+        .button {
+            height: 50px;
+        }
     }
 }

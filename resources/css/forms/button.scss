@@ -1,10 +1,12 @@
 @charset "utf-8";
 $color: #282828;
 $colorRed: #EF533F;
+$colorBlue: #0969A4;
 $colorCCC: #CCCCCC;
 $colorGrey: #667085;
-$colorBlue: #00AFEF;
+$colorBlue2: #00AFEF;
 $colorGreen: #00A357;
+
 
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {
@@ -15,27 +17,40 @@ $maxWidth: 1440;
 
 @mixin family {
     font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
 }
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
 .button {
     height: 46px;
-    border: 1px solid $colorRed;
+    border: 1px solid $colorBlue;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include family;
     color: #fff;
     font-size: 18px;
     font-weight: 400;
     font-style: normal;
-    background: $colorRed;
+    background: $colorBlue;
     width: 100%;
     border-radius: 12px;
     cursor: pointer;
     transition: 0.3s;
     text-decoration: none;
     &:hover {
-        border: 1px solid $colorRed;
-        color: $colorRed;
+        border: 1px solid $colorBlue;
+        color: $colorBlue;
         background: #fff;
     }
 }

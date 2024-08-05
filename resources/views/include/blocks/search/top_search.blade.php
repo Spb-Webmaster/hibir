@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="text_input">
-            <x-forms.text-input
+            <x-forms.text-input-search
                 type="text"
                 id="searchSearch"
                 name="top_search"

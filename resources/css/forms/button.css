@@ -1,24 +1,23 @@
 @charset "UTF-8";
 .button {
   height: 46px;
-  border: 1px solid #EF533F;
+  border: 1px solid #0969A4;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
   color: #fff;
   font-size: 18px;
   font-weight: 400;
   font-style: normal;
-  background: #EF533F;
+  background: #0969A4;
   width: 100%;
   border-radius: 12px;
   cursor: pointer;
   transition: 0.3s;
   text-decoration: none; }
   .button:hover {
-    border: 1px solid #EF533F;
-    color: #EF533F;
+    border: 1px solid #0969A4;
+    color: #0969A4;
     background: #fff; }
 
 .button_big {

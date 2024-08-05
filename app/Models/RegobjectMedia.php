@@ -32,6 +32,10 @@ class RegobjectMedia extends Model
         'video_title',
         'video_desc',
 
+        'audio',
+        'audio_title',
+        'audio_desc',
+
 
         'params',
         'css',
@@ -48,6 +52,7 @@ class RegobjectMedia extends Model
         'params' => 'collection',
         'gallery' => 'collection',
         'video' => 'collection',
+        'audio' => 'collection',
     ];
 
 

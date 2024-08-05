@@ -25,7 +25,7 @@
                     </h2>
                 @endif
 
-                @if($page->text)
+                @if($page->a_desc)
                     <div class="block  pad_t26_important  @if($page->a_img) page_l @endif">
                         <div class="@if($page->a_img) page_l__left @endif">
                             <div class="page_page__desc1 desc">

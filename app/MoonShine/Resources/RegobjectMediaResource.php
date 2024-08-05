@@ -267,6 +267,33 @@ class RegobjectMediaResource extends ModelResource
                         ]),
 
                     ]),
+                    Tab::make(__('Аудио'), [
+                        Grid::make([
+
+                            Column::make([
+
+                                Text::make(__('Заголовок Аудио'), 'audio_title'),
+
+                                Json::make('Аудиоматериал', 'audio')->fields([
+                                    Text::make('Заголовок  Аудиоматериала', 'audio_audio_title'),
+
+                                    File::make('Аудио', 'audio_audio_audio')
+                                        ->dir('audio')/* Директория где будут хранится файлы в storage (по умолчанию /) */
+                                        ->disk('moonshine') // Filesystems disk
+                                         ->allowedExtensions(['wma', 'mp3', 'wav'])/* Допустимые расширения */
+                                        ->removable(),
+
+                                    TinyMce::make('Описание Аудиоматериала', 'audio_audio_desc'),
+                                ])->vertical()->creatable(limit: 30)->removable(),
+
+                                TinyMce::make('Описание', 'audio_desc'),
+
+
+                            ])->columnSpan(12)
+
+                        ]),
+
+                    ]),
 
                 ]),
 

@@ -19,6 +19,7 @@ use MoonShine\Decorations\Grid;
 use MoonShine\Decorations\Tab;
 use MoonShine\Decorations\Tabs;
 use MoonShine\Enums\ClickAction;
+use MoonShine\Fields\Date;
 use MoonShine\Fields\File;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
@@ -58,7 +59,11 @@ class RegobjectResource extends ModelResource
             ID::make()
                 ->sortable(),
             Image::make(__('Изображение'), 'img'),
-            Text::make(__('Заголовок'), 'title')
+            Text::make(__('Заголовок'), 'title'),
+            Date::make(__('Дата публикации'), 'created_at')
+                ->format("d.m.Y")
+                ->default(now()->toDateTimeString())
+                ->sortable(),
 
         ];
     }
@@ -100,6 +105,10 @@ class RegobjectResource extends ModelResource
                                     Text::make('Мета тэг (description) ', 'description'),
                                     Text::make('Мета тэг (keywords) ', 'keywords'),
                                     Switcher::make('Публикация', 'published')->default(1),
+                                    Date::make(__('Дата публикации'), 'created_at')
+                                        ->format("d.m.Y")
+                                        ->default(now()->toDateTimeString())
+                                        ->sortable(),
 
                                 ])->show(),
                                 Collapse::make('Вложенность', [

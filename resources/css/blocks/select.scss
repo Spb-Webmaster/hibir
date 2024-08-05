@@ -1,10 +1,12 @@
 @charset "utf-8";
 $color: #282828;
 $colorRed: #EF533F;
+$colorBlue: #0969A4;
 $colorCCC: #CCCCCC;
 $colorGrey: #667085;
-$colorBlue: #00AFEF;
-$colorGreen: #0f6567;
+$colorBlue2: #00AFEF;
+$colorGreen: #00A357;
+
 
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {
@@ -29,6 +31,7 @@ $maxWidth: 1440;
 @mixin Roboto {
     font-family: 'Roboto Flex Variable', sans-serif;
 }
+
 
 .religion_select__flex {
     display: flex;

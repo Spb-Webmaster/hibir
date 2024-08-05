@@ -1,9 +1,12 @@
 @charset "utf-8";
 $color: #282828;
 $colorRed: #EF533F;
+$colorBlue: #0969A4;
 $colorCCC: #CCCCCC;
 $colorGrey: #667085;
-$colorBlue: #00AFEF;
+$colorBlue2: #00AFEF;
+$colorGreen: #00A357;
+
 
 $maxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobSize) {
@@ -14,10 +17,21 @@ $maxWidth: 1440;
 
 @mixin family {
     font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
 }
+
 @mixin family_Philosopher {
     font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
 }
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
 .flashMassege {
 
     top: 53px;

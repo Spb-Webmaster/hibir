@@ -60,13 +60,13 @@
         border-bottom: 3px solid #999;
         padding-bottom: 2px; }
       .religion_select__axeld .s_box .s_box__rel:hover {
-        color: #0f6567; }
+        color: #00A357; }
         .religion_select__axeld .s_box .s_box__rel:hover span {
-          border-bottom: 3px solid #0f6567; }
+          border-bottom: 3px solid #00A357; }
     .religion_select__axeld .s_box .s_box__rel.active {
-      color: #0f6567; }
+      color: #00A357; }
       .religion_select__axeld .s_box .s_box__rel.active span {
-        border-bottom: 3px solid #0f6567; }
+        border-bottom: 3px solid #00A357; }
   .religion_select__axeld .s_box.active {
     visibility: visible;
     opacity: 1;
