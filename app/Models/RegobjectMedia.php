@@ -61,6 +61,59 @@ class RegobjectMedia extends Model
         return $this->belongsTo(Regobject::class);
     }
 
+    public function getGalleryVisibleAttribute()
+    {
+
+        if($this->gallery) {
+            foreach ($this->gallery as $g) {
+
+                if ($g['gallery_img']) { // если хоть одно фото, то нужно!
+                    return true;
+                }
+
+
+            }
+        }
+        return false;
+
+    }
+
+    public function getVideoVisibleAttribute()
+    {
+        if ($this->video) {
+            foreach ($this->video as $g) {
+
+                if ($g['video_video_video']) { // если хоть одно фото, то нужно!
+                    return true;
+                }
+                if ($g['video_video_youtube']) { // если хоть одно фото, то нужно!
+                    return true;
+                }
+
+            }
+        }
+        return false;
+
+    }
+
+    public function getAudioVisibleAttribute()
+    {
+
+        if ($this->audio) {
+
+            foreach ($this->audio as $g) {
+
+                if ($g['audio_audio_audio']) { // если хоть одно фото, то нужно!
+                    return true;
+                }
+
+
+            }
+        }
+        return false;
+
+    }
+
 
     protected static function boot()
     {
@@ -75,9 +128,8 @@ class RegobjectMedia extends Model
             $object = Regobject::query()->where('id', $Moonshine->regobject_id)->first();
 
 
-
             $slug = Str::of($Moonshine->title)->slug('-');
-            $Moonshine->slug = 'id-'.$Moonshine->id . '-'.$slug->value;
+            $Moonshine->slug = 'id-' . $Moonshine->id . '-' . $slug->value;
             if (isset($object->cat_regobject_id)) {
 
                 $cat_regobject_id = $object->cat_regobject_id;
@@ -110,15 +162,15 @@ class RegobjectMedia extends Model
 
                     $description = '';
 
-                    if(isset($religion->title)) {
+                    if (isset($religion->title)) {
                         $description .= 'Религия  - ' . $religion->title;
                     }
 
-                    if(isset($cat_regobject->title)) {
+                    if (isset($cat_regobject->title)) {
                         $description .= ', категория - ' . $cat_regobject->title . ' - ' . $object->title;
                     }
 
-                    $description .= ', '. $Moonshine->title;
+                    $description .= ', ' . $Moonshine->title;
                     $Moonshine->description = $description;
                 }
 

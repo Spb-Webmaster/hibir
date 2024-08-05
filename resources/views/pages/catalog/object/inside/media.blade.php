@@ -116,8 +116,7 @@
                 @endif
 
 
-
-                    @if(isset($page->gallery))
+                    @if($page->gallery_visible)
                         <div class="block">
                             <div class="ob_gallery pad_t36 ">
                                 @foreach($page->gallery as $g)
@@ -142,7 +141,7 @@
                     @endif
 
 
-                @if(isset($page->video))
+                    @if($page->video_visible)
                     <div class="block">
                         <div class="ob_video">
                             @if($page->video)
@@ -191,7 +190,7 @@
 
 
 
-                @if(isset($page->audio))
+                    @if($page->audio_visible)
                     <div class="block">
                         <div class="ob_video">
                             @if($page->audio)
