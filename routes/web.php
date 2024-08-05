@@ -1,8 +1,14 @@
 <?php
 
 use App\Http\Controllers\AjaxController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\SignInController;
+use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\Catalog\CatalogController;
 use App\Http\Controllers\Catalog\ObjectController;
+use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
 use App\Http\Controllers\Pages\PageController;
@@ -17,6 +23,87 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')
         ->name('home');
 });
+
+
+/**
+ * Auth
+ */
+
+Route::controller(SignInController::class)->group(function () {
+
+    Route::get('/login', 'page')
+        ->middleware('guest')
+        ->name('login');
+    Route::post('/login', 'handle')
+
+        ->name('login.handle');
+
+});
+
+Route::controller(SignUpController::class)->group(function () {
+
+    Route::get('/sign-up', 'page')
+        ->middleware('guest')
+        ->name('register');
+    Route::post('/sign-up', 'handle')
+
+        ->name('register.handle');
+
+});
+
+Route::controller(ForgotPasswordController::class)->group(function () {
+
+    Route::get('/forgot-password', 'page')
+        ->middleware('guest')
+        ->name('forgot');
+
+    Route::post('/forgot-password', 'handle')
+        ->middleware('guest')
+        ->name('forgot.handel');
+
+});
+
+Route::controller(ResetPasswordController::class)->group(function () {
+
+    Route::get('/reset-password/{token}','page')
+        ->middleware('guest')
+        ->name('password.reset');
+
+    Route::post('/reset-password', 'handle')
+        ->middleware('guest')
+        ->name('password.handle');
+
+});
+
+Route::controller(LogoutController::class)->group(function () {
+
+    Route::delete('/logout', 'page')->name('logOut');
+
+});
+
+Route::controller(DashboardController::class)->group(function () {
+
+    Route::get('/cabinet', 'page')
+        ->middleware('auth.published')
+        ->name('cabinet');
+
+    Route::post('/cabinet.handle', 'handle')
+        ->middleware('auth.published')
+        ->name('cabinet.handle');
+
+    Route::get('/cabinet-blocked', 'blocked')
+        ->middleware('auth.blocked')
+        ->name('blocked');
+
+
+});
+
+/**
+ *  Auth
+ */
+
+
+
 
 Route::controller(InfoController::class)->group(function () {
 
