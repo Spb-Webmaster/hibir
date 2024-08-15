@@ -24,9 +24,7 @@
                         </a>
                     </div>
                     <div class="enter_to_LK">
-                        <a href="#">
-                            <span>{{__('Личный кабинет')}}</span>
-                        </a>
+                    @include('include.blocks.enter.enter')
                     </div>
                 </div><!--.h_t_right-->
 

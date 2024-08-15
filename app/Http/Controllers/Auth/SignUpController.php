@@ -27,7 +27,6 @@ class SignUpController extends Controller
 
             'name' => $request->name,
             'email' => $request->email,
-            'personal' => (int)$request->personal,
             'password' => bcrypt($request->password)
 
         ]);
@@ -48,7 +47,7 @@ class SignUpController extends Controller
 
         auth()->login($user); // залогинили
 
-        return redirect()->intended(route('cabinet'));
+       return redirect()->intended(route('cabinet'));
 
     }
 

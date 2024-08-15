@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\Catalog\CatalogController;
 use App\Http\Controllers\Catalog\ObjectController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
 use App\Http\Controllers\Pages\PageController;
@@ -77,7 +78,7 @@ Route::controller(ResetPasswordController::class)->group(function () {
 
 Route::controller(LogoutController::class)->group(function () {
 
-    Route::delete('/logout', 'page')->name('logOut');
+    Route::post('/logout', 'page')->name('logout');
 
 });
 
@@ -87,14 +88,31 @@ Route::controller(DashboardController::class)->group(function () {
         ->middleware('auth.published')
         ->name('cabinet');
 
-    Route::post('/cabinet.handle', 'handle')
-        ->middleware('auth.published')
-        ->name('cabinet.handle');
 
     Route::get('/cabinet-blocked', 'blocked')
         ->middleware('auth.blocked')
         ->name('blocked');
 
+
+    Route::post('/cabinet/setting.handel', 'settingHandel')
+        ->middleware('auth.published')
+        ->name('setting.handel');
+
+    Route::post('/cabinet/setting-password.handel', 'settingPasswordHandel')
+        ->middleware('auth.published')
+        ->name('setting.password.handel');
+
+});
+
+Route::controller(UserPhotoController::class)->group(function () {
+
+    Route::get('/cabinet/photos/{id}', 'page')
+        ->middleware('auth.published')
+        ->name('cabinet.photos');
+
+    Route::post('/cabinet/photos/{id}/upload', 'upload')
+        ->middleware('auth.published')
+        ->name('cabinet.photos.upload');
 
 });
 
@@ -221,6 +239,8 @@ Route::controller(AjaxController::class)->group(function () {
     /* подставка в input в поиске */
     Route::post('/search/big_autocomplete', 'bigAutocomplete');
     Route::post('/search/top_autocomplete', 'topAutocomplete');
+    /* загрузка аватара*/
+    Route::post('/cabinet/upload-avatar', 'uploadAvatar')->name('uploadAvatar');
 
 });
 /**

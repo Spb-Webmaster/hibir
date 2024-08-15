@@ -2,6 +2,16 @@
 
 namespace App\Providers;
 
+use App\Events\AdminCreateUserEvent;
+use App\Events\CreateUserEvent;
+use App\Events\MessageAdminBuyProjectEvent;
+use App\Events\MessageAdminCreateUserEvent;
+use App\Events\ResetPasswordEvent;
+use App\Listeners\AdminCreateUserHandlerListener;
+use App\Listeners\CreateUserHandlerListener;
+use App\Listeners\MessageAdminBuyProjectHandlerListener;
+use App\Listeners\MessageAdminCreateUserHandlerListener;
+use App\Listeners\ResetPasswordHandlerListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -15,8 +25,24 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-        Registered::class => [
+/*        Registered::class => [
             SendEmailVerificationNotification::class,
+        ],*/
+
+        CreateUserEvent::class => [
+            CreateUserHandlerListener::class
+        ],
+        AdminCreateUserEvent::class => [
+            AdminCreateUserHandlerListener::class
+        ],
+        MessageAdminCreateUserEvent::class => [
+            MessageAdminCreateUserHandlerListener::class
+        ],
+        ResetPasswordEvent::class => [
+            ResetPasswordHandlerListener::class
+        ],
+        MessageAdminBuyProjectEvent::class => [
+            MessageAdminBuyProjectHandlerListener::class
         ],
     ];
 

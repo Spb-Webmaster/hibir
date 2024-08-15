@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Events\ResetPasswordEvent;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -41,4 +42,42 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+
+    /**
+     * Замена стандартного сброса пароля
+     */
+
+    public function sendPasswordResetNotification($token)
+    {
+
+        settype($data, "array");
+        $data['email'] = $this->getEmailForPasswordReset();
+        $data['token'] = $token;
+
+        /**
+         * Событие отправка сообщения о сбросе пароля
+         */
+
+        ResetPasswordEvent::dispatch($data);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        # Проверка данных пользователя перед сохранением
+        static::saving(function ($Moonshine) {
+
+
+            $Moonshine->phone =  phone($Moonshine->phone);
+
+
+        });
+
+
+
+    }
 }

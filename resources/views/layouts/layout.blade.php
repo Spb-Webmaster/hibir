@@ -37,6 +37,8 @@
 </div><!--.content_-->
 
 @include('include.footer')
+@include('include.footer')
+
 
 
 </body>

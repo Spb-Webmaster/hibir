@@ -29,6 +29,18 @@ if (!function_exists('phone')) {
     }
 }
 
+/* Более корректная дата рождения birthdate */
+if (!function_exists('birthdate')) {
+    function birthdate(string $birthdate = null): string|int|null
+    {
+        if($birthdate == '1970-01-01') {
+            return null;
+        }
+        return $birthdate;
+    }
+}
+
+
 /* Удаляем лэш  */
 if (!function_exists('cache_clear ')) {
 
@@ -367,6 +379,68 @@ if (!function_exists('intervention')) {
     }
 }
 
+
+if (!function_exists('role')) {
+
+    function role($id = null): string
+    {
+        if (!auth()->user()) {
+            return 'guest';
+        }
+
+        if ($id) {
+
+            $user = User::query()
+                ->where('id', $id)
+                ->first();
+            if ($user) {
+                if (isset($user->parent)) {
+                    if (strtolower($user->parent->name) == 'admin') {
+                        return 'admin';
+                    }
+                }
+
+                if ($user->senior == $user->id) {
+                    return 'senior';
+                }
+
+
+                if (isset($user->parent)) {
+                    if (strtolower($user->parent->name) == 'manager') {
+                        return 'manager';
+                    }
+                }
+
+
+                return 'user';
+            }
+            return 'error_id';
+
+        }
+        $id = (auth()->user()) ? auth()->user()->id : '';
+        if ($id) {
+
+            $user = User::query()
+                ->where('id', $id)
+                ->first();
+            if ($user) {
+                if (isset($user->parent)) {
+                    if (strtolower($user->parent->name) == 'admin') {
+                        return 'admin';
+                    }
+                }
+                if (isset($user->parent)) {
+                    if (strtolower($user->parent->name) == 'manager') {
+                        return 'manager';
+                    }
+                }
+                return 'user';
+            }
+        }
+        return 'error_id';
+
+    }
+}
 
 
 

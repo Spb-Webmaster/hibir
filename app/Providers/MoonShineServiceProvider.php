@@ -21,6 +21,7 @@ use App\MoonShine\Resources\RegobjectResource;
 use App\MoonShine\Resources\RegobjectRitualResource;
 use App\MoonShine\Resources\ReligionResource;
 use App\MoonShine\Resources\SeoResource;
+use App\MoonShine\Resources\UserResource;
 use App\MoonShine\Resources\VideoResource;
 use App\MoonShine\Resources\MoonShineUserResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
@@ -50,7 +51,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                    static fn() => __('Админ'),
                    new MoonShineUserResource()
                ),
-
+                MenuItem::make(
+                    static fn() => __('Пользователи'),
+                    new UserResource()
+                )->icon('heroicons.users'),
             ]),
 
 

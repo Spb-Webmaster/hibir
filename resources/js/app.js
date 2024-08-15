@@ -14,19 +14,19 @@ import jQuery from 'jquery';
 //window.$ = jQuery;
 window.$ = window.jQuery = jQuery;
 
+// IMask to add input masks support
+import IMask from 'imask';
+window.IMask = IMask;
+
 
 
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import 'slick-carousel/slick/slick';
-import './chosen/chosen.jquery';
 import './ui/jquery-ui.min';
+import './chosen/chosen.jquery';
 
-/*import '@selectize/selectize/dist/js/selectize.min';*/
 
-import './yandex_map';
-
-import './select';
 
 import './script';
 

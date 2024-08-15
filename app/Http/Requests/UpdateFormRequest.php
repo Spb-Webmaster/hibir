@@ -7,15 +7,10 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 
-class DashboardHandleFormRequest extends FormRequest
+class UpdateFormRequest extends FormRequest
 {
-
-   // protected $errorBag = 'cabinet-handle';
-
     /**
      * Determine if the user is authorized to make this request.
-     * Определите, авторизован ли пользователь для выполнения этого запроса.
-
      */
     public function authorize(): bool
     {
@@ -29,24 +24,17 @@ class DashboardHandleFormRequest extends FormRequest
      */
     public function rules(): array
     {
-
-
-
         return [
-            'fio' => ['required', 'string' , 'min:1'],
-            'iin' => ['required', 'string', 'min:5'],
+            'name' => ['required', 'string' , 'min:2'],
             'phone' => ['required', 'string', 'min:5',  Rule::unique('users')->ignore(auth()->user()->id)],
-            'email' => ['email', 'unique:users'],
-            'nationality' => ['string'],
-            'birthdate' => ['date'],
-            'sex' => ['required', 'string'],
-
+            'birthdate' => ['date', 'nullable'],
+            'id' => ['required','integer'],
         ];
 
 
     }
 
-   protected function prepareForValidation()
+    protected function prepareForValidation()
     {
         $this->merge(
             [
@@ -55,8 +43,8 @@ class DashboardHandleFormRequest extends FormRequest
                     ->lower()
                     ->value(),
                 'phone' => phone($this->phone),
-                'nationality' => select($this->nationality),
-                'sex' => select($this->sex),
+                'birthdate' => birthdate($this->birthdate),
+
             ]
         );
     }
