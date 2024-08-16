@@ -18,35 +18,34 @@ class UserPhotoController extends Controller
 {
     public function page($id)
     {
-
-          $user   = auth()->user();
+        // бред
+        $user = auth()->user();
         $items = [];
 
         $items = UserPhoto::query()->where('user_id', $user->id)
             ->orderBy('created_at', 'desc')
-            ->get();
-        
-          if($user->id == $id) {
-              return view('dashboard.user_photos.user_page',
-                  [
-                      'user' => $user,
-                      'items' => $items
-                  ]);
+            ->paginate(50);
 
-          }
+        if ($user->id == $id) {
+            return view('dashboard.user_photos.user_page', [
+                'user' => $user,
+                'items' => $items
+            ]);
+        }
         abort(404);
 
 
     }
 
-    public function upload(UploadRequest $request) {
+    public function upload(UploadRequest $request)
+    {
 
         //dd($request->all());
 
-        $user   = auth()->user();
+        $user = auth()->user();
 
-        if(isset($request->photos)) {
-            if(count($request->photos) > 10) {
+        if (isset($request->photos)) {
+            if (count($request->photos) > 10) {
                 $image_error = str_replace("{image}", 10, config('message_flash.alert.user_img_count'));
                 flash()->alert($image_error);
                 return redirect()->back();
@@ -55,7 +54,7 @@ class UserPhotoController extends Controller
         }
 
         foreach ($request->photos as $photo) {
-            $filename = $photo->store('users/'. $user->id .'/photos');
+            $filename = $photo->store('users/' . $user->id . '/photos');
             UserPhoto::create([
                 'user_id' => $user->id,
                 'img' => $filename
@@ -66,7 +65,6 @@ class UserPhotoController extends Controller
 
         return redirect()->route('cabinet.photos', ['id' => $user->id]);
     }
-
 
 
 }

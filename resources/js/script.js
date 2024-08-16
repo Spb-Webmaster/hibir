@@ -10,6 +10,7 @@ import {autocomplete} from "./include/autocomplete";
 import {menu_js} from "./include/menu";
 import {yandex_map_object} from "./include/yandex_map";
 import {localDataPicker, datepicker_birthdate} from "./include/datapicker";
+import {jscroll} from "./include/jscroll";
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -30,8 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     chosen() // стилизованный select
     localDataPicker() // календарик основные настройки
     datepicker_birthdate() // календарь дня рождения
-
-
+    jscroll() // бесконечный скролл
 
 
 

@@ -29,7 +29,7 @@
                             <div class="c__title_subtitle">
                                 <h3 class="F_h1">{{ __('Ваши фотографии') }}</h3>
                                 <div class="F_h2 pad_t5">
-                                    <span>{{__('Вы можете спмостоятельно загружать изображения на свою страницу.')}}</span>
+                                    <span>{{__('Вы можете самостоятельно загружать изображения на свою страницу.')}}</span>
                                 </div>
                             </div>
 
@@ -67,18 +67,33 @@
 
 
                             @if(isset($items))
-                                <div class="cabinet_ob_gallery pad_t20  pad_b20 ">
+                                <div class="cabinet_ob_gallery grid pad_t20  pad_b20 ">
+                                        @foreach($items as $k => $item)
+                                            <div class="mItem" style="background-image: url('{{ asset(intervention('252x0', $item['img'], 'users/' . $user->id  . '/photos', 'scaleDown')) }}')"  >
 
-                                @foreach($items as $k => $item)
-                                    <div class="mItem">
-                                        <a href="{{ asset(Storage::disk('public')->url($item['img'])) }}"
-                                           data-fancybox="gallery"><img class="pc_category_img" style="width: 244px; height: auto"
-                                                                        loading="lazy"
-                                                                        src="{{ asset(Storage::disk('public')->url($item['img'])) }}"
-                                                                        alt="photo_{{ $k }}"></a></div>
+                                                <a class="co" href="{{ asset(Storage::disk('public')->url($item['img'])) }}"
+                                                   data-fancybox="gallery">
+                                                    <img  class="pc_category_img"
+                                                         style="width: auto; height: auto"
+                                                         loading="lazy"
+                                                         src="{{ asset(intervention('252x0', $item['img'], 'users/' . $user->id  . '/photos', 'scaleDown')) }}"
+                                                         alt="photo_{{ $k }}">
 
-                            @endforeach
+
+
+
+
+                                                </a></div>
+
+                                        @endforeach
+
+
+
+
+
+
                                 </div>
+                                <div class="display_none__">{{ $items->withQueryString()->links('pagination::default') }}</div>
                             @endif
 
                         </div>
@@ -90,6 +105,4 @@
         </div><!--.cabinet-->
     </div>
 @endsection
-
-
 

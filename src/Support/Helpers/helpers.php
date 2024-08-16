@@ -365,8 +365,13 @@ if (!function_exists('intervention')) {
 
 
             [$w, $h] = explode('x', $size);
+            if($h == 0) {
+                $image->{$method}(width: $w);
+            } else {
+                $image->{$method}($w, $h);
 
-            $image->{$method}($w, $h);
+            }
+
 
             $image->save($storage->path($resultPaht));
 

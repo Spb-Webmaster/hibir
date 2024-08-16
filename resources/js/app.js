@@ -9,6 +9,7 @@
 composer require barryvdh/laravel-debugbar --dev
 * php artisan lang:publish
 * */
+
 import './bootstrap';
 import jQuery from 'jquery';
 //window.$ = jQuery;
@@ -17,7 +18,6 @@ window.$ = window.jQuery = jQuery;
 // IMask to add input masks support
 import IMask from 'imask';
 window.IMask = IMask;
-
 
 
 import { Fancybox } from "@fancyapps/ui";
@@ -29,6 +29,5 @@ import './chosen/chosen.jquery';
 
 
 import './script';
-
 import './fancybox';
 
