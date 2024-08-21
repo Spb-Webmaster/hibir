@@ -28,9 +28,11 @@
 
                         if (result.success == true) {
 
-                            Parent.find('.site_avatar').css('background-image', 'url(' + result.avatar + ')');
-                            $('.enter_to_website__a .site_avatar').css('background-image', 'url(' + result.avatar + ')');
-
+                            console.log(result.avatar)
+                            Parent.find('.site_avatar').css('background-image','url("' + result.avatar +'")');
+                            if($('.enter_to_website__a').length) {
+                                $('.enter_to_website__a .site_avatar').css('background-image', 'url("' + result.avatar +'")');
+                            }
                         } else {
                             console.log(result);
                             alert('Ошибка при загрузке файла');

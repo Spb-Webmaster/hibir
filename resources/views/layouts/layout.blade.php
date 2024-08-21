@@ -38,10 +38,8 @@
 
 @include('include.footer')
 
-{{--
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js" charset="UTF-8"></script>
---}}
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js" charset="UTF-8"></script>
 </body>
 </html>
 
