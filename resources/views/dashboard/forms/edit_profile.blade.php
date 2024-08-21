@@ -31,7 +31,6 @@
                         id="registerPhone"
                         name="phone"
                         placeholder="Номер телефона"
-                        required="true"
                         class="input phone"
                         value="{{ (old('phone'))?:$user->phone }}"
                         :isError="$errors->has('phone')"
