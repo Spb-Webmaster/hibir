@@ -34,13 +34,20 @@
 
                         <div class="ob_gallery pad_t36  pad_b20 ">
 
-                            @foreach($item->gallery as $g)
+                            @foreach($item->gallery as $k=>$g)
                                 <div class="mItem">
                                     <a href="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
-                                       data-fancybox="gallery"><img class="pc_category_img" style="width: 264px; height: auto"
-                                                                    loading="lazy"
-                                                                    src="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
-                                                                    alt="{{($item->gallery_img_title)??''}}"></a></div>
+                                       data-fancybox="gallery">
+
+                                        <img  class="pc_category_img"
+                                              style="width: auto; height: auto"
+                                              loading="lazy"
+                                              src="{{ asset(intervention('252x0', $g['gallery_img'], 'gallery', 'scaleDown')) }}"
+                                              alt="photo_{{ $k }}">
+
+
+                                    </a>
+                                </div>
                             @endforeach
 
                         </div>

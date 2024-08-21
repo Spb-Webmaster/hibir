@@ -80,9 +80,6 @@
                                                          alt="photo_{{ $k }}">
 
 
-
-
-
                                                 </a></div>
 
                                         @endforeach

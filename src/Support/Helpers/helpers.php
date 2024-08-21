@@ -174,10 +174,11 @@ if (!function_exists('active_linkParse')) {
     function active_linkParse($url, string $find = null, string $class = 'active'): string|null
     {
 
+
+
         $parse_url =  parse_url(url()->current(), PHP_URL_PATH)?? '/' ;
 
         if($parse_url == '/') { /** * мы на главной  */
-
             if ($url == $parse_url) {
                 return $class;
             }

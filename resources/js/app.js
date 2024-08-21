@@ -8,6 +8,8 @@
 /* composer require spatie/laravel-honeypot - анти спам (@honeypot) https://codebrisk.com/blog/laravel-honeypot-prevent-spam-submitted-through-forms
 composer require barryvdh/laravel-debugbar --dev
 * php artisan lang:publish
+npm i imask
+npm i slick
 * */
 
 import './bootstrap';
@@ -25,6 +27,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import 'slick-carousel/slick/slick';
 import './ui/jquery-ui.min';
 import './chosen/chosen.jquery';
+import './imagesLoaded/imagesLoaded';
 
 
 

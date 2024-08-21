@@ -119,14 +119,25 @@
                     @if($page->gallery_visible)
                         <div class="block">
                             <div class="ob_gallery pad_t36 ">
-                                @foreach($page->gallery as $g)
+                                @foreach($page->gallery as $k => $g)
                                     <div class="mItem">
                                         <a href="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
-                                           data-fancybox="gallery"><img class="pc_category_img"
-                                                                        style="width: 264px; height: auto"
-                                                                        loading="lazy"
-                                                                        src="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
-                                                                        alt="{{($page->gallery_img_title)??''}}"></a></div>
+                                           data-fancybox="gallery">
+
+
+
+
+
+                                            <img  class="pc_category_img"
+                                                  style="width: auto; height: auto"
+                                                  loading="lazy"
+                                                  src="{{ asset(intervention('252x0', $g['gallery_img'], 'gallery', 'scaleDown')) }}"
+                                                  alt="photo_{{ $k }}">
+
+
+
+
+                                        </a></div>
                                 @endforeach
                             </div>
                         </div>
@@ -141,7 +152,7 @@
                     @endif
 
 
-                    @if($page->video_visible)
+               @if($page->video_visible)
                     <div class="block">
                         <div class="ob_video">
                             @if($page->video)
@@ -190,7 +201,7 @@
 
 
 
-                    @if($page->audio_visible)
+              @if($page->audio_visible)
                     <div class="block">
                         <div class="ob_video">
                             @if($page->audio)
