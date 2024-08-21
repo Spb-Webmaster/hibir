@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
     chosen() // стилизованный select
     localDataPicker() // календарик основные настройки
     datepicker_birthdate() // календарь дня рождения
-    grid() //
     upload_photo() // загрузка фото на стронице use
+    grid() //
 
 
 

@@ -1,3 +1,4 @@
+import 'imagesLoaded/imagesLoaded';
 
 
 export  function grid(){
@@ -29,7 +30,7 @@ export  function grid(){
     let allItems = document.getElementsByClassName("mItem");
     let x;
     for(x=0;x<allItems.length;x++){
-        imagesLoaded( allItems[x], resizeInstance);
+       // imagesLoaded( allItems[x], resizeInstance);
     }
 
 }
