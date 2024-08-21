@@ -10,7 +10,7 @@ import {autocomplete} from "./include/autocomplete";
 import {menu_js} from "./include/menu";
 import {yandex_map_object} from "./include/yandex_map";
 import {localDataPicker, datepicker_birthdate} from "./include/datapicker";
-import {grid, imagesloaded} from "./include/image-loaded";
+import {grid} from "./include/image-loaded";
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -32,24 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     localDataPicker() // календарик основные настройки
     datepicker_birthdate() // календарь дня рождения
     grid() //
-    //imagesloaded() //
     upload_photo() // загрузка фото на стронице use
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
