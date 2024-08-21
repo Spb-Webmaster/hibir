@@ -92,6 +92,11 @@
                     //   fileHandler(file, file.name, file.type);
                 });
 
+                if ($("#upload-button")[0].files.length > 10) {
+                    alert('Превышено максимально допустимое количество изображений. Максимально - 10');
+                    return false;
+                }
+
 
                 form.submit();
 

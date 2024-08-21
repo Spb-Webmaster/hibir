@@ -16,7 +16,6 @@ import {grid} from "./include/image-loaded";
 document.addEventListener('DOMContentLoaded', function () {
 
     //console.log(moment().format('LL'))
-
     upload_f() // pзагрузка файлов (Аватар)
     imask() // маска на поле input input[name="phone"]
     slick() // карусел
@@ -33,9 +32,5 @@ document.addEventListener('DOMContentLoaded', function () {
     datepicker_birthdate() // календарь дня рождения
     upload_photo() // загрузка фото на стронице use
     grid() //
-
-
-
-
 
 });
