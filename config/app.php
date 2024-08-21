@@ -5,6 +5,13 @@ use Illuminate\Support\Facades\Facade;
 
 return [
 
+
+
+    'mail_username' => env('MAIL_USERNAME'),
+
+    'mail_admin' => env('MAIL_ADMIN'),
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
