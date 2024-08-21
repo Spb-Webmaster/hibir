@@ -1,4 +1,3 @@
-import 'imagesLoaded/imagesLoaded';
 
 
 export  function grid(){

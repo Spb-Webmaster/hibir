@@ -20,6 +20,7 @@ window.$ = window.jQuery = jQuery;
 import IMask from 'imask';
 window.IMask = IMask;
 
+import 'imagesLoaded/imagesLoaded';
 
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
