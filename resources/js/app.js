@@ -12,9 +12,8 @@ npm i imask
 npm i slick
 * */
 
-import './bootstrap';
+//import './bootstrap';
 import jQuery from 'jquery';
-//window.$ = jQuery;
 window.$ = window.jQuery = jQuery;
 
 // IMask to add input masks support
@@ -27,7 +26,7 @@ import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import 'slick-carousel/slick/slick';
 import './ui/jquery-ui.min';
 import './chosen/chosen.jquery';
-import './imagesLoaded/imagesLoaded';
+import 'imagesLoaded/imagesLoaded';
 
 
 
