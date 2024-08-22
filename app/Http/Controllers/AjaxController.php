@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Regobject;
 use App\Models\User;
 use Domain\Catalog\ViewModels\AutoCompleteViewModel;
+use Domain\User\ViewModels\UserViewModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -98,5 +99,7 @@ class AjaxController
         ]);
 
     }
+
+
 
 }

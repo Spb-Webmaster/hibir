@@ -55,7 +55,7 @@
                         type="password"
                         id="registerPassword"
                         name="password"
-                        placeholder="Пароль"
+                        placeholder="Пароль мин.8 символов"
                         required="true"
                         :isError="$errors->has('password')"
                     />

@@ -1,5 +1,5 @@
 
-import { upload_f,upload_photo } from './include/ajax';
+import { upload_f,upload_photo,delete_photo } from './include/ajax';
 import { imask } from './include/imask';
 import { slick } from './include/slick';
 import { input_label, _iserror } from './include/input';
@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
     chosen() // стилизованный select
     localDataPicker() // календарик основные настройки
     datepicker_birthdate() // календарь дня рождения
-    upload_photo() // загрузка фото на стронице use
+    upload_photo() // загрузка фото на стронице user
+    delete_photo() // удалить фото на стронице user
     grid() //
 
 });

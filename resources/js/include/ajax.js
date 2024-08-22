@@ -53,6 +53,8 @@
     }
     /*  загрузка аватара */
 
+
+
     /*  загрузка фото на стронице user */
     export function upload_photo() {
         if($('#upload-button').length) {
@@ -153,3 +155,47 @@
             };
         }
     }
+    /*  загрузка фото на стронице user */
+
+
+    /*  удаление фото - страница фото user  */
+    export function delete_photo() {
+
+
+        $('body').on('click', '.mItemDelete__del__js', function (event) {
+
+            var Id = $(this).data('id');
+            var Thumb =  $(this).data('thumb');
+            var Parent = $(this).parents('.mItem');
+            var Token = $('meta[name="csrf-token"]').attr('content');
+
+            $.ajax({
+                url: '/cabinet/photo-delete',
+                type: 'POST',
+                data: {
+                    "_token": Token,
+                    "id": Id,
+                    "thumb": Thumb,
+                       },
+
+
+                success: function (response) {
+
+                    if (response.error) {
+                        alert('Ошибка при удалении файла');
+                    } else {
+                        console.log(response.success);
+                        Parent.remove();
+                    }
+
+                }
+
+            });
+
+
+
+        });
+        return true;
+
+    }
+    /*  удаление фото - страница фото user  */

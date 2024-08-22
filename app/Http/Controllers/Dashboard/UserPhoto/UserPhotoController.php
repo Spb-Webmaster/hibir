@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Dashboard\UserPhoto;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\DashboardHandleFormRequest;
 use App\Http\Requests\UpdateFormRequest;
 use App\Http\Requests\UpdatePasswordFormRequest;
 use App\Http\Requests\UploadRequest;

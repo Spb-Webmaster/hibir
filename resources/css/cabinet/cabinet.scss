@@ -72,6 +72,7 @@ $maxWidth: 1440;
         padding: 0;
         margin: 0;
         z-index: 10;
+
         button[type="submit"] {
             position: absolute;
             top: -53px;
@@ -80,7 +81,6 @@ $maxWidth: 1440;
         }
     }
 }
-
 
 
 .c__flex {
@@ -110,13 +110,16 @@ $maxWidth: 1440;
     border-radius: 12px;
     border: 1px solid #dddddd;
 }
+
 .birthdate {
     display: flex;
     padding: 11px 0 7px 14px;
-span {
-    color: $colorGrey;
+
+    span {
+        color: $colorGrey;
+    }
 }
-}
+
 .birthdate_pic {
     position: relative;
     padding: 0 0 0 12px;
@@ -141,8 +144,9 @@ span {
         z-index: 5;
         color: $colorBlue2;
     }
+
     .datepicker-birthdate_result:hover {
-text-decoration: none;
+        text-decoration: none;
     }
 }
 
@@ -151,6 +155,7 @@ text-decoration: none;
         border: 1px solid #dddddd;
         border-radius: 12px;
         font-size: 14px;
+
         option {
             padding: 20px;
             background: #f7f7f7;
@@ -159,6 +164,7 @@ text-decoration: none;
         }
 
     }
+
     select.year {
         border: 1px solid #dddddd;
         border-radius: 12px;
@@ -195,38 +201,43 @@ text-decoration: none;
         padding-left: 7px;
     }
 }
+
 .avatar_img {
     width: 36px;
     height: 36px;
     background-size: cover !important;
     border-radius: 50%;
 }
+
 .c__title_subtitle {
-    padding: 6px 0  24px 0;
+    padding: 6px 0 24px 0;
 }
 
 .c__title_subtitle_flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .c__title_subtitle_left {
         padding: 0 16px 0 0;
     }
 }
 
 .image-upload__flex {
-display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     padding: 17px 0 0 0;
 }
-.image-upload__cabinet>input {
+
+.image-upload__cabinet > input {
     display: none;
 }
 
 #doc_form {
     padding: 14px 0 0 0;
 }
+
 .left_bar__name {
     padding: 25px 16px 0 16px;
     overflow: hidden;
@@ -235,9 +246,11 @@ display: flex;
     max-width: 100%;
     text-align: center;
 }
+
 .left_bar__email {
     text-align: center;
 }
+
 .left_bar__phone {
     text-align: center;
     font-size: 18px;
@@ -246,21 +259,25 @@ display: flex;
 .imp_box {
     padding-bottom: 16px;
 }
+
 .c_title {
-    padding: 4px 0 ;
+    padding: 4px 0;
     font-size: 21px;
     font-weight: 700;
     line-height: 1.2em;
     color: $colorRed;
+
     a {
         text-decoration: none;
     }
+
     a:hover {
         text-decoration: underline;
     }
 }
+
 .c_subtitle {
-    padding: 4px 0 ;
+    padding: 4px 0;
     font-size: 18px;
     font-weight: 700;
     line-height: 1.2em;
@@ -289,8 +306,10 @@ display: flex;
         display: flex;
         align-items: center;
         color: #fff;
+
         .__s__left {
             padding: 0 20px 0 0;
+
             img {
                 background-color: $colorRed;
                 padding: 0 10px;
@@ -298,33 +317,36 @@ display: flex;
             }
 
         }
-        .__s__right{
+
+        .__s__right {
 
         }
     }
+
     .__s__title {
         font-weight: 900;
         font-size: 20px;
         line-height: 1.2em;
-        padding:10px 0  6px 0;
+        padding: 10px 0 6px 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         max-width: 646px;
 
 
-
-
     }
 
     .__s_box {
         padding-right: 20px;
+
         span {
             display: block;
         }
+
         .__s_label {
             font-size: 15px;
         }
+
         .__s_string {
             font-size: 13px;
         }
@@ -370,6 +392,7 @@ display: flex;
             margin: 0 0 1px 0;
             color: $color;
             position: relative;
+
             a {
                 text-decoration: none;
                 color: $color;
@@ -380,10 +403,12 @@ display: flex;
                 position: relative;
             }
         }
+
         .surveyMenuEdit__li:hover,
-        .surveyMenuEdit__li:first-child{
+        .surveyMenuEdit__li:first-child {
             background: #F5FBFF;
         }
+
         .surveyMenuEdit__liForm {
             width: 100%;
             background: #fff;
@@ -395,9 +420,11 @@ display: flex;
         }
     }
 }
+
 .delete_survey_form {
 
     position: relative;
+
     .delete_survey_form__button {
         border: none;
         width: 100%;
@@ -409,6 +436,7 @@ display: flex;
         padding: 0 4px 0 10px;
         position: relative;
     }
+
     .delete_survey_form__button:hover {
 
         background: #F5FBFF;
@@ -419,10 +447,12 @@ display: flex;
 
 /* end редактирование кнопка и меню для админа */
 .background_green {
-    background: rgba(89,177,74,.1215686275)!important;
+    background: rgba(89, 177, 74, .1215686275) !important;
     border-radius: 8px
-}.background_biruza {
-    background: #cff4fc!important;
+}
+
+.background_biruza {
+    background: #cff4fc !important;
     border-radius: 8px
 }
 
@@ -505,13 +535,14 @@ display: flex;
 }
 
 .select__wrap {
-   width: 100%;
-  padding: 30px 0 0 0;
+    width: 100%;
+    padding: 30px 0 0 0;
 }
 
 .a_user__nameFio {
     display: flex;
 }
+
 .LC_icons {
     padding: 0 0 0 8px;
 }
@@ -530,7 +561,7 @@ display: flex;
     position: relative;
     line-height: normal;
     right: 0;
-    margin: 0  3px;
+    margin: 0 3px;
 }
 
 .LC_senior_manager {
@@ -547,7 +578,7 @@ display: flex;
     position: relative;
     line-height: normal;
     right: 0;
-    margin: 0  2px;
+    margin: 0 2px;
 }
 
 .LC_senior_cash {
@@ -565,9 +596,10 @@ display: flex;
     position: relative;
     line-height: normal;
     right: 0;
-    margin: 0  2px;
+    margin: 0 2px;
     padding: 0 3px;
 }
+
 .LC_senior_ball {
     border-radius: 20px;
     color: #842029;
@@ -583,10 +615,9 @@ display: flex;
     position: relative;
     line-height: normal;
     right: 0;
-    margin: 0  2px;
+    margin: 0 2px;
     padding: 0 3px;
 }
-
 
 
 .site_avatar {
@@ -702,29 +733,134 @@ display: flex;
 .cabinet_ob_gallery {
     display: grid;
     grid-gap: 10px 20px;
-  //  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    //  grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
     grid-template-columns: 253px 253px 253px;
 
     grid-auto-rows: 20px;
-   .mItem {
-       display: inline-block;
-       margin-bottom: 14px;
-       width: 100%;
-       background-repeat: no-repeat;
-       background-size: cover;
-       border-radius: 4px;
 
-       .co {
-           display: block;
-           position: relative;
+    .mItem {
+        display: inline-block;
+        margin-bottom: 14px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 4px;
+        position: relative;
 
-       }
-       .pc_category_img {
-           position: relative;
-           visibility: hidden;
+        .co {
+            display: block;
+            position: relative;
 
-       }
-   }
+        }
+
+        .pc_category_img {
+            position: relative;
+            visibility: hidden;
+
+        }
+    }
+
+
+
+    /* user photo = скачать и удалить */
+    .mItemDelete {
+        position: absolute;
+        right: 6px;
+        top: 6px;
+        padding: 6px;
+        border-radius: 50%;
+        z-index: 4;
+        transform: translateY(-100%);
+        opacity: 0;
+        cursor: pointer;
+        img {
+            transition: 0.2s;
+            border-radius: 50%;
+
+        }
+    }
+
+
+    .mItemDelete:hover {
+        img {
+            opacity: 0.6;
+            background: #fff;
+        }
+    }
+
+    @keyframes ani {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+
+    }
+
+    .mItem:hover {
+        overflow: hidden;
+
+        .mItemDelete {
+            transform: translateY(-100%);
+            animation: ani 0.2s forwards;
+            opacity: 1;
+        }
+    }
+
+
+    .mItemDelete__list {
+        position: absolute;
+        width: 120px;
+        height: 62px;
+        background: #fff;
+        border-radius: 8px;
+        padding: 4px;
+        right: 0;
+        a {
+            color: $colorGrey;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-bottom: 3px;
+            display: block;
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+            font-size: 13px;
+            padding: 0 10px;
+        }
+        a:hover {
+            background-color: #f5fbff;
+        }
+        ul {
+            li:last-child {
+                a {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+
+    .mItemDelete__download {
+        padding-left: 29px !important;
+        background-size: 16px;
+        background-position: 4px 4px;
+        background-repeat: no-repeat;
+        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMTIgM1YxNk0xMiAxNkwxNiAxMS42MjVNMTIgMTZMOCAxMS42MjUiIHN0cm9rZT0iIzY2NzA4NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPg0KPHBhdGggZD0iTTE1IDIxSDlDNi4xNzE1NyAyMSA0Ljc1NzM2IDIxIDMuODc4NjggMjAuMTIxM0MzIDE5LjI0MjYgMyAxNy44Mjg0IDMgMTVNMjEgMTVDMjEgMTcuODI4NCAyMSAxOS4yNDI2IDIwLjEyMTMgMjAuMTIxM0MxOS44MjE1IDIwLjQyMTEgMTkuNDU5NCAyMC42MTg2IDE5IDIwLjc0ODciIHN0cm9rZT0iIzY2NzA4NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPg0KPC9zdmc+');
+    }
+
+    .mItemDelete__del {
+        padding-left: 29px !important;
+        background-size: 14px;
+        background-position: 6px 5px;
+        background-repeat: no-repeat;
+        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+DQo8c3ZnIHdpZHRoPSI4MHB4IiBoZWlnaHQ9IjgwcHgiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIGNsYXNzPSJpY29uIiAgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik05NjAgMTYwaC0yOTEuMmExNjAgMTYwIDAgMCAwLTMxMy42IDBINjRhMzIgMzIgMCAwIDAgMCA2NGg4OTZhMzIgMzIgMCAwIDAgMC02NHpNNTEyIDk2YTk2IDk2IDAgMCAxIDkwLjI0IDY0aC0xODAuNDhBOTYgOTYgMCAwIDEgNTEyIDk2ek04NDQuMTYgMjkwLjU2YTMyIDMyIDAgMCAwLTM0Ljg4IDYuNzJBMzIgMzIgMCAwIDAgODAwIDMyMGEzMiAzMiAwIDEgMCA2NCAwIDMzLjYgMzMuNiAwIDAgMC05LjI4LTIyLjcyIDMyIDMyIDAgMCAwLTEwLjU2LTYuNzJ6TTgzMiA0MTZhMzIgMzIgMCAwIDAtMzIgMzJ2OTZhMzIgMzIgMCAwIDAgNjQgMHYtOTZhMzIgMzIgMCAwIDAtMzItMzJ6TTgzMiA2NDBhMzIgMzIgMCAwIDAtMzIgMzJ2MjI0YTMyIDMyIDAgMCAxLTMyIDMySDI1NmEzMiAzMiAwIDAgMS0zMi0zMlYzMjBhMzIgMzIgMCAwIDAtNjQgMHY1NzZhOTYgOTYgMCAwIDAgOTYgOTZoNTEyYTk2IDk2IDAgMCAwIDk2LTk2di0yMjRhMzIgMzIgMCAwIDAtMzItMzJ6IiBmaWxsPSIjRUY1MzNGIiAvPjxwYXRoIGQ9Ik0zODQgNzY4VjM1MmEzMiAzMiAwIDAgMC02NCAwdjQxNmEzMiAzMiAwIDAgMCA2NCAwek01NDQgNzY4VjM1MmEzMiAzMiAwIDAgMC02NCAwdjQxNmEzMiAzMiAwIDAgMCA2NCAwek03MDQgNzY4VjM1MmEzMiAzMiAwIDAgMC02NCAwdjQxNmEzMiAzMiAwIDAgMCA2NCAweiIgZmlsbD0iI0VGNTMzRiIgLz48L3N2Zz4=');
+
+    }
+
+
+    /* user photo = скачать и удалить */
 }
 
 /* ////////// фото галерея  в ЛК  */

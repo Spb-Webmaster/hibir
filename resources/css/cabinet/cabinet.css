@@ -121,7 +121,7 @@
   border-radius: 50%; }
 
 .c__title_subtitle {
-  padding: 6px 0  24px 0; }
+  padding: 6px 0 24px 0; }
 
 .c__title_subtitle_flex {
   display: flex;
@@ -205,7 +205,7 @@
     font-weight: 900;
     font-size: 20px;
     line-height: 1.2em;
-    padding: 10px 0  6px 0;
+    padding: 10px 0 6px 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -363,7 +363,7 @@
   position: relative;
   line-height: normal;
   right: 0;
-  margin: 0  3px; }
+  margin: 0 3px; }
 
 .LC_senior_manager {
   border-radius: 20px;
@@ -379,7 +379,7 @@
   position: relative;
   line-height: normal;
   right: 0;
-  margin: 0  2px; }
+  margin: 0 2px; }
 
 .LC_senior_cash {
   border-radius: 20px;
@@ -396,7 +396,7 @@
   position: relative;
   line-height: normal;
   right: 0;
-  margin: 0  2px;
+  margin: 0 2px;
   padding: 0 3px; }
 
 .LC_senior_ball {
@@ -414,7 +414,7 @@
   position: relative;
   line-height: normal;
   right: 0;
-  margin: 0  2px;
+  margin: 0 2px;
   padding: 0 3px; }
 
 .site_avatar {
@@ -494,20 +494,85 @@
   display: grid;
   grid-gap: 10px 20px;
   grid-template-columns: 253px 253px 253px;
-  grid-auto-rows: 20px; }
+  grid-auto-rows: 20px;
+  /* user photo = скачать и удалить */
+  /* user photo = скачать и удалить */ }
   .cabinet_ob_gallery .mItem {
     display: inline-block;
     margin-bottom: 14px;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 4px; }
+    border-radius: 4px;
+    position: relative; }
     .cabinet_ob_gallery .mItem .co {
       display: block;
       position: relative; }
     .cabinet_ob_gallery .mItem .pc_category_img {
       position: relative;
       visibility: hidden; }
+  .cabinet_ob_gallery .mItemDelete {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    padding: 6px;
+    border-radius: 50%;
+    z-index: 4;
+    transform: translateY(-100%);
+    opacity: 0;
+    cursor: pointer; }
+    .cabinet_ob_gallery .mItemDelete img {
+      transition: 0.2s;
+      border-radius: 50%; }
+  .cabinet_ob_gallery .mItemDelete:hover img {
+    opacity: 0.6;
+    background: #fff; }
+@keyframes ani {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(0); } }
+  .cabinet_ob_gallery .mItem:hover {
+    overflow: hidden; }
+    .cabinet_ob_gallery .mItem:hover .mItemDelete {
+      transform: translateY(-100%);
+      animation: ani 0.2s forwards;
+      opacity: 1; }
+  .cabinet_ob_gallery .mItemDelete__list {
+    position: absolute;
+    width: 120px;
+    height: 62px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+    right: 0; }
+    .cabinet_ob_gallery .mItemDelete__list a {
+      color: #667085;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-bottom: 3px;
+      display: block;
+      width: 100%;
+      height: 25px;
+      line-height: 25px;
+      font-size: 13px;
+      padding: 0 10px; }
+    .cabinet_ob_gallery .mItemDelete__list a:hover {
+      background-color: #f5fbff; }
+    .cabinet_ob_gallery .mItemDelete__list ul li:last-child a {
+      margin: 0; }
+  .cabinet_ob_gallery .mItemDelete__download {
+    padding-left: 29px !important;
+    background-size: 16px;
+    background-position: 4px 4px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMTIgM1YxNk0xMiAxNkwxNiAxMS42MjVNMTIgMTZMOCAxMS42MjUiIHN0cm9rZT0iIzY2NzA4NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPg0KPHBhdGggZD0iTTE1IDIxSDlDNi4xNzE1NyAyMSA0Ljc1NzM2IDIxIDMuODc4NjggMjAuMTIxM0MzIDE5LjI0MjYgMyAxNy44Mjg0IDMgMTVNMjEgMTVDMjEgMTcuODI4NCAyMSAxOS4yNDI2IDIwLjEyMTMgMjAuMTIxM0MxOS44MjE1IDIwLjQyMTEgMTkuNDU5NCAyMC42MTg2IDE5IDIwLjc0ODciIHN0cm9rZT0iIzY2NzA4NSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPg0KPC9zdmc+"); }
+  .cabinet_ob_gallery .mItemDelete__del {
+    padding-left: 29px !important;
+    background-size: 14px;
+    background-position: 6px 5px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+DQo8c3ZnIHdpZHRoPSI4MHB4IiBoZWlnaHQ9IjgwcHgiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIGNsYXNzPSJpY29uIiAgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik05NjAgMTYwaC0yOTEuMmExNjAgMTYwIDAgMCAwLTMxMy42IDBINjRhMzIgMzIgMCAwIDAgMCA2NGg4OTZhMzIgMzIgMCAwIDAgMC02NHpNNTEyIDk2YTk2IDk2IDAgMCAxIDkwLjI0IDY0aC0xODAuNDhBOTYgOTYgMCAwIDEgNTEyIDk2ek04NDQuMTYgMjkwLjU2YTMyIDMyIDAgMCAwLTM0Ljg4IDYuNzJBMzIgMzIgMCAwIDAgODAwIDMyMGEzMiAzMiAwIDEgMCA2NCAwIDMzLjYgMzMuNiAwIDAgMC05LjI4LTIyLjcyIDMyIDMyIDAgMCAwLTEwLjU2LTYuNzJ6TTgzMiA0MTZhMzIgMzIgMCAwIDAtMzIgMzJ2OTZhMzIgMzIgMCAwIDAgNjQgMHYtOTZhMzIgMzIgMCAwIDAtMzItMzJ6TTgzMiA2NDBhMzIgMzIgMCAwIDAtMzIgMzJ2MjI0YTMyIDMyIDAgMCAxLTMyIDMySDI1NmEzMiAzMiAwIDAgMS0zMi0zMlYzMjBhMzIgMzIgMCAwIDAtNjQgMHY1NzZhOTYgOTYgMCAwIDAgOTYgOTZoNTEyYTk2IDk2IDAgMCAwIDk2LTk2di0yMjRhMzIgMzIgMCAwIDAtMzItMzJ6IiBmaWxsPSIjRUY1MzNGIiAvPjxwYXRoIGQ9Ik0zODQgNzY4VjM1MmEzMiAzMiAwIDAgMC02NCAwdjQxNmEzMiAzMiAwIDAgMCA2NCAwek01NDQgNzY4VjM1MmEzMiAzMiAwIDAgMC02NCAwdjQxNmEzMiAzMiAwIDAgMCA2NCAwek03MDQgNzY4VjM1MmEzMiAzMiAwIDAgMC02NCAwdjQxNmEzMiAzMiAwIDAgMCA2NCAweiIgZmlsbD0iI0VGNTMzRiIgLz48L3N2Zz4="); }
 
 /* ////////// фото галерея  в ЛК  */
 

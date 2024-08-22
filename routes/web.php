@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\Catalog\CatalogController;
 use App\Http\Controllers\Catalog\ObjectController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoAjaxController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
@@ -113,6 +114,14 @@ Route::controller(UserPhotoController::class)->group(function () {
     Route::post('/cabinet/photos/{id}/upload', 'upload')
         ->middleware('auth.published')
         ->name('cabinet.photos.upload');
+
+});
+Route::controller(UserPhotoAjaxController::class)->group(function () {
+
+    /* удаление фото - кабинет user */
+    Route::post('/cabinet/photo-delete', 'deletePhoto')
+        ->middleware('auth.published');
+
 
 });
 
