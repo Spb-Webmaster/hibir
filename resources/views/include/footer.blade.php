@@ -1,5 +1,5 @@
 <div class="footer">
-    <div class="block">
+    <div class="block block_mobile ">
 
         <div class="bottom__menu">
             @include('include.menu.bottom_menu')

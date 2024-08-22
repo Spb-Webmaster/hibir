@@ -889,4 +889,7 @@ breadcrumbs
     padding: 10px 0;
     text-align: center; }
 
+.mob_menu_content, .mobile_menu {
+  display: none; }
+
 /*# sourceMappingURL=style.css.map */

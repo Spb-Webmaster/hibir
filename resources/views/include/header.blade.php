@@ -32,7 +32,7 @@
 
         </div><!--.header_top-->
         <div class="header_middle">
-            <div class="block">
+            <div class="block block_mobile">
                 <div class="top_menu top_menu_over">
                     @include('include.menu.top_menu')
                 </div>

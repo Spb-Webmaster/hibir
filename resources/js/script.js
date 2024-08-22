@@ -11,6 +11,7 @@ import {menu_js} from "./include/menu";
 import {yandex_map_object} from "./include/yandex_map";
 import {localDataPicker, datepicker_birthdate} from "./include/datapicker";
 import {grid} from "./include/image-loaded";
+import {mobile_menu, add__mobile_menu, mobile_menu_close} from "./include/mobile";
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -33,5 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     upload_photo() // загрузка фото на стронице user
     delete_photo() // удалить фото на стронице user
     grid() //
-
+    mobile_menu() // работа мобильного меню
+    add__mobile_menu() // добавить нужные пункты в меню
+    mobile_menu_close() // закрытие мобильного меню
 });

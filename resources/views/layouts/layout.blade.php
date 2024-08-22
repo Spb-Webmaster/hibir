@@ -28,8 +28,6 @@
 </nav>
 
 <div id="content" class="content_ ">
-
-
     <x-message.message/>
     <x-message.message_error/>
     @include('include.header', ['route' => route_name()]) {{--{{ 'Для стиля главной' }}--}}
@@ -37,6 +35,7 @@
 </div><!--.content_-->
 
 @include('include.footer')
+@include('html.mobile.bottom')
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js" charset="UTF-8"></script>

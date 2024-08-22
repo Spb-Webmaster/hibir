@@ -89,7 +89,28 @@ $maxWidth: 1440;
 
     }
     .button_normal {
-        height: 36px;
+        height: 40px !important;
+        font-size: 15px;
+
+
+    }
+    .button_small {
+
+    }
+    .button_mini {
+
+    }
+}
+
+@media (max-width: 468px) {
+    .button_big {
+        height: 40px;
+        font-size: 16px;
+
+
+    }
+    .button_normal {
+        height: 38px !important;
         font-size: 15px;
 
 

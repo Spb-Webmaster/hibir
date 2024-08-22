@@ -5,7 +5,7 @@
         action="{{ route('form.search.top_search') }}"
         method="POST"
     >
-        <div class="slotButtons slotButtons__right">
+        <div class="slotButtons slotButtons__right slotButtons__lupa">
             <div class=" text_input">
                 <x-forms.primary-button>
                 </x-forms.primary-button>

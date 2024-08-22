@@ -70,7 +70,7 @@
                                 <div class="cabinet_ob_gallery grid pad_t20  pad_b20 ">
                                         @foreach($items as $k => $item)
                                             <div class="mItem" style="background-image: url('{{ asset(intervention('252x0', $item['img'], 'users/' . $user->id  . '/photos', 'scaleDown')) }}')"  >
-                                                <div class="mItemDelete"><img
+                                                <div class="mItemDelete mItemDelete__js"><img
                                                         src="https://hottour.tours/images/menu-survey.svg" alt="">
                                                     <div class="mItemDelete__list">
                                                         <ul>
