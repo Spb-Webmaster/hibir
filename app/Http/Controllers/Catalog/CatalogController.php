@@ -97,11 +97,15 @@ class CatalogController extends Controller
     public function bigSearch(Request $request)
     {
 
+
         $search = $request->top_search;
 
         if (is_null($request->object)) {
 
-            //dump($search);
+            if(is_null($search)) {
+                return redirect()->back();
+            }
+
 
             if ($search) {
                 $items = Regobject::query()
@@ -120,6 +124,10 @@ class CatalogController extends Controller
                     'items' => $items,
                 ]);
         } else {
+
+            if(is_null($search)) {
+                return redirect()->back();
+            }
 
             //dd($request->all());
             $object = Regobject::query()

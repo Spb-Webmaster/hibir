@@ -5,7 +5,7 @@
                 <x-forms.form
                     name="big_search"
                     action="{{route('form.search.big_search')}}">
-                    <div class="slotButtons slotButtons__right">
+                    <div class="slotButtons slotButtons__right slotButtons__lupa">
                         <div>
                             <x-forms.primary-button>
                             </x-forms.primary-button>

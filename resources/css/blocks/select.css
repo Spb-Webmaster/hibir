@@ -72,4 +72,19 @@
     opacity: 1;
     transform: translate(-50%); }
 
+._rel_cat .s_box {
+  width: 421px !important; }
+
+._lefttext {
+  min-width: 200px; }
+
+._righttext {
+  min-width: 200px; }
+  ._righttext .font_30 span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 295px;
+    display: block; }
+
 /*# sourceMappingURL=select.css.map */

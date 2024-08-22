@@ -45,6 +45,10 @@
   display: flex;
   justify-content: right; }
 
+.slotButtons__lupa {
+  display: flex;
+  justify-content: left; }
+
 .birthdate_wrap {
   width: 100%;
   height: 46px;

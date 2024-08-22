@@ -6,8 +6,8 @@
 
     </x-forms.formsubmit>
     <div class="axeld_select__js religion_select__flex _rel__js">
-        <div class="_h1 color_green"><span>{{__('Направление:')}}</span></div>
-        <div class="religion_select__axeld">
+        <div class="_h1 color_green _lefttext"><span>{{__('Направление:')}}</span></div>
+        <div class="religion_select__axeld _righttext">
             <div class="font_30 s_active s__js" data-religion="{{ $religion->id }}"><span>{{ $religion->title }}</span></div>
             <div class="s_box">
 
