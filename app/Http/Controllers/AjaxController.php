@@ -39,7 +39,7 @@ class AjaxController
     {
 
         $validator = Validator::make($request->all(), [
-            'upload_f' => 'required|mimes:png,jpg,jpeg,csv,txt,pdf|max:4096'
+            'upload_f' => 'required|mimes:png,jpg,jpeg,JPG,JPEG|max:8096'
         ]);
 
         if ($validator->fails()) {

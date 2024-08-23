@@ -36,7 +36,7 @@ export function upload_f() {
                         }
                     } else {
                         console.log(result);
-                        alert('Ошибка при загрузке файла');
+                        alert('Ошибка при загрузке аватара.');
 
                     }
                 },
