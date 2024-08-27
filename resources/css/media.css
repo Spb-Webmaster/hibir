@@ -217,7 +217,27 @@
       padding: 0; }
     .h_row.block .h_col__responce {
       width: 100%;
-      padding: 0; } }
+      padding: 0; }
+
+  .r_filter__flex {
+    padding: 30px 0 13px 30px;
+    display: block; }
+    .r_filter__flex .r_filter__left {
+      width: 100%;
+      padding: 10px 15px 10px 0; }
+    .r_filter__flex .r_filter__right {
+      width: 100%;
+      padding: 10px 15px 10px 0; }
+      .r_filter__flex .r_filter__right .f_region__flex {
+        padding-left: 0; }
+    .r_filter__flex .chosen_area__wrap.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0);
+      z-index: 100; }
+
+  .r_filter .r_filter__b {
+    display: none; } }
 @media screen and (max-width: 868px) {
   .ob_controls embed, .ob_controls video {
     max-width: 100%;
@@ -256,7 +276,10 @@
   .footer__flex .footer__left {
     width: 25%; }
   .footer__flex .footer__right {
-    width: 75%; } }
+    width: 75%; }
+
+  .r_filter__flex_nopadding {
+    padding-left: 30px !important; } }
 /* pocofon  x3 */
 @media (max-width: 793px) {
   .cabinet_ob_gallery {
@@ -300,26 +323,6 @@
   .religion_select__axeld .s_active:after {
     width: 16px;
     height: 16px; }
-
-  .r_filter__flex_nopadding {
-    padding-left: 30px !important; }
-
-  .r_filter__flex {
-    padding: 30px 0 13px 30px;
-    display: block; }
-    .r_filter__flex .r_filter__left {
-      width: 100%;
-      padding: 10px 15px 10px 0; }
-    .r_filter__flex .r_filter__right {
-      width: 100%;
-      padding: 10px 15px 10px 0; }
-      .r_filter__flex .r_filter__right .f_region__flex {
-        padding-left: 0; }
-    .r_filter__flex .chosen_area__wrap.active {
-      visibility: visible;
-      opacity: 1;
-      transform: translate(0);
-      z-index: 100; }
 
   .chosen_area__wrap {
     width: 100%; }
@@ -598,6 +601,10 @@
   .flashMassege__relative {
     width: 94%; }
 
+  .religion_select__axeld .s_active:after {
+    top: 12px;
+    right: 0; }
+
   /* Переход на мобильную версию */ }
 /* pocofon  x3 */
 /* xiaomi pro6 */
@@ -778,6 +785,15 @@
     max-width: 568px;
     width: 100%; } }
 @media (max-width: 468px) {
+  ._lefttext {
+    width: 50% !important; }
+
+  ._righttext {
+    width: 50% !important; }
+
+  .r_filter__flex {
+    padding: 30px 0 13px 10px; }
+
   .ob_main_page .page_l, .ob_main_new .page_l, .page_page .page_l {
     flex-direction: column-reverse; }
     .ob_main_page .page_l .page_l__left, .ob_main_new .page_l .page_l__left, .page_page .page_l .page_l__left {
@@ -818,7 +834,7 @@
     font-size: 14px; }
 
   .r_filter__flex {
-    padding: 20px 0 13px 15px;
+    padding: 20px 0 13px 10px;
     display: block; }
 
   .r_filter__flex_nopadding {
