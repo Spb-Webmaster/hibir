@@ -544,6 +544,8 @@
         color: #EF533F; }
     .fMenu li:last-child, .fLogin li:last-child {
       border-bottom: none; }
+    .fMenu li.active a, .fLogin li.active a {
+      color: #EF533F; }
 
   .fMenu, .fLogin {
     width: 100%;
@@ -609,6 +611,16 @@
 /* pocofon  x3 */
 /* xiaomi pro6 */
 @media (max-width: 742px) {
+  ._articles__foreach ._articles_h2_title {
+    font-size: 22px;
+    max-width: 85%; }
+
+  ._articles__foreach ._articles_options {
+    font-size: 13px;
+    padding: 11px 0 22px 0; }
+    ._articles__foreach ._articles_options ._art_m {
+      padding: 0 15px 0 0; }
+
   .drob_container {
     width: 100%;
     min-width: 1px; }
@@ -839,5 +851,8 @@
 
   .r_filter__flex_nopadding {
     padding-left: 15px !important; } }
+@media (max-width: 375px) {
+  ._articles_options__date_create {
+    max-width: 100px !important; } }
 
 /*# sourceMappingURL=media.css.map */

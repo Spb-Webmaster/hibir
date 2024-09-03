@@ -24,6 +24,8 @@ window.IMask = IMask;
 
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+import './ckeditor5/ckeditor5';
 import 'slick-carousel/slick/slick';
 import './ui/jquery-ui.min';
 import './chosen/chosen.jquery';

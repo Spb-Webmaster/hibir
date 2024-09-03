@@ -13,10 +13,6 @@
 
     </div>
 </div>
-<br>
-<br>
-<div class="cabinet_radius12_fff">
-</div>
 
 <br>
 <br>

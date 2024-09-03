@@ -87,7 +87,6 @@ protected $fillable = [
             cache_clear();
         });
 
-
     }
 
 }

@@ -4,10 +4,12 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
 
-class UpdateManagerFormRequest extends FormRequest
+class ArticleFormRequest extends FormRequest
 {
-    /**
+    /** ok
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
@@ -23,10 +25,9 @@ class UpdateManagerFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => [ 'string' , 'min:1'],
-            'phone' => [ 'string', 'min:5'],
-            'email' => [ 'email'],
-            'whatsapp' => ['string',  'min:5']
+            'title_article' => ['required', 'string' , 'min:2'],
+            'article' => ['string', 'min:10'],
+
         ];
 
 
@@ -34,14 +35,11 @@ class UpdateManagerFormRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-
         $this->merge(
             [
-                'email' => str(request('email'))
-                    ->squish()
-                    ->lower()
-                    ->value(),
-                'phone' => phone($this->phone),
+
+                'title' => strip_tags($this->title),
+
             ]
         );
     }

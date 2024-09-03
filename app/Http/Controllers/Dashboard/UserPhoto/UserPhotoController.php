@@ -10,6 +10,7 @@ use App\Models\User;
 
 use App\Models\UserPhoto;
 use Domain\User\ViewModels\UserViewModel;
+use Domain\UserPhoto\ViewModels\UserPhotoViewModel;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -17,15 +18,13 @@ class UserPhotoController extends Controller
 {
     public function page($id)
     {
-        // бред
         $user = auth()->user();
         $items = [];
 
-        $items = UserPhoto::query()->where('user_id', $user->id)
-            ->orderBy('created_at', 'desc')
-            ->paginate(50);
 
         if ($user->id == $id) {
+            $items =  UserPhotoViewModel::make()->userPhotos($user->id);
+
             return view('dashboard.user_photos.user_page', [
                 'user' => $user,
                 'items' => $items
@@ -54,10 +53,9 @@ class UserPhotoController extends Controller
 
         foreach ($request->photos as $photo) {
             $filename = $photo->store('users/' . $user->id . '/photos');
-            UserPhoto::create([
-                'user_id' => $user->id,
-                'img' => $filename
-            ]);
+            UserPhotoViewModel::make()->create($user->id, $filename);
+
+
         }
         $image_successes = str_replace("{image}", count($request->photos), config('message_flash.info.user_img_successes'));
         flash()->info($image_successes);

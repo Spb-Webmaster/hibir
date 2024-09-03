@@ -9,8 +9,10 @@ use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\Catalog\CatalogController;
 use App\Http\Controllers\Catalog\ObjectController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\UserArticle\UserArticleController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoAjaxController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoController;
+use App\Http\Controllers\Dashboard\UserVideo\UserVideoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
 use App\Http\Controllers\Pages\PageController;
@@ -82,7 +84,13 @@ Route::controller(LogoutController::class)->group(function () {
     Route::post('/logout', 'page')->name('logout');
 
 });
+/**
+ *  Auth
+ */
 
+/**
+ *  DashboardController - общее
+ */
 Route::controller(DashboardController::class)->group(function () {
 
     Route::get('/cabinet', 'page')
@@ -105,6 +113,14 @@ Route::controller(DashboardController::class)->group(function () {
 
 });
 
+
+/**
+ *  //////DashboardController - общее
+ */
+
+/**
+ *  UserPhotoController - фото
+ */
 Route::controller(UserPhotoController::class)->group(function () {
 
     Route::get('/cabinet/photos/{id}', 'page')
@@ -116,6 +132,8 @@ Route::controller(UserPhotoController::class)->group(function () {
         ->name('cabinet.photos.upload');
 
 });
+
+
 Route::controller(UserPhotoAjaxController::class)->group(function () {
 
     /* удаление фото - кабинет user */
@@ -125,10 +143,88 @@ Route::controller(UserPhotoAjaxController::class)->group(function () {
 
 });
 
+
 /**
- *  Auth
+ *  ///////UserPhotoController - фото
  */
 
+/**
+ *  UserArticleController - статьи
+ */
+Route::controller(UserArticleController::class)->group(function () {
+
+    Route::get('/cabinet/articles/{user_id}', 'articles')
+        ->middleware('auth.published')
+        ->name('cabinet.articles');
+
+    Route::get('/cabinet/articles/{user_id}/{id}', 'article')
+        ->middleware('auth.published')
+        ->name('cabinet.article');
+
+    Route::get('/cabinet/articles/{user_id}/{id}/edit', 'edit')
+        ->middleware('auth.published')
+        ->name('cabinet.article.edit');
+
+
+    Route::post('/cabinet/create-articles', 'articleCreate')
+        ->middleware('auth.published')
+        ->name('cabinet.article.create');
+
+    Route::post('/cabinet/delete-articles', 'articleDelete')
+        ->middleware('auth.published')
+        ->name('cabinet.article.delete');
+
+    Route::post('/cabinet/update-articles', 'articleUpdate')
+        ->middleware('auth.published')
+        ->name('cabinet.article.update');
+
+
+
+
+});
+
+/**
+ *  ///////UserArticleController - статьи
+ */
+
+/**
+ *  UserVideoController - видео
+ */
+Route::controller(UserVideoController::class)->group(function () {
+
+    Route::get('/cabinet/videos/{user_id}', 'videos')
+        ->middleware('auth.published')
+        ->name('cabinet.videos');
+
+    Route::get('/cabinet/videos/{user_id}/{id}', 'video')
+        ->middleware('auth.published')
+        ->name('cabinet.video');
+
+    Route::get('/cabinet/videos/{user_id}/{id}/edit', 'edit')
+        ->middleware('auth.published')
+        ->name('cabinet.video.edit');
+
+
+    Route::post('/cabinet/create-videos', 'videoCreate')
+        ->middleware('auth.published')
+        ->name('cabinet.video.create');
+
+    Route::post('/cabinet/delete-videos', 'videoDelete')
+        ->middleware('auth.published')
+        ->name('cabinet.video.delete');
+
+    Route::post('/cabinet/update-videos', 'videoUpdate')
+        ->middleware('auth.published')
+        ->name('cabinet.video.update');
+
+
+
+
+});
+
+/**
+ *  ///////UserArticleController - статьи
+ */
 
 
 

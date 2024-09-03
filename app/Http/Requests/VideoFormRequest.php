@@ -4,14 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Password;
 
-class DashboardHandleActivityFormRequest extends FormRequest
+class VideoFormRequest extends FormRequest
 {
-
-    /**
+    /** ok
      * Determine if the user is authorized to make this request.
-     * Определите, авторизован ли пользователь для выполнения этого запроса.
-
      */
     public function authorize(): bool
     {
@@ -25,11 +24,10 @@ class DashboardHandleActivityFormRequest extends FormRequest
      */
     public function rules(): array
     {
-
         return [
-            'work' => ['string' , 'min:1', 'max:255'],
-            'interest' => ['string' , 'min:1', 'max:255'],
-            'prosperity' => ['string' , 'min:1', 'max:255'],
+            'title_video' => ['required', 'string' , 'min:2'],
+            'video' => ['required', 'string' , 'min:10'],
+
 
         ];
 
@@ -41,11 +39,9 @@ class DashboardHandleActivityFormRequest extends FormRequest
         $this->merge(
             [
 
-                'work' => select($this->work),
-                'interest' => select($this->interest),
-                'prosperity' => select($this->prosperity)
+                'title' => strip_tags($this->title),
+
             ]
         );
     }
-
 }

@@ -16,9 +16,6 @@ class UserPhotoAjaxController extends Controller
     {
 
 
-
-
-
         $id = $request->id;
         $thumb = $request->thumb;
         $result = UserViewModel::make()->userDeletePhoto($id, $thumb); // удаляем

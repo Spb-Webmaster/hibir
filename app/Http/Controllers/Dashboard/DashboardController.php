@@ -67,6 +67,9 @@ class DashboardController extends Controller
          *  Проверка совпадения сессии и $request->id
          */
         if($session_user == $request->id) {
+
+
+
             $user = User::query()
                 ->where('id', auth()->user()->id)
                 ->update([
