@@ -38,7 +38,6 @@ class UserPhotoController extends Controller
     public function upload(UploadRequest $request)
     {
 
-        //dd($request->all());
 
         $user = auth()->user();
 
